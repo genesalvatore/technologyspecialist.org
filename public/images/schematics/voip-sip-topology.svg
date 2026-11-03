@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" style="background:#0F172A;">
+  <defs>
+    <pattern id="grid-voip" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#grid-voip)"/>
+
+  <!-- Telemetry Header Bar -->
+  <rect x="20" y="20" width="760" height="36" fill="#1E293B" rx="1"/>
+  <text x="35" y="42" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#38BDF8">SYS-04 // ENTERPRISE VOIP &amp; REDUNDANT SIP TRUNKING TOPOLOGY</text>
+  <text x="560" y="42" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">QoS DSCP EF // G.711u / G.722 HD</text>
+  <circle cx="755" cy="38" r="4" fill="#10B981"/>
+
+  <!-- Left: Redundant Public PSTN / SIP Carriers -->
+  <rect x="40" y="80" width="180" height="150" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="2"/>
+  <rect x="40" y="80" width="180" height="28" fill="#0C4A6E"/>
+  <text x="50" y="99" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#FFFFFF">CARRIER A: FIBER SIP</text>
+  <text x="50" y="128" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; SIP / TLS Encryption</text>
+  <text x="50" y="145" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; SRTP Media Crypto</text>
+  <text x="50" y="162" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; E911 Dispatch Reg</text>
+  <text x="50" y="180" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&bull; LATENCY 9ms JITTER 1ms</text>
+
+  <rect x="40" y="260" width="180" height="150" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="2"/>
+  <rect x="40" y="260" width="180" height="28" fill="#0C4A6E"/>
+  <text x="50" y="279" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#FFFFFF">CARRIER B: 5G/COAX FAILOVER</text>
+  <text x="50" y="308" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; Redundant Outbound Route</text>
+  <text x="50" y="325" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; Sub-Second BGP Switch</text>
+  <text x="50" y="342" font-family="JetBrains Mono, monospace" font-size="9" fill="#94A3B8">&bull; Inbound DID Roll-Over</text>
+  <text x="50" y="360" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&bull; STANDBY READY</text>
+
+  <!-- Middle: Enterprise Session Border Controller & IP-PBX -->
+  <rect x="280" y="120" width="220" height="250" fill="#1E293B" stroke="#0284C7" stroke-width="2" rx="2"/>
+  <rect x="280" y="120" width="220" height="28" fill="#0284C7"/>
+  <text x="295" y="139" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#FFFFFF">CORE SBC &amp; IP-PBX ENGINE</text>
+
+  <g transform="translate(295, 160)">
+    <rect x="0" y="0" width="190" height="35" fill="#0F172A" stroke="#334155"/>
+    <text x="10" y="22" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#38BDF8">AUTO-ATTENDANT &amp; IVR</text>
+
+    <rect x="0" y="42" width="190" height="35" fill="#0F172A" stroke="#334155"/>
+    <text x="10" y="64" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#38BDF8">HUNT GROUPS / QUEUES</text>
+
+    <rect x="0" y="84" width="190" height="35" fill="#0F172A" stroke="#334155"/>
+    <text x="10" y="106" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#38BDF8">CALL RECORDING ENCRYPT</text>
+
+    <rect x="0" y="126" width="190" height="35" fill="#0F172A" stroke="#334155"/>
+    <text x="10" y="148" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#38BDF8">MICROSOFT TEAMS TIE-IN</text>
+
+    <rect x="0" y="168" width="190" height="30" fill="#0F172A" stroke="#10B981"/>
+    <text x="10" y="188" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; E911 RAY BAUM'S ACT OK</text>
+  </g>
+
+  <!-- Connectors: Carriers to SBC -->
+  <path d="M 220 155 L 280 180" stroke="#38BDF8" stroke-width="2"/>
+  <path d="M 220 335 L 280 300" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- Right: Voice QoS Network & Endpoints -->
+  <rect x="560" y="80" width="200" height="330" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="2"/>
+  <rect x="560" y="80" width="200" height="28" fill="#0C4A6E"/>
+  <text x="575" y="99" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#FFFFFF">VOICE VLAN 20 (QoS EF)</text>
+
+  <g transform="translate(575, 120)">
+    <rect x="0" y="0" width="170" height="50" fill="#0F172A" stroke="#1E293B"/>
+    <text x="10" y="20" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">EXECUTIVE DESK PHONES</text>
+    <text x="10" y="36" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Gigabit PoE Passthrough</text>
+
+    <rect x="0" y="60" width="170" height="50" fill="#0F172A" stroke="#1E293B"/>
+    <text x="10" y="80" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">CONFERENCE ROOM AUDIO</text>
+    <text x="10" y="96" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Full-Duplex Beamforming</text>
+
+    <rect x="0" y="120" width="170" height="50" fill="#0F172A" stroke="#1E293B"/>
+    <text x="10" y="140" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">MOBILE SOFTCLIENTS</text>
+    <text x="10" y="156" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; iOS / Android Secure SIP</text>
+
+    <rect x="0" y="180" width="170" height="50" fill="#0F172A" stroke="#1E293B"/>
+    <text x="10" y="200" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">EMERGENCY STROBES / PA</text>
+    <text x="10" y="216" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Multicast Paging Zoning</text>
+  </g>
+
+  <!-- Connectors: SBC to VLAN -->
+  <line x1="500" y1="245" x2="560" y2="245" stroke="#10B981" stroke-width="3"/>
+  <rect x="508" y="225" width="45" height="16" fill="#10B981" rx="1"/>
+  <text x="530" y="236" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#0F172A" text-anchor="middle">DSCP 46</text>
+</svg>

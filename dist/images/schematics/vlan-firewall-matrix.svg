@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" style="background:#0F172A;">
+  <defs>
+    <pattern id="grid-vlan" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#grid-vlan)"/>
+
+  <!-- Telemetry Header Bar -->
+  <rect x="20" y="20" width="760" height="36" fill="#1E293B" rx="1"/>
+  <text x="35" y="42" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#38BDF8">SYS-03 // ZERO-TRUST VLAN MICRO-SEGMENTATION &amp; HARDENED FIREWALL</text>
+  <text x="560" y="42" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">CIS BENCHMARK LEVEL 2</text>
+  <circle cx="755" cy="38" r="4" fill="#10B981"/>
+
+  <!-- Perimeter Firewall -->
+  <rect x="40" y="80" width="160" height="380" fill="#1E1B4B" stroke="#6366F1" stroke-width="2" rx="2"/>
+  <rect x="40" y="80" width="160" height="28" fill="#312E81"/>
+  <text x="50" y="99" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#FFFFFF">PERIMETER FIREWALL</text>
+
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="140" height="42" fill="#0F172A" stroke="#4338CA"/>
+    <text x="8" y="18" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#A5B4FC">WAN-1 (FIBER)</text>
+    <text x="8" y="32" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; ACTIVE 1000/1000</text>
+
+    <rect x="0" y="50" width="140" height="42" fill="#0F172A" stroke="#4338CA"/>
+    <text x="8" y="68" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#A5B4FC">WAN-2 (STANDBY)</text>
+    <text x="8" y="82" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; BGP AUTO FAILOVER</text>
+
+    <rect x="0" y="100" width="140" height="42" fill="#0F172A" stroke="#4338CA"/>
+    <text x="8" y="118" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#A5B4FC">IPSEC / WIREGUARD</text>
+    <text x="8" y="132" font-family="JetBrains Mono, monospace" font-size="8" fill="#38BDF8">&bull; 14 SITE MESH</text>
+
+    <rect x="0" y="150" width="140" height="42" fill="#0F172A" stroke="#4338CA"/>
+    <text x="8" y="168" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#A5B4FC">INTRUSION DETECT</text>
+    <text x="8" y="182" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; SNORT / SURICATA</text>
+
+    <rect x="0" y="200" width="140" height="50" fill="#0F172A" stroke="#10B981"/>
+    <text x="8" y="218" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#10B981">DEFAULT POLICY:</text>
+    <text x="8" y="232" font-family="JetBrains Mono, monospace" font-size="8" fill="#FFFFFF">EXPLICIT DENY ALL</text>
+    <text x="8" y="242" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">ZERO UNTRUSTED INBOUND</text>
+  </g>
+
+  <!-- Segmentation Bus -->
+  <line x1="200" y1="240" x2="260" y2="240" stroke="#6366F1" stroke-width="3"/>
+  <rect x="210" y="225" width="40" height="15" fill="#6366F1" rx="1"/>
+  <text x="230" y="235" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">TRUNK</text>
+
+  <!-- Isolated VLAN Grid Columns -->
+  <!-- VLAN 10: Management -->
+  <rect x="260" y="80" width="230" height="110" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="1"/>
+  <rect x="260" y="80" width="230" height="24" fill="#0C4A6E"/>
+  <text x="270" y="96" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">VLAN 10: OOB &amp; SAN MANAGEMENT</text>
+  <text x="270" y="122" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 10.10.10.0/24 | Isolated Layer 2</text>
+  <text x="270" y="138" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; ESXi Host Management, iLO/iDRAC IPMI</text>
+  <text x="270" y="154" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; ACCESS: Dedicated PAW Workstations Only</text>
+
+  <!-- VLAN 20: Servers -->
+  <rect x="260" y="205" width="230" height="110" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="1"/>
+  <rect x="260" y="205" width="230" height="24" fill="#0C4A6E"/>
+  <text x="270" y="221" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">VLAN 20: CORE PRODUCTION SERVERS</text>
+  <text x="270" y="247" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 10.10.20.0/24 | Micro-Segmented</text>
+  <text x="270" y="263" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Domain Controllers, SQL, Application Hosts</text>
+  <text x="270" y="279" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; E-W FILTER: Zero Unchecked Workstation RPC</text>
+
+  <!-- VLAN 30: Corporate Workstations -->
+  <rect x="260" y="330" width="230" height="130" fill="#132338" stroke="#0052CC" stroke-width="1.5" rx="1"/>
+  <rect x="260" y="330" width="230" height="24" fill="#0C4A6E"/>
+  <text x="270" y="346" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">VLAN 30: CORP WORKSTATIONS (802.1X)</text>
+  <text x="270" y="372" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 10.10.30.0/23 | RADIUS EAP-TLS</text>
+  <text x="270" y="388" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Client Isolation Active (Anti-Lateral Spread)</text>
+  <text x="270" y="404" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Ransomware Blast Radius: Contained to 1 PC</text>
+  <text x="270" y="420" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; BITLOCKER ESCROW &amp; EDR SENSORS ACTIVE</text>
+
+  <!-- Right Column: Voice, IoT & Guest Quarantine -->
+  <rect x="520" y="80" width="240" height="110" fill="#132338" stroke="#0284C7" stroke-width="1.5" rx="1"/>
+  <rect x="520" y="80" width="240" height="24" fill="#0369A1"/>
+  <text x="530" y="96" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">VLAN 40: DEDICATED VOICE (QoS EF)</text>
+  <text x="530" y="122" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 10.10.40.0/24 | DSCP Expedited</text>
+  <text x="530" y="138" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; VoIP PBX, IP Phones, Conference units</text>
+  <text x="530" y="154" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; ROUTING: Strict Path to SBC Only</text>
+
+  <rect x="520" y="205" width="240" height="110" fill="#132338" stroke="#0284C7" stroke-width="1.5" rx="1"/>
+  <rect x="520" y="205" width="240" height="24" fill="#0369A1"/>
+  <text x="530" y="221" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FFFFFF">VLAN 50: HVAC, ACCESS &amp; CAMERAS</text>
+  <text x="530" y="247" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 10.10.50.0/24 | IoT Quarantine</text>
+  <text x="530" y="263" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Zero Internet Access &bull; NVR Private Path</text>
+  <text x="530" y="279" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; ZERO REACHABILITY TO SERVER VLAN</text>
+
+  <rect x="520" y="330" width="240" height="130" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5" rx="1"/>
+  <rect x="520" y="330" width="240" height="24" fill="#78350F"/>
+  <text x="530" y="346" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#FDE68A">VLAN 90: PUBLIC GUEST WI-FI</text>
+  <text x="530" y="372" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Subnet: 192.168.90.0/23 | Captive Portal</text>
+  <text x="530" y="388" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#94A3B8">&bull; Complete Client Isolation &amp; Rate Capped</text>
+  <text x="530" y="404" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#F87171">&bull; RFC 1918 Private Ranges BLOCKED</text>
+  <text x="530" y="420" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#10B981">&bull; ZERO VISIBILITY INTO CORPORATE LAN</text>
+</svg>
