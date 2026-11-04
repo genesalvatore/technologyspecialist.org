@@ -6,8 +6,17 @@
   <title>Technology Specialist | Enterprise Systems, Virtualization &amp; Network Engineering Since 1990</title>
   <meta name="description" content="Technology Specialist provides enterprise virtualization, VMware ESXi, Hyper-V, Microsoft 365 governance, VoIP SIP trunking, and network hardening. Principal-led by Steve Cormier since 1990." />
   <meta name="author" content="Steve Cormier - Technology Specialist" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate icon" type="image/png" href="/images/logo-mark.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="twitter:image" content="/images/og-image.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <!-- Logo Studio Client Runtime -->
+  <script src="/logo-studio.js" defer></script>
 
   <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,6 +110,7 @@
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
         <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
           <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
           <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
         </div>
@@ -112,7 +122,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo & Monogram Unit -->
         <a href="/" class="flex items-center gap-3.5 group">
-          <img src="/images/logo.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" id="siteHeaderLogo" class="h-10 sm:h-12 w-auto object-contain" />
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
           <div class="hidden md:block hairline-l pl-3.5">
             <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
             <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
@@ -125,6 +135,7 @@
           <a href="#inspector" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Hypervisor Inspector</a>
           <a href="#triage" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Architecture Triage</a>
           <a href="#heritage" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Since 1990</a>
+          <a href="/logos" class="px-3 py-2 text-brand-cobalt hover:text-blue-700 hover:bg-blue-50 font-bold transition-colors">Logo Studio (10)</a>
           <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
         </nav>
 
@@ -847,6 +858,15 @@
   </section>
 
   <!-- ===================================================================== -->
+  <!-- 4.5 BRAND IDENTITY & VECTOR LOGO STUDIO                               -->
+  <!-- ===================================================================== -->
+  <section id="logo-studio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="hairline-grid bg-white p-6 sm:p-10 shadow-sm">
+      <div id="logo-studio-mount"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
   <!-- 5. STRUCTURAL BLUEPRINT FOOTER                                        -->
   <!-- ===================================================================== -->
   <footer class="bg-white hairline-t mt-12">
@@ -857,7 +877,7 @@
         <!-- Col 1: Identity -->
         <div class="space-y-3">
           <div class="flex items-center gap-3">
-            <img src="/images/logo-full.png" alt="Technology Specialist" class="h-10 w-auto object-contain" />
+            <img src="/images/logos/concept-01-hypervisor-blades.svg" alt="Technology Specialist" class="h-10 w-auto object-contain" />
           </div>
           <p class="text-xs text-slate-600 leading-relaxed font-normal">
             Technology Specialist provides mission-critical enterprise virtualization, M365 governance, VoIP systems, and network engineering. Principal-led by Steve Cormier since 1990.
