@@ -44,7 +44,9 @@ const SITE_DOMAIN_DEFAULT =
 const SITE_BRAND_COLOR = "#0052CC";
 const SITE_SIDEBAR_BG = "#0F172A";
 const SITE_TOPBAR_BG = "#1E293B";
-const SITE_LOGO_URL = "/images/logo-full.png";
+const SITE_LOGO_URL =
+  process.env.SITE_LOGO_URL ||
+  "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=technologyspecialist";
 const SITE_VERTICAL =
   "Enterprise Systems, Virtualization & Network Engineering (Est. 1990)";
 
