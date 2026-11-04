@@ -74,7 +74,7 @@ export const GREENTREE_PAYMENT_GATEWAYS = [
     name: "No Billing Connected (Preview Mode)",
     shortLabel: "No Billing",
     badgeColor: "#64748b",
-    description: "Executive Concept Preview — Zero pricing and no billing portal connected",
+    description: "Executive Concept Preview  -  Zero pricing and no billing portal connected",
   },
   {
     id: "whmcs",
@@ -938,7 +938,7 @@ export const SPOKE_VERTICAL_PRESETS = {
 export const DEFAULT_TENANT_LICENSES = {
   "eei-socomec": {
     siteKey: "eei-socomec",
-    siteName: "EEI Socomec — Heavy Breaker & Excavator Attachments",
+    siteName: "EEI Socomec  -  Heavy Breaker & Excavator Attachments",
     portalTitle: "EEI Socomec Operations Portal",
     logoUrl: "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=eei-socomec",
     domain: "eei-socomec.com",
@@ -957,7 +957,7 @@ export const DEFAULT_TENANT_LICENSES = {
   },
   "eei-trevibenne": {
     siteKey: "eei-trevibenne",
-    siteName: "EEI Trevi Benne — Demolition, Pulverizers & Forestry",
+    siteName: "EEI Trevi Benne  -  Demolition, Pulverizers & Forestry",
     portalTitle: "EEI Trevi Benne Operations Portal",
     logoUrl: "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=eei-trevibenne",
     domain: "eei-trevibenne.com",
@@ -976,7 +976,7 @@ export const DEFAULT_TENANT_LICENSES = {
   },
   "gallmac-us": {
     siteKey: "gallmac-us",
-    siteName: "Gallmac US — Multi-Purpose Wheeled Excavators & Rail",
+    siteName: "Gallmac US  -  Multi-Purpose Wheeled Excavators & Rail",
     portalTitle: "Gallmac US Operations Portal",
     logoUrl: "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=gallmac-us",
     domain: "gallmac.us",
@@ -995,7 +995,7 @@ export const DEFAULT_TENANT_LICENSES = {
   },
   rockfrac: {
     siteKey: "rockfrac",
-    siteName: "RockFrac — Non-Explosive Rock Splitting & Demolition",
+    siteName: "RockFrac  -  Non-Explosive Rock Splitting & Demolition",
     portalTitle: "RockFrac Operations Portal",
     logoUrl: "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=rockfrac",
     domain: "rockfrac.com",
@@ -1014,7 +1014,7 @@ export const DEFAULT_TENANT_LICENSES = {
   },
   "eei-canam": {
     siteKey: "eei-canam",
-    siteName: "EEI Canam Rock Drill — Pneumatic & Hydraulic Drilling",
+    siteName: "EEI Canam Rock Drill  -  Pneumatic & Hydraulic Drilling",
     portalTitle: "EEI Canam Rock Drill Operations Portal",
     logoUrl: "https://command.greentreehosting.com/api/public/tenant-logo?siteKey=eei-canam",
     domain: "eei-canamrockdrill.com",
@@ -1919,7 +1919,7 @@ export const DEFAULT_TENANT_LICENSES = {
   },
   "infieldlife": {
     "siteKey": "infieldlife",
-    "siteName": "Infield Life — The Soul of Race Weekend",
+    "siteName": "Infield Life  -  The Soul of Race Weekend",
     "portalTitle": "Infield Life Operations & Merch Command Portal",
     "logoUrl": "https://infieldlife.com/images/crest-est2011.jpg",
     "domain": "infieldlife.com",

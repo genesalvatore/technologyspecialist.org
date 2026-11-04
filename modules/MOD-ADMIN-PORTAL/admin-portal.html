@@ -3864,7 +3864,7 @@ const CONTEXTUAL_GUIDE_BUTTON_META = {
                       ${prog ? `
                         <div style="margin-bottom:8px;padding:10px 12px;border-radius:8px;background:#eff6ff;border:1px solid #93c5fd;">
                           <div class="mono" style="display:flex;justify-content:space-between;font-size:0.72rem;font-weight:800;color:#1e3a8a;margin-bottom:4px;">
-                            <span>⚡ CLOUD ${escHtml((STATE.agentHandle || getSiteAgentIdentity().handle).toUpperCase())} WORKING &mdash; Stage ${prog.stageNum}/4: ${escHtml(prog.stageTitle)}</span>
+                            <span>⚡ CLOUD ${escHtml((STATE.agentHandle || getSiteAgentIdentity().handle).toUpperCase())} WORKING  -  Stage ${prog.stageNum}/4: ${escHtml(prog.stageTitle)}</span>
                             <span>${prog.percent}% (${escHtml(prog.elapsedFormatted)})</span>
                           </div>
                           <div style="width:100%;height:7px;background:#dbeafe;border-radius:9999px;overflow:hidden;">
@@ -4534,7 +4534,7 @@ const CONTEXTUAL_GUIDE_BUTTON_META = {
                       return `
                         <div onclick="loadWhmcsTicketDetail(${Number(t.id || t.ticketid)})" style="cursor:pointer;background:${isSel ? '#eff6ff' : '#fff'};border:1.5px solid ${isSel ? '#3b82f6' : '#e2e8f0'};border-radius:9px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:all 0.12s;">
                           <div style="min-width:0;flex:1;">
-                            <div style="font-weight:800;font-size:0.8rem;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">#${escHtml(t.tid)} &mdash; ${escHtml(t.subject)}</div>
+                            <div style="font-weight:800;font-size:0.8rem;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">#${escHtml(t.tid)}  -  ${escHtml(t.subject)}</div>
                             <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">${escHtml(t.deptname || 'Tech Support')} &middot; Last activity: ${escHtml(t.lastreply || t.date)}</div>
                           </div>
                           <span class="badge ${String(t.status).toLowerCase() === 'closed' ? 'badgeSlate' : 'badgeGreen'}" style="font-size:0.64rem;">${escHtml(t.status)}</span>

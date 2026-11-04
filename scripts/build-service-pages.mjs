@@ -1384,7 +1384,7 @@ function buildAll() {
         scanDir(fullPath);
       } else if (f.endsWith('.html')) {
         const content = fs.readFileSync(fullPath, 'utf8');
-        const matches = content.match(/—/g);
+        const matches = content.match(/ - /g);
         if (matches) {
           console.error(`EM DASH FOUND in ${fullPath}: ${matches.length} instances`);
           emDashCount += matches.length;

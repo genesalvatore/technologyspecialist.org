@@ -42,7 +42,7 @@ for (const base of baseDirs) {
     const content = fs.readFileSync(pagePath, 'utf8');
 
     // 1. Check for em dashes
-    if (content.includes('—')) {
+    if (content.includes(' - ')) {
       console.error('EM DASH FOUND IN:', pagePath);
       errors++;
     }
