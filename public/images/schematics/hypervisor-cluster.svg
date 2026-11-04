@@ -15,7 +15,7 @@
   <!-- Telemetry Header Bar -->
   <rect x="20" y="20" width="760" height="36" fill="#1E293B" rx="1"/>
   <text x="35" y="42" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#38BDF8">SYS-02 // HA HYPERVISOR CLUSTER FABRIC</text>
-  <text x="500" y="42" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">VMWARE ESXi 8.0 &bull; HYPER-V CLUSTER</text>
+  <text x="500" y="42" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">VMWARE ESXi 8.0 &#8226; HYPER-V CLUSTER</text>
   <circle cx="755" cy="38" r="4" fill="#10B981"/>
 
   <!-- Cluster Node 01 Box -->
@@ -28,19 +28,19 @@
   <!-- Node 01 VMs -->
   <rect x="65" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="73" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-DC01</text>
-  <text x="73" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; ACTIVE DC</text>
+  <text x="73" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; ACTIVE DC</text>
 
   <rect x="160" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="168" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-SQL01</text>
-  <text x="168" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; PROD DB</text>
+  <text x="168" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; PROD DB</text>
 
   <rect x="255" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="263" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-APP01</text>
-  <text x="263" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; RUNTIME</text>
+  <text x="263" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; RUNTIME</text>
 
   <rect x="65" y="212" width="275" height="42" fill="#0B132B" stroke="#1E293B" rx="1"/>
   <text x="75" y="230" font-family="JetBrains Mono, monospace" font-size="9" fill="#38BDF8">STATUS: 12 VMs ONLINE | CPU LOAD 18% | RAM 42%</text>
-  <text x="75" y="244" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&bull; VMOTION READY | HEARTBEAT SYNC NOMINAL</text>
+  <text x="75" y="244" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&#8226; VMOTION READY | HEARTBEAT SYNC NOMINAL</text>
 
   <!-- Cluster Node 02 Box -->
   <rect x="440" y="80" width="310" height="190" fill="#132338" stroke="#0284C7" stroke-width="1.5" rx="2"/>
@@ -52,21 +52,21 @@
   <!-- Node 02 VMs -->
   <rect x="455" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="463" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-DC02</text>
-  <text x="463" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; SECONDARY</text>
+  <text x="463" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; SECONDARY</text>
 
   <rect x="550" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="558" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-RDS01</text>
-  <text x="558" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; RDS FARM</text>
+  <text x="558" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; RDS FARM</text>
 
   <rect x="645" y="160" width="85" height="42" fill="#0F172A" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="653" y="177" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#E2E8F0">VM-PBX01</text>
-  <text x="653" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&bull; VOICE CORE</text>
+  <text x="653" y="193" font-family="JetBrains Mono, monospace" font-size="8" fill="#10B981">&#8226; VOICE CORE</text>
 
   <rect x="455" y="212" width="275" height="42" fill="#0B132B" stroke="#1E293B" rx="1"/>
   <text x="465" y="230" font-family="JetBrains Mono, monospace" font-size="9" fill="#38BDF8">STATUS: 14 VMs ONLINE | CPU LOAD 22% | RAM 46%</text>
-  <text x="465" y="244" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&bull; AUTO-FAILOVER STANDBY | ZERO VM DOWNTIME</text>
+  <text x="465" y="244" font-family="JetBrains Mono, monospace" font-size="9" fill="#10B981">&#8226; AUTO-FAILOVER STANDBY | ZERO VM DOWNTIME</text>
 
-  <!-- Inter-Host HA Heartbeat & vMotion Bus -->
+  <!-- Inter-Host HA Heartbeat and vMotion Bus -->
   <line x1="360" y1="175" x2="440" y2="175" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 3"/>
   <polygon points="395,170 405,175 395,180" fill="#38BDF8"/>
   <rect x="365" y="152" width="70" height="18" fill="#0284C7" rx="1"/>
@@ -95,5 +95,5 @@
   <!-- Storage Telemetry -->
   <text x="430" y="415" font-family="JetBrains Mono, monospace" font-size="10" fill="#E2E8F0">ARRAY: 48TB RAW NVMe RAID 10</text>
   <text x="430" y="432" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">THROUGHPUT: 125,000 IOPS @ 0.4ms</text>
-  <text x="430" y="449" font-family="JetBrains Mono, monospace" font-size="10" fill="#10B981">&bull; ACTIVE-ACTIVE MP-IO MULTIPATHING</text>
+  <text x="430" y="449" font-family="JetBrains Mono, monospace" font-size="10" fill="#10B981">&#8226; ACTIVE-ACTIVE MP-IO MULTIPATHING</text>
 </svg>

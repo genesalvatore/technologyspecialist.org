@@ -21,19 +21,19 @@
   <text x="53" y="139" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">TOPOLOGY SCAN</text>
   <text x="53" y="156" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">SNMP, ARP &amp; L2/L3 map</text>
   <text x="53" y="171" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Active Directory audit</text>
-  <text x="53" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Zero blind spots</text>
+  <text x="53" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Zero blind spots</text>
 
   <rect x="45" y="205" width="145" height="75" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="53" y="224" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">TELECOM &amp; ISP AUDIT</text>
   <text x="53" y="241" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Bill &amp; contract analysis</text>
   <text x="53" y="256" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">SIP trunk &amp; PRI review</text>
-  <text x="53" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; 20-40% savings found</text>
+  <text x="53" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; 20-40% savings found</text>
 
   <rect x="45" y="290" width="145" height="85" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="53" y="309" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">VULNERABILITY SCAN</text>
   <text x="53" y="326" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Open ports &amp; weak ciphers</text>
   <text x="53" y="341" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Ransomware exposure check</text>
-  <text x="53" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#F59E0B">&bull; CIS Benchmark baseline</text>
+  <text x="53" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#F59E0B">&#8226; CIS Benchmark baseline</text>
 
   <rect x="45" y="385" width="145" height="60" fill="#1E293B" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="53" y="405" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFFFFF">DELIVERABLE:</text>
@@ -49,19 +49,19 @@
   <text x="243" y="139" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">TARGET ARCHITECTURE</text>
   <text x="243" y="156" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Hypervisor sizing (RAM/IOPS)</text>
   <text x="243" y="171" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">M365 SKU optimization</text>
-  <text x="243" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Future-proof 5yr scope</text>
+  <text x="243" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Future-proof 5yr scope</text>
 
   <rect x="235" y="205" width="145" height="75" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="243" y="224" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">DR / BCDR FORMULATION</text>
   <text x="243" y="241" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">RPO &lt; 15m / RTO &lt; 1hr</text>
   <text x="243" y="256" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">3-2-1-1-0 Backup Model</text>
-  <text x="243" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Air-gapped immutability</text>
+  <text x="243" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Air-gapped immutability</text>
 
   <rect x="235" y="290" width="145" height="85" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="243" y="309" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">CAPEX / OPEX ROADMAP</text>
   <text x="243" y="326" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Hardware refresh cycle</text>
   <text x="243" y="341" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Warranty status audit</text>
-  <text x="243" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#38BDF8">&bull; Clear ROI projections</text>
+  <text x="243" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#38BDF8">&#8226; Clear ROI projections</text>
 
   <rect x="235" y="385" width="145" height="60" fill="#1E293B" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="243" y="405" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFFFFF">DELIVERABLE:</text>
@@ -77,19 +77,19 @@
   <text x="433" y="139" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">AFTER-HOURS CUTOVER</text>
   <text x="433" y="156" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Zero midday disruption</text>
   <text x="433" y="171" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Staged live migrations</text>
-  <text x="433" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Fallback rollback plan</text>
+  <text x="433" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Fallback rollback plan</text>
 
   <rect x="425" y="205" width="145" height="75" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="433" y="224" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">SAN &amp; FABRIC BUILD</text>
   <text x="433" y="241" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">10G/25G SFP+ structured cabling</text>
   <text x="433" y="256" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">LACP bond &amp; multipath IO</text>
-  <text x="433" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Full redundancy tested</text>
+  <text x="433" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Full redundancy tested</text>
 
   <rect x="425" y="290" width="145" height="85" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="433" y="309" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#38BDF8">IDENTITY LOCKDOWN</text>
   <text x="433" y="326" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">PIM Tier 0/1/2 separation</text>
   <text x="433" y="341" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">FIDO2 passkey enforcement</text>
-  <text x="433" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; 100% MFA coverage</text>
+  <text x="433" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; 100% MFA coverage</text>
 
   <rect x="425" y="385" width="145" height="60" fill="#1E293B" stroke="#38BDF8" stroke-width="1" rx="1"/>
   <text x="433" y="405" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFFFFF">DELIVERABLE:</text>
@@ -105,19 +105,19 @@
   <text x="623" y="139" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#10B981">24/7 TELEMETRY</text>
   <text x="623" y="156" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">SNMP, syslog &amp; cloud alarms</text>
   <text x="623" y="171" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Heartbeat health monitoring</text>
-  <text x="623" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; &lt;15m response SLA</text>
+  <text x="623" y="186" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; &lt;15m response SLA</text>
 
   <rect x="615" y="205" width="140" height="75" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="623" y="224" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#10B981">QUARTERLY REVIEWS</text>
   <text x="623" y="241" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Executive QBR presentation</text>
   <text x="623" y="256" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Cap-ex budgeting updates</text>
-  <text x="623" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#38BDF8">&bull; Strategic alignment</text>
+  <text x="623" y="271" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#38BDF8">&#8226; Strategic alignment</text>
 
   <rect x="615" y="290" width="140" height="85" fill="#0F172A" stroke="#334155" stroke-width="1" rx="1"/>
   <text x="623" y="309" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#10B981">DR DRILL RUNBOOK</text>
   <text x="623" y="326" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#E2E8F0">Semi-annual live test</text>
   <text x="623" y="341" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94A3B8">Sandbox restore verification</text>
-  <text x="623" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&bull; Attested compliance</text>
+  <text x="623" y="356" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#10B981">&#8226; Attested compliance</text>
 
   <rect x="615" y="385" width="140" height="60" fill="#1E293B" stroke="#10B981" stroke-width="1" rx="1"/>
   <text x="623" y="405" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFFFFF">DELIVERABLE:</text>

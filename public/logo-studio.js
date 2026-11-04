@@ -170,6 +170,19 @@
   }
 
   function injectStudioUI() {
+    if (!document.getElementById("ts-logo-studio-responsive-styles")) {
+      const studioStyle = document.createElement("style");
+      studioStyle.id = "ts-logo-studio-responsive-styles";
+      studioStyle.textContent = `
+        @media (max-width: 768px) {
+          #ts-logo-studio-launcher, #ts-logo-launcher {
+            display: none !important;
+          }
+        }
+      `;
+      document.head.appendChild(studioStyle);
+    }
+
     // 1. Inject Floating Launcher Button (Bottom Left)
     const launcher = document.createElement("button");
     launcher.id = "ts-logo-studio-launcher";

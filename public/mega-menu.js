@@ -62,6 +62,11 @@
         display: none !important;
       }
     }
+    @media (max-width: 768px) {
+      #ts-logo-studio-launcher, #ts-logo-launcher {
+        display: none !important;
+      }
+    }
     .overflow-x-auto {
       max-width: 100% !important;
       overflow-x: auto !important;
