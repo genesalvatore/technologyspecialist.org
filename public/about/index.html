@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Steve Cormier | Principal Systems Architect | Technology Specialist (Est. 1990)</title>
+  <meta name="description" content="Executive biography of Steve Cormier: Founder and Principal Systems Architect of Technology Specialist since 1990, Vice President of Technical and Customer Support at Sonitor Technologies, U.S. Air Force Veteran, and Lead Instructor for Track Day Xperience at Sebring." />
+  <meta name="author" content="Steve Cormier - Technology Specialist" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/steve/steve-cormier-portrait.png" />
+  <meta property="og:title" content="Steve Cormier: Principal Systems Architect (Est. 1990)" />
+  <meta property="og:description" content="36 years of enterprise IT network design, VMware virtualization, global healthcare escalation leadership, U.S. Air Force service, and high-speed motorsport instruction at Sebring." />
+
+  <!-- Logo Studio Client Runtime -->
+  <script src="/logo-studio.js" defer></script>
+  <!-- Swiss Architectural Mega-Menu Runtime -->
+  <script src="/mega-menu.js" defer></script>
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cobalt: '#0052CC',
+              cyan: '#0284C7',
+              slate: '#0F172A',
+              card: '#FFFFFF',
+              surface: '#FAFAFC',
+              silver: '#F1F5F9',
+              line: '#CBD5E1',
+              darkLine: '#334155',
+              success: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFC;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .blueprint-bg {
+      background-image: linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hairline-grid { border: 1px solid #CBD5E1; }
+    .hairline-b { border-bottom: 1px solid #CBD5E1; }
+    .hairline-t { border-top: 1px solid #CBD5E1; }
+    .hairline-r { border-right: 1px solid #CBD5E1; }
+    .hairline-l { border-left: 1px solid #CBD5E1; }
+  </style>
+</head>
+<body class="blueprint-bg text-brand-slate antialiased">
+
+  <!-- ===================================================================== -->
+  <!-- 0. TOP TECHNICAL TELEMETRY BAR & STICKY ARCHITECTURAL HEADER          -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md hairline-b">
+    <!-- Monospace Telemetry Strip -->
+    <div class="bg-brand-slate text-white text-[11px] font-mono font-bold tracking-wider uppercase py-2 px-4 hairline-b">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
+          <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
+        </div>
+        <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Architectural Nav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Unit -->
+        <a href="/" class="flex items-center gap-3.5 group">
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <div class="hidden md:block hairline-l pl-3.5">
+            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
+            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Matrix with Mega-Menu Hooks -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1">
+            <span>Practice Areas (10)</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 text-brand-cobalt bg-blue-50/60 font-extrabold flex items-center gap-1">
+            <span>Leadership</span>
+            <span class="text-[9px] text-brand-cobalt">&darr;</span>
+          </a>
+          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Logo Studio (10)</a>
+          <a href="/contact" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Contact &amp; Dispatch</a>
+          <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
+        </nav>
+
+        <!-- Header Action CTA & Mobile Trigger -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
+            <span>(407) 917-5250</span>
+          </a>
+          <a href="/contact" class="px-4 py-2 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+            Request Dispatch
+          </a>
+          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+            <span class="sr-only">Open Menu</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 1. PRINCIPAL PROFILE HERO                                             -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 hairline-grid bg-white shadow-xl">
+      
+      <!-- Left Column: Portrait & Precision Visual Frame (5 Cols) -->
+      <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between hairline-b lg:hairline-b-0 lg:hairline-r bg-slate-50">
+        <div>
+          <div class="flex items-center justify-between mb-4 font-mono text-[10px] text-slate-500 pb-2 hairline-b">
+            <span>ARCHITECT ID // SC-1990</span>
+            <span class="text-brand-cobalt font-bold">EXECUTIVE PRINCIPAL</span>
+          </div>
+
+          <!-- Studio Portrait -->
+          <div class="relative bg-white p-2 border border-brand-line shadow-sm">
+            <img src="/images/steve/steve-cormier-portrait.png" alt="Steve Cormier - Founder and Principal Systems Architect" class="w-full h-auto object-cover border border-slate-200" />
+            <div class="mt-3 pt-2 hairline-t flex items-center justify-between font-mono text-[10px] text-slate-500">
+              <span>STEVE CORMIER</span>
+              <span>ORLANDO / KISSIMMEE, FL</span>
+            </div>
+          </div>
+
+          <!-- Quick Factsheet -->
+          <div class="mt-6 space-y-2 font-mono text-xs">
+            <div class="bg-white p-3 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 uppercase text-[10px]">Primary Role:</span>
+              <span class="font-bold text-brand-slate">Founder &amp; Principal Architect</span>
+            </div>
+            <div class="bg-white p-3 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 uppercase text-[10px]">Enterprise Tenure:</span>
+              <span class="font-bold text-brand-cobalt">1990 - Present (36 Years)</span>
+            </div>
+            <div class="bg-white p-3 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 uppercase text-[10px]">Corporate Post:</span>
+              <span class="font-bold text-brand-slate text-right">VP Support @ Sonitor (2010 - Pres.)</span>
+            </div>
+            <div class="bg-white p-3 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 uppercase text-[10px]">Military Service:</span>
+              <span class="font-bold text-slate-800">U.S. Air Force (Security Police)</span>
+            </div>
+            <div class="bg-white p-3 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 uppercase text-[10px]">Motorsport:</span>
+              <span class="font-bold text-brand-cobalt text-right">Lead Instructor, TDX (Sebring)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 hairline-t">
+          <a href="tel:+14079175250" class="block w-full py-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+            Direct Dispatch: (407) 917-5250
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Executive Credentials & Bio (7 Cols) -->
+      <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+        <div>
+          <!-- Engineering Code Tag -->
+          <div class="flex items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 border border-blue-200 font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+              EXECUTIVE LEADERSHIP &bull; PRINCIPAL BIOGRAPHY
+            </span>
+            <span class="font-mono text-[10px] text-slate-400">EST. 1990 // 36 YRS</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-slate leading-tight mb-4">
+            Steve Cormier
+          </h1>
+          <p class="font-heading text-lg sm:text-xl text-brand-cobalt font-semibold mb-6">
+            Founder &amp; Principal Systems Architect, Technology Specialist (Est. 1990)<br />
+            Vice President, Technical &amp; Customer Support at Sonitor Technologies
+          </p>
+
+          <!-- Precision Credentials Bar -->
+          <div class="p-4 bg-slate-50 border border-brand-line mb-8 font-mono text-[11px] text-slate-700 space-y-2">
+            <div class="flex flex-wrap items-center gap-2 font-bold text-brand-slate">
+              <span class="px-2 py-0.5 bg-white border border-brand-line">U.S. Air Force Veteran</span>
+              <span class="px-2 py-0.5 bg-white border border-brand-line">Microsoft Certified</span>
+              <span class="px-2 py-0.5 bg-white border border-brand-line">B.S. Criminal Justice</span>
+              <span class="px-2 py-0.5 bg-white border border-brand-line">Lead Instructor, TDX</span>
+            </div>
+            <div class="text-[10px] text-slate-500 pt-1">
+              Active Directory &bull; VMware ESXi 8.0 &bull; Windows Hyper-V &bull; Microsoft 365 Copilot &bull; Zero-Trust Hardening &bull; Central Florida (Orlando / Kissimmee)
+            </div>
+          </div>
+
+          <!-- Executive Overview Text -->
+          <div class="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p>
+              Steve Cormier has engineered mission-critical enterprise systems, virtualized clusters, and secure networks for 36 continuous years. Since establishing <strong>Technology Specialist</strong> in 1990 in Central Florida, Steve has provided direct, hands-on principal engineering to commercial organizations across Orlando, Kissimmee, and nationwide, eliminating the overhead and dilution of junior helpdesk intermediaries.
+            </p>
+            <p>
+              In parallel to his private practice, Steve serves as <strong>Vice President of Technical &amp; Customer Support at Sonitor Technologies</strong>, where he has led global support operations since 2010. Over more than a decade and a half at Sonitor, he architected a complete global support organization, custom operational toolsets, and multi-tier escalation frameworks supporting major healthcare hospital systems as their highest-level technical resource and final point of technical escalation.
+            </p>
+            <p>
+              Before his civilian enterprise career, Steve served in the <strong>United States Air Force</strong> in the Security Police at Offutt Air Force Base in Nebraska. That military foundation in physical and perimeter security directly informs his approach to cyber hygiene, zero-trust infrastructure, and CIS Level 2 server hardening. Steve holds a degree in Criminal Justice and is Microsoft Certified, with recognized expertise across Active Directory domain architecture, Microsoft 365 enterprise tenant governance, and practical generative AI implementation.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 hairline-t flex flex-wrap items-center justify-between gap-4">
+          <div class="font-mono text-xs text-slate-500">
+            <span>Direct Line:</span>
+            <strong class="text-brand-slate ml-1">(407) 917-5250</strong>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+              Schedule Consultation &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 2. CAREER ARCHITECTURE & DETAILED EXECUTIVE CHAPTERS                  -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="hairline-grid bg-white p-6 sm:p-10 mb-8">
+      <div class="max-w-3xl mb-8">
+        <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-2">CHAPTER 01 // GLOBAL ESCALATION</div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brand-slate">
+          Final Point of Technical Escalation &amp; Global Support Leadership
+        </h2>
+        <p class="font-mono text-xs text-slate-500 mt-1">November 2010 - Present // Sonitor Technologies</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p>
+            Steve Cormier joined Sonitor in 2010 as Director of Support and was subsequently promoted to Vice President, Technical &amp; Customer Support. Over the course of more than 15 years, Steve built Sonitor's entire global customer service and engineering support apparatus from the ground up.
+          </p>
+          <p>
+            Operating in mission-critical healthcare environments where real-time location systems (RTLS) directly impact patient clinical workflows, asset tracking, and nurse call operations, Steve designed the tooling, diagnostic playbooks, and tier-3 escalation protocols required to maintain five-nines operational uptime.
+          </p>
+          <p>
+            As the highest-level technical resource within the global organization, Steve serves as the final point of escalation for high-complexity field incidents, enterprise client disputes, and software/firmware integration challenges. He leads a worldwide team of support engineers and customer service representatives, setting rigorous standards for diagnostic precision and rapid resolution.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-50 p-6 border border-brand-line font-mono text-xs space-y-4">
+          <div class="font-bold text-brand-slate uppercase text-[11px] pb-2 hairline-b">Sonitor Support Posture:</div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">GLOBAL SCOPE:</span>
+            <span class="font-bold text-brand-slate">North America, EMEA &amp; APAC</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">CLIENT VERTICAL:</span>
+            <span class="font-bold text-brand-slate">Acute Care Hospital Networks</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">INFRASTRUCTURE:</span>
+            <span class="font-bold text-brand-slate">Ultrasonic RTLS &amp; Wi-Fi Telemetry</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">ESCALATION TIER:</span>
+            <span class="font-bold text-brand-cobalt">Final Engineering Escalation Point</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 02: 36 Years Orlando IT -->
+    <div class="hairline-grid bg-white p-6 sm:p-10 mb-8">
+      <div class="max-w-3xl mb-8">
+        <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-2">CHAPTER 02 // PRIVATE PRACTICE</div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brand-slate">
+          36 Years of Central Florida IT Network Design (Since 1990)
+        </h2>
+        <p class="font-mono text-xs text-slate-500 mt-1">1990 - Present // Technology Specialist (Orlando / Kissimmee)</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p>
+            Technology Specialist was established in 1990 to provide direct, senior-level systems engineering for Orlando-area businesses that require enterprise-grade reliability without hiring an internal corporate IT department.
+          </p>
+          <p>
+            Steve's practice spans physical rack infrastructure, multi-node VMware ESXi and Windows Server Hyper-V failover clusters, SAN/iSCSI storage design, and Layer 2/3 network segmentation. By maintaining direct principal engagement on every client engagement, clients bypass ticket queues and junior dispatch tiers, receiving immediate, authoritative architecture decisions.
+          </p>
+          <p>
+            Over 36 years, Technology Specialist has evolved alongside the technology landscape: from early NetWare and Windows NT networks to modern hybrid cloud environments, Microsoft Entra ID privileged identity governance, and enterprise AI implementations.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-50 p-6 border border-brand-line font-mono text-xs space-y-4">
+          <div class="font-bold text-brand-slate uppercase text-[11px] pb-2 hairline-b">Practice Highlights:</div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">FOUNDED:</span>
+            <span class="font-bold text-brand-slate">1990 (36 Continuous Years)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">HEADQUARTERS:</span>
+            <span class="font-bold text-brand-slate">Kissimmee, FL 34741</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">COVERAGE:</span>
+            <span class="font-bold text-brand-slate">Orange, Osceola, Seminole, Polk + Remote</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">METHODOLOGY:</span>
+            <span class="font-bold text-brand-cobalt">100% Principal-Led Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 03: Military & Prior Integration Leadership -->
+    <div class="hairline-grid bg-white p-6 sm:p-10 mb-8">
+      <div class="max-w-3xl mb-8">
+        <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-2">CHAPTER 03 // FOUNDATIONS</div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brand-slate">
+          U.S. Air Force Service, Criminal Justice &amp; Systems Integration
+        </h2>
+        <p class="font-mono text-xs text-slate-500 mt-1">July 1992 - November 1994 // Security Police, Offutt Air Force Base</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p>
+            From July 1992 through November 1994, Steve served on active duty in the <strong>United States Air Force</strong> in the Security Police stationed at <strong>Offutt Air Force Base, Nebraska</strong>, the global headquarters of the U.S. Strategic Command (USSTRATCOM).
+          </p>
+          <p>
+            His responsibilities included base defense, physical perimeter control, and asset protection in high-security military environments. Steve coupled this military service with a Bachelor of Science degree in Criminal Justice and comprehensive Microsoft Certifications, establishing an investigative, evidence-based mindset that defines his security and incident response methodology today.
+          </p>
+          <p>
+            Following his military service and early IT operations, Steve held key leadership roles at <strong>Exceptional Innovation</strong> (pioneering enterprise IP software, commercial automation, and hospitality systems integration) and <strong>Sound Advice</strong> (commercial electronics and high-end systems integration), deepening his hardware-level knowledge of commercial electronics, structured cabling, and networked control systems.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-50 p-6 border border-brand-line font-mono text-xs space-y-4">
+          <div class="font-bold text-brand-slate uppercase text-[11px] pb-2 hairline-b">Military &amp; Educational Pedigree:</div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">BRANCH:</span>
+            <span class="font-bold text-brand-slate">United States Air Force</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">STATION:</span>
+            <span class="font-bold text-brand-slate">Offutt AFB, Nebraska (USSTRATCOM)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">SPECIALTY:</span>
+            <span class="font-bold text-brand-slate">Security Police (Base Defense)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">ACADEMIC DEGREE:</span>
+            <span class="font-bold text-brand-slate">B.S. Criminal Justice</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">CERTIFICATION:</span>
+            <span class="font-bold text-brand-cobalt">Microsoft Certified Professional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 04: Sebring & Motorsport Instruction -->
+    <div class="hairline-grid bg-white p-6 sm:p-10 mb-8">
+      <div class="max-w-3xl mb-8">
+        <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-2">CHAPTER 04 // MOTORSPORT TELEMETRY</div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brand-slate">
+          Precision Engineering On &amp; Off the Track: Lead Instructor for Track Day Xperience (TDX)
+        </h2>
+        <p class="font-mono text-xs text-slate-500 mt-1">Sebring International Raceway // High-Performance Driver Coaching</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p>
+            High-speed track driving and enterprise systems architecture share the same core disciplines: rigorous pre-flight inspection, sub-millisecond telemetry monitoring, and total composure under stress.
+          </p>
+          <p>
+            Steve Cormier serves as the <strong>Lead Instructor for Track Day Xperience (TDX)</strong> at the historic <strong>Sebring International Raceway</strong> in Sebring, Florida. In this role, Steve coaches advanced drivers through the grueling 3.74-mile road course, teaching braking threshold management, weight transfer mechanics, apex clipping, and telemetry analysis at speeds exceeding 140 MPH.
+          </p>
+          <p>
+            Whether analyzing brake temperature gradients on the Sebring backstretch or diagnosing latency spikes on an enterprise SAN fabric, Steve applies the exact same mindset: absolute mechanical precision, zero tolerance for unmonitored failure points, and data-backed performance tuning.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 bg-slate-50 p-6 border border-brand-line font-mono text-xs space-y-4">
+          <div class="font-bold text-brand-slate uppercase text-[11px] pb-2 hairline-b">Track Telemetry:</div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">VENUE:</span>
+            <span class="font-bold text-brand-slate">Sebring International Raceway (Florida)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">PROGRAM:</span>
+            <span class="font-bold text-brand-slate">Track Day Xperience (TDX)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">ROLE:</span>
+            <span class="font-bold text-brand-cobalt">Lead Instructor &amp; Driver Coach</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block text-[10px]">DISCIPLINE:</span>
+            <span class="font-bold text-brand-slate">High-Speed Telemetry &amp; Vehicle Dynamics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo Gallery: Sebring & Pit Lane -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 pt-8 hairline-t">
+        <div class="border border-brand-line bg-slate-50 p-2">
+          <img src="/images/steve/steve-sebring-pitlane.jpg" alt="Steve Cormier on the pit lane at Sebring International Raceway" class="w-full h-52 object-cover border border-slate-200" />
+          <div class="mt-2 font-mono text-[10px] text-slate-500 flex justify-between">
+            <span>SEBRING PIT LANE</span>
+            <span class="text-brand-cobalt">TDX LEAD INSTRUCTOR</span>
+          </div>
+        </div>
+        <div class="border border-brand-line bg-slate-50 p-2">
+          <img src="/images/steve/steve-sebring-bridge.jpg" alt="Mobil 1 Bridge and track layout at Sebring International Raceway" class="w-full h-52 object-cover border border-slate-200" />
+          <div class="mt-2 font-mono text-[10px] text-slate-500 flex justify-between">
+            <span>MOBIL 1 BRIDGE</span>
+            <span>SEBRING CIRCUIT</span>
+          </div>
+        </div>
+        <div class="border border-brand-line bg-slate-50 p-2">
+          <img src="/images/steve/steve-cormier-osceola.jpg" alt="Steve Cormier in Osceola County Central Florida" class="w-full h-52 object-cover border border-slate-200" />
+          <div class="mt-2 font-mono text-[10px] text-slate-500 flex justify-between">
+            <span>CENTRAL FLORIDA ROOTS</span>
+            <span>OSCEOLA COUNTY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 05: Family & Community Roots -->
+    <div class="hairline-grid bg-white p-6 sm:p-10 mb-8">
+      <div class="max-w-3xl mb-8">
+        <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-2">CHAPTER 05 // COMMUNITY &amp; ROOTS</div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-brand-slate">
+          Central Florida Roots, Community &amp; Family
+        </h2>
+        <p class="font-mono text-xs text-slate-500 mt-1">Kissimmee, Florida // Osceola County Community Engagement</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p>
+            Steve Cormier has lived and worked in Central Florida for over three decades, establishing deep community ties across Kissimmee, Orlando, and the broader Osceola and Orange County business corridor.
+          </p>
+          <p>
+            When not architecting enterprise hypervisors or instructing drivers at Sebring, Steve is dedicated to his family, enjoying Florida's Atlantic and Gulf coastlines and supporting local community initiatives. His business philosophy remains rooted in transparency, handshake accountability, and long-term client stewardship.
+          </p>
+        </div>
+        <div class="md:col-span-5">
+          <div class="border border-brand-line bg-slate-50 p-2 shadow-sm">
+            <img src="/images/steve/steve-cormier-family-beach.jpg" alt="Steve Cormier and family on Florida coastline" class="w-full h-64 object-cover border border-slate-200" />
+            <div class="mt-2 font-mono text-[10px] text-slate-500 flex justify-between">
+              <span>FLORIDA COASTLINE</span>
+              <span>FAMILY &amp; COMMUNITY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. ARCHITECTURAL CAREER TIMELINE MATRIX                               -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="hairline-grid bg-white p-6 sm:p-10 shadow-sm">
+      <div class="flex items-center justify-between pb-4 mb-6 hairline-b">
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block">CHRONOLOGY // 1990 - 2026</span>
+          <h2 class="font-heading text-xl sm:text-2xl font-bold text-brand-slate">Executive Career Architecture</h2>
+        </div>
+        <div class="font-mono text-[10px] text-slate-400 hidden sm:block">VERIFIED TIMELINE // 36 YRS</div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Milestone 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 hairline-b">
+          <div class="md:col-span-3 font-mono">
+            <span class="text-brand-cobalt font-extrabold text-sm block">1990 - PRESENT</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider">36 Years Continuous</span>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="font-heading text-base font-bold text-brand-slate">
+              Founder &amp; Principal Systems Architect, Technology Specialist
+            </h3>
+            <p class="font-mono text-xs text-brand-slate/70 mt-1">Kissimmee / Orlando, Florida</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Founded private systems architecture and IT consultancy practice. Direct engineering of multi-node VMware ESXi and Windows Server Hyper-V clusters, SAN storage arrays, Microsoft 365 tenant migrations, carrier SIP trunking, and enterprise AI implementations across Central Florida.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 hairline-b">
+          <div class="md:col-span-3 font-mono">
+            <span class="text-brand-cobalt font-extrabold text-sm block">NOV 2010 - PRESENT</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider">15+ Years Executive</span>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="font-heading text-base font-bold text-brand-slate">
+              Vice President, Technical &amp; Customer Support, Sonitor Technologies
+            </h3>
+            <p class="font-mono text-xs text-brand-slate/70 mt-1">Global Healthcare RTLS Infrastructure (Previously Director of Support)</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Architected the global support organization, tooling, and escalation processes supporting Tier 1 hospital systems worldwide. Manages global support engineering teams and customer service representatives, serving as the highest-level technical resource and final point of technical escalation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 hairline-b">
+          <div class="md:col-span-3 font-mono">
+            <span class="text-brand-slate font-extrabold text-sm block">PRIOR ENTERPRISE</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider">Systems Integration</span>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="font-heading text-base font-bold text-brand-slate">
+              Exceptional Innovation &amp; Sound Advice
+            </h3>
+            <p class="font-mono text-xs text-brand-slate/70 mt-1">Commercial Automation, Hospitality IP Software &amp; High-End Integration</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Spearheaded commercial IP software deployments, automation networks, and custom enterprise electronics installations, establishing deep hardware-level mastery of networked audiovisual, telemetry, and control systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 hairline-b">
+          <div class="md:col-span-3 font-mono">
+            <span class="text-brand-slate font-extrabold text-sm block">JUL 1992 - NOV 1994</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider">Active Duty Military</span>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="font-heading text-base font-bold text-brand-slate">
+              United States Air Force &bull; Security Police
+            </h3>
+            <p class="font-mono text-xs text-brand-slate/70 mt-1">Offutt Air Force Base, Nebraska (USSTRATCOM)</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Base defense, physical access perimeter governance, and strategic asset protection. Maintained military security protocols in high-consequence operational zones, coupled with a Bachelor of Science degree in Criminal Justice and Microsoft Certifications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 5 -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-3 font-mono">
+            <span class="text-brand-cobalt font-extrabold text-sm block">MOTORSPORT</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider">Sebring International</span>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="font-heading text-base font-bold text-brand-slate">
+              Lead Instructor, Track Day Xperience (TDX)
+            </h3>
+            <p class="font-mono text-xs text-brand-slate/70 mt-1">Sebring International Raceway &bull; High-Performance Driver Coaching</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Driver coaching, dynamic telemetry analysis, and vehicle balance instruction at Sebring International Raceway. Translates precision vehicle control and mechanical telemetry into enterprise IT risk mitigation and performance tuning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. BOTTOM ARCHITECTURAL CTA STRIP                                     -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="hairline-grid bg-brand-slate text-white p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <div class="font-mono text-[10px] text-emerald-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+          <span class="w-2 h-2 bg-emerald-400 animate-pulse"></span>
+          DIRECT PRINCIPAL ACCESS // NO HELPDESK TIERS
+        </div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight">
+          Consult Directly with Steve Cormier.
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
+          From 15-minute emergency hypervisor recovery to complete Microsoft 365 tenant hardening and enterprise AI deployment, engage direct principal systems engineering.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+        <a href="tel:+14079175250" class="px-5 py-3 bg-white hover:bg-slate-100 text-brand-slate font-mono text-xs font-bold uppercase tracking-wider text-center transition-colors">
+          Call: (407) 917-5250
+        </a>
+        <a href="/contact" class="px-5 py-3 bg-brand-cobalt hover:bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider text-center transition-colors">
+          Dispatch Form &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white hairline-t mt-12 py-10 font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 hairline-b">
+        <div>
+          <div class="font-heading text-sm font-bold text-brand-slate uppercase mb-2">Technology Specialist</div>
+          <p class="text-[11px] text-slate-500 leading-relaxed mb-3">
+            Principal Systems, Virtualization &amp; Network Engineering. Founded 1990 by Steve Cormier. Central Florida Onsite &amp; Nationwide Remote.
+          </p>
+          <div class="text-[10px] text-slate-400">
+            Kissimmee, FL 34741 &bull; (407) 917-5250
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Practice Areas</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt">SYS-01 Microsoft 365 Architecture</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt">SYS-02 Virtualization &amp; ESXi</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt">SYS-03 Hardening &amp; CIS Level 2</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt">SYS-04 VoIP &amp; IP-PBX Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt">SYS-05 Enterprise Network Mgmt</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt font-bold text-brand-cobalt">SYS-10 Enterprise AI &amp; Copilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Site Architecture</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/" class="hover:text-brand-cobalt">Home Overview</a></li>
+            <li><a href="/about" class="text-brand-cobalt font-bold">About Steve Cormier (Est. 1990)</a></li>
+            <li><a href="/services" class="hover:text-brand-cobalt">All 10 Practice Specifications</a></li>
+            <li><a href="/tools" class="hover:text-brand-cobalt">Engineering Calculators (03)</a></li>
+            <li><a href="/logos" class="hover:text-brand-cobalt">Vector &amp; AI Logo Studio (10)</a></li>
+            <li><a href="/contact" class="hover:text-brand-cobalt">Engineering Dispatch &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Direct Dispatch</div>
+          <div class="p-3 bg-slate-50 border border-brand-line text-[10px] space-y-1.5 mb-3">
+            <div>&bull; Phone: <a href="tel:+14079175250" class="text-brand-cobalt font-bold hover:underline">(407) 917-5250</a></div>
+            <div>&bull; Email: <a href="mailto:steve@technologyspecialist.org" class="text-brand-cobalt hover:underline">steve@technologyspecialist.org</a></div>
+            <div>&bull; Dispatch: Orlando, Kissimmee &amp; Remote</div>
+          </div>
+          <a href="/admin/" class="text-[10px] text-slate-400 hover:text-brand-slate">Customer Command Center &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-wrap items-center justify-between gap-4 text-[10px]">
+        <div>
+          &copy; 1990 - 2026 Technology Specialist. All rights reserved. Principal Architect: Steve Cormier.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>STD-2026-BRAND-TECHSPEC-01</span>
+          <span>&bull;</span>
+          <span class="text-emerald-600 font-bold">ZERO EM DASHES ENFORCED</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

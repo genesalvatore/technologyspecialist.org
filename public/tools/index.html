@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Calculators &amp; AI Readiness Audit | Technology Specialist (Est. 1990)</title>
+  <meta name="description" content="Interactive enterprise systems engineering calculators: Hypervisor Cluster Sizer, VoIP SIP Trunk QoS Sizer, and 60-Second Hardening & AI Readiness Audit. Engineered by Steve Cormier." />
+  <meta name="author" content="Steve Cormier - Technology Specialist" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:title" content="Engineering Calculators &amp; Architecture Audit: Technology Specialist" />
+  <meta property="og:description" content="Live interactive infrastructure sizing calculators: VMware/Hyper-V hypervisor clusters, SIP trunk bandwidth, and CIS/M365 Copilot security posture audit." />
+
+  <!-- Logo Studio Client Runtime -->
+  <script src="/logo-studio.js" defer></script>
+  <!-- Swiss Architectural Mega-Menu Runtime -->
+  <script src="/mega-menu.js" defer></script>
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cobalt: '#0052CC',
+              cyan: '#0284C7',
+              slate: '#0F172A',
+              card: '#FFFFFF',
+              surface: '#FAFAFC',
+              silver: '#F1F5F9',
+              line: '#CBD5E1',
+              darkLine: '#334155',
+              success: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFC;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .blueprint-bg {
+      background-image: linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hairline-grid { border: 1px solid #CBD5E1; }
+    .hairline-b { border-bottom: 1px solid #CBD5E1; }
+    .hairline-t { border-top: 1px solid #CBD5E1; }
+    .hairline-r { border-right: 1px solid #CBD5E1; }
+    .hairline-l { border-left: 1px solid #CBD5E1; }
+    input[type=range] {
+      accent-color: #0052CC;
+    }
+  </style>
+</head>
+<body class="blueprint-bg text-brand-slate antialiased">
+
+  <!-- ===================================================================== -->
+  <!-- 0. TOP TECHNICAL TELEMETRY BAR & STICKY ARCHITECTURAL HEADER          -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md hairline-b">
+    <div class="bg-brand-slate text-white text-[11px] font-mono font-bold tracking-wider uppercase py-2 px-4 hairline-b">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
+          <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; INTERACTIVE SYSTEM CALCULATORS</span>
+        </div>
+        <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Architectural Nav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Unit -->
+        <a href="/" class="flex items-center gap-3.5 group">
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <div class="hidden md:block hairline-l pl-3.5">
+            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
+            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Matrix with Mega-Menu Hooks -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1">
+            <span>Practice Areas (10)</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1">
+            <span>Leadership</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/tools" class="px-3 py-2 text-brand-cobalt bg-blue-50/60 font-extrabold transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Logo Studio (10)</a>
+          <a href="/contact" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Contact &amp; Dispatch</a>
+          <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
+        </nav>
+
+        <!-- Header Action CTA & Mobile Trigger -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
+            <span>(407) 917-5250</span>
+          </a>
+          <a href="/contact" class="px-4 py-2 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+            Request Dispatch
+          </a>
+          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+            <span class="sr-only">Open Menu</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 1. HERO HEADER                                                        -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="hairline-grid bg-white p-6 sm:p-10 shadow-xl">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 border border-blue-200 font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            INTERACTIVE SYSTEM SIZERS // CLIENT-SIDE RUNTIME
+          </span>
+          <span class="font-mono text-[10px] text-slate-400">STD-2026-ENG-CALC-01</span>
+        </div>
+
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-slate leading-tight mb-4">
+          Interactive Infrastructure Sizers &amp; Security Audit.
+        </h1>
+
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-6">
+          Architectural planning tools developed by <strong>Steve Cormier</strong> based on 36 years of enterprise virtualization, carrier telephony engineering, and CIS Level 2 hardening. Compute hardware footprints, voice bandwidth quotas, and organizational security postures instantly in real time.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+          <a href="#calc-hypervisor" class="px-3 py-1.5 bg-slate-50 border border-brand-line hover:border-brand-cobalt text-slate-700">01. Hypervisor Sizer &darr;</a>
+          <a href="#calc-voip" class="px-3 py-1.5 bg-slate-50 border border-brand-line hover:border-brand-cobalt text-slate-700">02. VoIP &amp; SIP Sizer &darr;</a>
+          <a href="#calc-audit" class="px-3 py-1.5 bg-blue-50 border border-blue-200 text-brand-cobalt font-bold">03. 60-Sec Hardening &amp; AI Audit &darr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 2. CALCULATOR 01: HYPERVISOR CLUSTER & SERVER SIZER                   -->
+  <!-- ===================================================================== -->
+  <section id="calc-hypervisor" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="hairline-grid bg-white shadow-md">
+      <div class="bg-slate-900 text-white p-4 sm:px-6 font-mono text-xs flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-emerald-400"></span>
+          <span class="font-bold tracking-wider uppercase">CALCULATOR 01 // HYPERVISOR CLUSTER &amp; COMPUTE SIZER</span>
+        </div>
+        <span class="text-slate-400 text-[10px]">VMware ESXi 8.0 &bull; Windows Hyper-V</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <!-- Input Sliders (7 Cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 hairline-b lg:hairline-b-0 lg:hairline-r space-y-6">
+          <div>
+            <div class="flex justify-between font-mono text-xs mb-2">
+              <span class="font-bold text-brand-slate uppercase">Workload Virtual Machines (VMs)</span>
+              <span id="vmCountVal" class="text-brand-cobalt font-extrabold text-sm">25 VMs</span>
+            </div>
+            <input type="range" id="vmCount" min="5" max="250" step="5" value="25" class="w-full" oninput="calcHypervisor()" />
+            <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+              <span>5 VMs (Branch)</span>
+              <span>100 VMs (Mid-Market)</span>
+              <span>250 VMs (Enterprise)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <div class="flex justify-between font-mono text-xs mb-2">
+                <span class="font-bold text-brand-slate uppercase">Avg vCPU per VM</span>
+                <span id="vcpuVal" class="text-brand-cobalt font-extrabold">2 vCPUs</span>
+              </div>
+              <input type="range" id="vcpuPerVm" min="1" max="8" step="1" value="2" class="w-full" oninput="calcHypervisor()" />
+              <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+                <span>1 vCPU</span>
+                <span>4 vCPUs</span>
+                <span>8 vCPUs</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-mono text-xs mb-2">
+                <span class="font-bold text-brand-slate uppercase">Avg RAM per VM</span>
+                <span id="vramVal" class="text-brand-cobalt font-extrabold">16 GB</span>
+              </div>
+              <input type="range" id="vramPerVm" min="4" max="64" step="4" value="16" class="w-full" oninput="calcHypervisor()" />
+              <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+                <span>4 GB</span>
+                <span>32 GB</span>
+                <span>64 GB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <div class="flex justify-between font-mono text-xs mb-2">
+                <span class="font-bold text-brand-slate uppercase">Raw Storage Need</span>
+                <span id="storageVal" class="text-brand-cobalt font-extrabold">10 TB</span>
+              </div>
+              <input type="range" id="storageCapacity" min="2" max="100" step="2" value="10" class="w-full" oninput="calcHypervisor()" />
+              <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+                <span>2 TB</span>
+                <span>50 TB</span>
+                <span>100 TB</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs font-bold text-brand-slate uppercase mb-2">HA Failover Policy</label>
+              <select id="haMode" onchange="calcHypervisor()" class="w-full px-3 py-2 bg-slate-50 border border-brand-line font-mono text-xs focus:bg-white focus:border-brand-cobalt focus:outline-none">
+                <option value="1">N+1 Redundancy (Standard HA)</option>
+                <option value="2">N+2 Redundancy (Mission-Critical / Healthcare)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Architectural Output (5 Cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-8 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-widest pb-3 mb-4 hairline-b flex items-center justify-between">
+              <span>Cluster Hardware Architecture</span>
+              <span class="text-emerald-600 font-extrabold">&bull; SIZED</span>
+            </div>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div class="bg-white p-3.5 border border-brand-line">
+                <span class="text-slate-400 block text-[10px] uppercase">Recommended Physical Hosts:</span>
+                <span id="outHosts" class="font-heading text-2xl font-bold text-brand-cobalt">3 Physical Nodes</span>
+                <span class="text-[10px] text-slate-500 block mt-0.5">Dell PowerEdge R760 or HPE ProLiant DL380 Gen11</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white p-3 border border-brand-line">
+                  <span class="text-slate-400 block text-[10px] uppercase">Per-Host Sockets/Cores:</span>
+                  <span id="outCores" class="font-bold text-brand-slate text-sm">2x 16-Core Xeon</span>
+                </div>
+                <div class="bg-white p-3 border border-brand-line">
+                  <span class="text-slate-400 block text-[10px] uppercase">Per-Host ECC RAM:</span>
+                  <span id="outRam" class="font-bold text-brand-slate text-sm">256 GB DDR5</span>
+                </div>
+              </div>
+
+              <div class="bg-white p-3 border border-brand-line">
+                <span class="text-slate-400 block text-[10px] uppercase">SAN / Storage Topology:</span>
+                <span id="outStorage" class="font-bold text-brand-slate block text-xs">All-Flash NVMe iSCSI SAN (24 TB Raw)</span>
+                <span class="text-[10px] text-slate-500 block">RAID-10 + 20% Snapshot / VM Swap Reserve</span>
+              </div>
+
+              <div class="bg-white p-3 border border-brand-line">
+                <span class="text-slate-400 block text-[10px] uppercase">vSwitch Network Fabric:</span>
+                <span class="font-bold text-brand-slate block text-xs">Dual 25GbE SFP28 with vDS LACP</span>
+                <span class="text-[10px] text-slate-500 block">Isolated vMotion, iSCSI SAN, and Management VLANs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t">
+            <a href="/contact?service=SYS-02" class="block w-full py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase text-center tracking-wider transition-colors">
+              Request Cluster Blueprint Consultation &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. CALCULATOR 02: VOIP & IP-PBX SIP TRUNK SIZER                       -->
+  <!-- ===================================================================== -->
+  <section id="calc-voip" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="hairline-grid bg-white shadow-md">
+      <div class="bg-slate-900 text-white p-4 sm:px-6 font-mono text-xs flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-emerald-400"></span>
+          <span class="font-bold tracking-wider uppercase">CALCULATOR 02 // VOIP &amp; IP-PBX SIP TRUNK SIZER</span>
+        </div>
+        <span class="text-slate-400 text-[10px]">Session Border Controllers &bull; Carrier Trunks</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <!-- Input Sliders (7 Cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 hairline-b lg:hairline-b-0 lg:hairline-r space-y-6">
+          <div>
+            <div class="flex justify-between font-mono text-xs mb-2">
+              <span class="font-bold text-brand-slate uppercase">Total Handsets / Softphone Extensions</span>
+              <span id="phoneCountVal" class="text-brand-cobalt font-extrabold text-sm">40 Phones</span>
+            </div>
+            <input type="range" id="phoneCount" min="5" max="500" step="5" value="40" class="w-full" oninput="calcVoip()" />
+            <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+              <span>5 Extensions</span>
+              <span>150 Extensions</span>
+              <span>500 Extensions</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <div class="flex justify-between font-mono text-xs mb-2">
+                <span class="font-bold text-brand-slate uppercase">Peak Concurrent Calls %</span>
+                <span id="concurVal" class="text-brand-cobalt font-extrabold">25% (Standard)</span>
+              </div>
+              <input type="range" id="concurPct" min="10" max="60" step="5" value="25" class="w-full" oninput="calcVoip()" />
+              <div class="flex justify-between font-mono text-[10px] text-slate-400 mt-1">
+                <span>10% Low</span>
+                <span>25% Standard</span>
+                <span>60% Call Center</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs font-bold text-brand-slate uppercase mb-2">Voice Audio Codec</label>
+              <select id="codecSelect" onchange="calcVoip()" class="w-full px-3 py-2 bg-slate-50 border border-brand-line font-mono text-xs focus:bg-white focus:border-brand-cobalt focus:outline-none">
+                <option value="87.2">G.711u Uncompressed (87.2 kbps / ch)</option>
+                <option value="31.2">G.729 Compressed (31.2 kbps / ch)</option>
+                <option value="64.0">Opus Wideband HD (64.0 kbps / ch)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Output (5 Cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-8 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-widest pb-3 mb-4 hairline-b flex items-center justify-between">
+              <span>Telephony Trunk Specifications</span>
+              <span class="text-emerald-600 font-extrabold">&bull; CALCULATED</span>
+            </div>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div class="bg-white p-3.5 border border-brand-line">
+                <span class="text-slate-400 block text-[10px] uppercase">Required SIP Trunk Channels:</span>
+                <span id="outChannels" class="font-heading text-2xl font-bold text-brand-cobalt">10 Concurrent Paths</span>
+                <span class="text-[10px] text-slate-500 block mt-0.5">Carrier DID rollover with sub-second trunk failover</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white p-3 border border-brand-line">
+                  <span class="text-slate-400 block text-[10px] uppercase">QoS Voice Bandwidth:</span>
+                  <span id="outBw" class="font-bold text-brand-slate text-sm">1.05 Mbps</span>
+                  <span class="text-[9px] text-slate-400 block">DSCP EF (46)</span>
+                </div>
+                <div class="bg-white p-3 border border-brand-line">
+                  <span class="text-slate-400 block text-[10px] uppercase">PoE Switch Budget:</span>
+                  <span id="outPoe" class="font-bold text-brand-slate text-sm">616 Watts</span>
+                  <span class="text-[9px] text-slate-400 block">802.3af Class 2</span>
+                </div>
+              </div>
+
+              <div class="bg-white p-3 border border-brand-line">
+                <span class="text-slate-400 block text-[10px] uppercase">Session Border Controller:</span>
+                <span id="outSbc" class="font-bold text-brand-slate block text-xs">Enterprise Edge SBC (TLS / SRTP Enabled)</span>
+                <span class="text-[10px] text-slate-500 block">Hardware-assisted NAT traversal &amp; Teams Direct Routing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t">
+            <a href="/contact?service=SYS-04" class="block w-full py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase text-center tracking-wider transition-colors">
+              Request VoIP SIP Trunk Migration &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. CALCULATOR 03: 60-SEC HARDENING & AI READINESS AUDIT                -->
+  <!-- ===================================================================== -->
+  <section id="calc-audit" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-12">
+    <div class="hairline-grid bg-white shadow-xl">
+      <div class="bg-brand-slate text-white p-4 sm:px-6 font-mono text-xs flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-emerald-400 animate-pulse"></span>
+          <span class="font-bold tracking-wider uppercase">CALCULATOR 03 // 60-SECOND HARDENING &amp; AI READINESS AUDIT</span>
+        </div>
+        <span class="text-blue-200 text-[10px]">Zero-Trust &bull; M365 Copilot &bull; CIS Level 2</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <!-- 8 Interactive Toggle Controls (7 Cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 hairline-b lg:hairline-b-0 lg:hairline-r">
+          <div class="font-mono text-[10px] text-slate-400 uppercase tracking-wider mb-4 pb-2 hairline-b">
+            Toggle your organization's active controls:
+          </div>
+
+          <div class="space-y-3 font-mono text-xs">
+            <!-- Item 1 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk1" onchange="calcAudit()" checked class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">1. Entra ID Conditional Access &amp; Privileged Identity</span>
+                <span class="text-[11px] text-slate-500">MFA enforced for all users, legacy auth blocked, and PIM for admin roles.</span>
+              </div>
+            </label>
+
+            <!-- Item 2 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk2" onchange="calcAudit()" checked class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">2. CIS Benchmark Level 2 Operating System Hardening</span>
+                <span class="text-[11px] text-slate-500">Disabled SMBv1/NTLMv1, LAPS deployed, AppLocker, and encrypted RPC.</span>
+              </div>
+            </label>
+
+            <!-- Item 3 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk3" onchange="calcAudit()" class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">3. VLAN East-West Micro-Segmentation &amp; Firewall Lockdown</span>
+                <span class="text-[11px] text-slate-500">Servers, workstations, VoIP, and IoT isolated with inter-VLAN inspection.</span>
+              </div>
+            </label>
+
+            <!-- Item 4 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk4" onchange="calcAudit()" checked class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">4. Immutable Air-Gapped Backups (S3 Object Lock / Veeam)</span>
+                <span class="text-[11px] text-slate-500">Ransomware-proof storage that cannot be deleted even with root domain credentials.</span>
+              </div>
+            </label>
+
+            <!-- Item 5 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk5" onchange="calcAudit()" class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">5. SharePoint / OneDrive Permission Audit for M365 Copilot</span>
+                <span class="text-[11px] text-slate-500">Eliminated broad "Everyone" permissions before generative AI indexation.</span>
+              </div>
+            </label>
+
+            <!-- Item 6 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk6" onchange="calcAudit()" class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">6. MDM Zero-Touch Enrollment &amp; Remote MAM Data Wipe</span>
+                <span class="text-[11px] text-slate-500">Intune compliance baselines, BitLocker escrow, and corporate sandboxing.</span>
+              </div>
+            </label>
+
+            <!-- Item 7 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk7" onchange="calcAudit()" checked class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">7. SIP Trunk TLS Signaling &amp; SRTP Audio Encryption</span>
+                <span class="text-[11px] text-slate-500">Encrypted call streams protecting against eavesdropping and packet sniffing.</span>
+              </div>
+            </label>
+
+            <!-- Item 8 -->
+            <label class="flex items-start gap-3 p-3 bg-slate-50 hover:bg-slate-100 border border-brand-line cursor-pointer transition-colors">
+              <input type="checkbox" id="chk8" onchange="calcAudit()" class="mt-0.5 w-4 h-4 accent-brand-cobalt" />
+              <div>
+                <span class="font-bold text-brand-slate block">8. Documented &amp; Annually Tested Disaster Recovery Runbook</span>
+                <span class="text-[11px] text-slate-500">Live spin-up test of replicated VMs with measured RTO under 60 minutes.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Live Score & Recommendations (5 Cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-8 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-widest pb-3 mb-4 hairline-b flex items-center justify-between">
+              <span>Posture Telemetry</span>
+              <span id="auditBadge" class="px-2 py-0.5 bg-blue-100 text-brand-cobalt font-bold text-[9px] uppercase">BASE AUDIT</span>
+            </div>
+
+            <!-- Big Score Indicator -->
+            <div class="bg-white p-5 border border-brand-line text-center mb-6 shadow-sm">
+              <div class="font-mono text-[10px] text-slate-400 uppercase tracking-wider mb-1">Architecture Posture Score</div>
+              <div class="flex items-baseline justify-center gap-1">
+                <span id="auditScoreNum" class="font-heading text-5xl font-extrabold text-brand-cobalt">50</span>
+                <span class="font-mono text-slate-400 text-base">/ 100</span>
+              </div>
+              <div id="auditGrade" class="font-mono text-xs font-bold text-amber-600 mt-2">
+                MODERATE RISK &bull; REMEDIATION RECOMMENDED
+              </div>
+            </div>
+
+            <!-- Dynamic Recommendations List -->
+            <div class="space-y-2">
+              <div class="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-wider">Priority Remediation Items:</div>
+              <ul id="recommendationsList" class="font-mono text-[11px] text-slate-600 space-y-1.5 bg-white p-3 border border-brand-line">
+                <li>&bull; Audit SharePoint permissions before enabling M365 Copilot</li>
+                <li>&bull; Implement East-West VLAN firewall boundaries</li>
+                <li>&bull; Deploy Microsoft Intune MDM compliance baselines</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t space-y-2">
+            <button onclick="sendScoreToSteve()" class="w-full py-3 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+              <span>Send My Audit Score to Steve</span>
+              <span>&rarr;</span>
+            </button>
+            <div class="font-mono text-[10px] text-slate-400 text-center">
+              Pre-populates dispatch intake form with your score &amp; gap analysis
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white hairline-t mt-12 py-10 font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 hairline-b">
+        <div>
+          <div class="font-heading text-sm font-bold text-brand-slate uppercase mb-2">Technology Specialist</div>
+          <p class="text-[11px] text-slate-500 leading-relaxed mb-3">
+            Principal Systems, Virtualization &amp; Network Engineering. Founded 1990 by Steve Cormier. Central Florida Onsite &amp; Nationwide Remote.
+          </p>
+          <div class="text-[10px] text-slate-400">
+            Kissimmee, FL 34741 &bull; (407) 917-5250
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Practice Areas</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt">SYS-01 Microsoft 365 Architecture</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt">SYS-02 Virtualization &amp; ESXi</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt">SYS-03 Hardening &amp; CIS Level 2</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt">SYS-04 VoIP &amp; IP-PBX Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt">SYS-05 Enterprise Network Mgmt</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt font-bold text-brand-cobalt">SYS-10 Enterprise AI &amp; Copilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Site Architecture</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/" class="hover:text-brand-cobalt">Home Overview</a></li>
+            <li><a href="/about" class="hover:text-brand-cobalt">About Steve Cormier (Est. 1990)</a></li>
+            <li><a href="/services" class="hover:text-brand-cobalt">All 10 Practice Specifications</a></li>
+            <li><a href="/tools" class="text-brand-cobalt font-bold">Engineering Calculators (03)</a></li>
+            <li><a href="/logos" class="hover:text-brand-cobalt">Vector &amp; AI Logo Studio (10)</a></li>
+            <li><a href="/contact" class="hover:text-brand-cobalt">Engineering Dispatch &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Direct Dispatch</div>
+          <div class="p-3 bg-slate-50 border border-brand-line text-[10px] space-y-1.5 mb-3">
+            <div>&bull; Phone: <a href="tel:+14079175250" class="text-brand-cobalt font-bold hover:underline">(407) 917-5250</a></div>
+            <div>&bull; Email: <a href="mailto:steve@technologyspecialist.org" class="text-brand-cobalt hover:underline">steve@technologyspecialist.org</a></div>
+            <div>&bull; Dispatch: Orlando, Kissimmee &amp; Remote</div>
+          </div>
+          <a href="/admin/" class="text-[10px] text-slate-400 hover:text-brand-slate">Customer Command Center &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-wrap items-center justify-between gap-4 text-[10px]">
+        <div>
+          &copy; 1990 - 2026 Technology Specialist. All rights reserved. Principal Architect: Steve Cormier.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>STD-2026-BRAND-TECHSPEC-01</span>
+          <span>&bull;</span>
+          <span class="text-emerald-600 font-bold">ZERO EM DASHES ENFORCED</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sizing & Audit Calculation Logic -->
+  <script>
+    // Calculator 01: Hypervisor Sizer
+    function calcHypervisor() {
+      const vms = parseInt(document.getElementById('vmCount').value, 10);
+      const vcpu = parseInt(document.getElementById('vcpuPerVm').value, 10);
+      const vram = parseInt(document.getElementById('vramPerVm').value, 10);
+      const storage = parseInt(document.getElementById('storageCapacity').value, 10);
+      const ha = parseInt(document.getElementById('haMode').value, 10);
+
+      document.getElementById('vmCountVal').textContent = vms + ' VMs';
+      document.getElementById('vcpuVal').textContent = vcpu + ' vCPUs';
+      document.getElementById('vramVal').textContent = vram + ' GB';
+      document.getElementById('storageVal').textContent = storage + ' TB';
+
+      const totalVcpu = vms * vcpu;
+      const totalVram = vms * vram;
+
+      // Rule: ~3:1 vCPU to pCore overcommit ratio for standard enterprise workloads
+      const activeNodes = Math.max(2, Math.ceil(totalVram / 256));
+      const totalNodes = activeNodes + ha;
+
+      document.getElementById('outHosts').textContent = totalNodes + ' Physical Nodes';
+      
+      const coresPerNode = Math.max(16, Math.ceil((totalVcpu / 3) / activeNodes / 2) * 2);
+      document.getElementById('outCores').textContent = '2x ' + coresPerNode + '-Core Xeon / EPYC';
+
+      const ramPerNode = Math.max(128, Math.pow(2, Math.ceil(Math.log2(totalVram / activeNodes))));
+      document.getElementById('outRam').textContent = ramPerNode + ' GB DDR5 ECC';
+
+      // Storage sizing with RAID-10 (2x multiplier) and 20% snapshot buffer
+      const rawStorage = Math.ceil(storage * 2 * 1.2);
+      document.getElementById('outStorage').textContent = 'All-Flash NVMe iSCSI SAN (' + rawStorage + ' TB Raw)';
+    }
+
+    // Calculator 02: VoIP SIP Trunk Sizer
+    function calcVoip() {
+      const phones = parseInt(document.getElementById('phoneCount').value, 10);
+      const concurPct = parseInt(document.getElementById('concurPct').value, 10);
+      const kbpsPerCh = parseFloat(document.getElementById('codecSelect').value);
+
+      document.getElementById('phoneCountVal').textContent = phones + ' Phones';
+      document.getElementById('concurVal').textContent = concurPct + '% Concurrent';
+
+      const channels = Math.max(2, Math.ceil(phones * (concurPct / 100)));
+      document.getElementById('outChannels').textContent = channels + ' Concurrent Paths';
+
+      // Total voice bandwidth with 20% IP/UDP/RTP packet header & QoS headroom
+      const totalKbps = channels * kbpsPerCh * 1.2;
+      const totalMbps = (totalKbps / 1000).toFixed(2);
+      document.getElementById('outBw').textContent = totalMbps + ' Mbps';
+
+      // PoE budget: 15.4W per phone + 10% line loss
+      const poeWatts = Math.ceil(phones * 15.4);
+      document.getElementById('outPoe').textContent = poeWatts + ' Watts';
+
+      if (channels <= 15) {
+        document.getElementById('outSbc').textContent = 'Branch Office Edge SBC (TLS / SRTP)';
+      } else if (channels <= 60) {
+        document.getElementById('outSbc').textContent = 'Enterprise Edge SBC with Dual Carrier Rollover';
+      } else {
+        document.getElementById('outSbc').textContent = 'High-Availability Carrier SBC Cluster';
+      }
+    }
+
+    // Calculator 03: 60-Second Hardening & AI Audit
+    let currentAuditScore = 50;
+
+    function calcAudit() {
+      let score = 0;
+      const recs = [];
+
+      const items = [
+        { id: 'chk1', pts: 12, rec: 'Enforce Microsoft Entra ID Conditional Access and MFA for all identities.' },
+        { id: 'chk2', pts: 13, rec: 'Apply CIS Benchmark Level 2 lockdown: disable NTLMv1 and deploy LAPS.' },
+        { id: 'chk3', pts: 12, rec: 'Implement East-West VLAN segmentation and inter-subnet firewall filtering.' },
+        { id: 'chk4', pts: 13, rec: 'Deploy immutable air-gapped backups with S3 Object Lock.' },
+        { id: 'chk5', pts: 13, rec: 'Audit and restrict broad SharePoint permissions before rolling out M365 Copilot.' },
+        { id: 'chk6', pts: 12, rec: 'Deploy Microsoft Intune MDM compliance policies with MAM remote wipe.' },
+        { id: 'chk7', pts: 12, rec: 'Encrypt voice telephony with TLS signaling and SRTP audio payloads.' },
+        { id: 'chk8', pts: 13, rec: 'Establish and annually test a documented disaster recovery failover runbook.' }
+      ];
+
+      items.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el && el.checked) {
+          score += item.pts;
+        } else {
+          recs.push(item.rec);
+        }
+      });
+
+      currentAuditScore = score;
+      document.getElementById('auditScoreNum').textContent = score;
+
+      const gradeEl = document.getElementById('auditGrade');
+      const badgeEl = document.getElementById('auditBadge');
+
+      if (score >= 90) {
+        gradeEl.className = 'font-mono text-xs font-bold text-emerald-600 mt-2';
+        gradeEl.textContent = 'ENTERPRISE FORTIFIED &bull; AI READY';
+        badgeEl.className = 'px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold text-[9px] uppercase';
+        badgeEl.textContent = 'HARDENED POSTURE';
+      } else if (score >= 70) {
+        gradeEl.className = 'font-mono text-xs font-bold text-blue-600 mt-2';
+        gradeEl.textContent = 'HARDENED BASELINE &bull; MINOR GAPS';
+        badgeEl.className = 'px-2 py-0.5 bg-blue-100 text-brand-cobalt font-bold text-[9px] uppercase';
+        badgeEl.textContent = 'BASELINE SECURE';
+      } else if (score >= 40) {
+        gradeEl.className = 'font-mono text-xs font-bold text-amber-600 mt-2';
+        gradeEl.textContent = 'MODERATE RISK &bull; REMEDIATION RECOMMENDED';
+        badgeEl.className = 'px-2 py-0.5 bg-amber-100 text-amber-800 font-bold text-[9px] uppercase';
+        badgeEl.textContent = 'VULNERABLE';
+      } else {
+        gradeEl.className = 'font-mono text-xs font-bold text-red-600 mt-2';
+        gradeEl.textContent = 'CRITICAL EXPOSURE &bull; IMMEDIATE INTERVENTION';
+        badgeEl.className = 'px-2 py-0.5 bg-red-100 text-red-700 font-bold text-[9px] uppercase';
+        badgeEl.textContent = 'CRITICAL RISK';
+      }
+
+      const recsListEl = document.getElementById('recommendationsList');
+      recsListEl.innerHTML = '';
+      if (recs.length === 0) {
+        recsListEl.innerHTML = '<li class="text-emerald-700">&bull; Outstanding architecture posture. All 8 security &amp; AI baselines active.</li>';
+      } else {
+        recs.slice(0, 3).forEach(r => {
+          const li = document.createElement('li');
+          li.textContent = '\u2022 ' + r;
+          recsListEl.appendChild(li);
+        });
+      }
+    }
+
+    function sendScoreToSteve() {
+      window.location.href = '/contact?audit_score=' + currentAuditScore + '&service=SYS-03';
+    }
+
+    // Initialize on load
+    calcHypervisor();
+    calcVoip();
+    calcAudit();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYS-01: Microsoft Office & M365 Organization Management | Technology Specialist</title>
+  <meta name="description" content="Enterprise Microsoft 365 administration, Entra ID Conditional Access, Exchange Online DMARC p=reject, Intune security baselines, and Copilot readiness by Steve Cormier." />
+  <meta name="author" content="Steve Cormier - Technology Specialist" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="twitter:image" content="/images/og-image.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <!-- Logo Studio Client Runtime & Mega Menu -->
+  <script src="/logo-studio.js" defer></script>
+  <script src="/mega-menu.js" defer></script>
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cobalt: '#0052CC',
+              cyan: '#0284C7',
+              slate: '#0F172A',
+              card: '#FFFFFF',
+              surface: '#FAFAFC',
+              silver: '#F1F5F9',
+              line: '#CBD5E1',
+              darkLine: '#334155',
+              success: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --color-brand: #0052CC;
+      --color-cyan: #0284C7;
+      --color-slate: #0F172A;
+      --color-surface: #FAFAFC;
+      --color-hairline: #CBD5E1;
+      --color-success: #059669;
+    }
+    body {
+      background-color: #FAFAFC;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .blueprint-bg {
+      background-image: linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hairline-grid {
+      border: 1px solid #CBD5E1;
+    }
+    .hairline-b {
+      border-bottom: 1px solid #CBD5E1;
+    }
+    .hairline-t {
+      border-top: 1px solid #CBD5E1;
+    }
+    .hairline-r {
+      border-right: 1px solid #CBD5E1;
+    }
+    .hairline-l {
+      border-left: 1px solid #CBD5E1;
+    }
+  </style>
+</head>
+<body class="blueprint-bg text-brand-slate antialiased">
+
+  
+  <!-- ===================================================================== -->
+  <!-- 0. TOP TECHNICAL TELEMETRY BAR & STICKY ARCHITECTURAL HEADER          -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md hairline-b">
+    <!-- Monospace Telemetry Strip -->
+    <div class="bg-brand-slate text-white text-[11px] font-mono font-bold tracking-wider uppercase py-2 px-4 hairline-b">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
+          <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
+        </div>
+        <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+          <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Architectural Nav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Monogram Unit -->
+        <a href="/" class="flex items-center gap-3.5 group">
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <div class="hidden md:block hairline-l pl-3.5">
+            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
+            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Matrix -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <a href="/" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Home</a>
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 text-brand-cobalt bg-slate-50">
+            <span>Practice Matrix (10)</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/services/virtualization" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Virtualization</a>
+          <a href="/services/microsoft-365" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors text-brand-cobalt font-extrabold">M365 &amp; Cloud</a>
+          <a href="/services/voip-ippbx" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">VoIP &amp; SIP</a>
+          <a href="/services/hardening" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Hardening</a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 ">
+            <span>About Steve</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/tools" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-2.5 py-2 text-brand-cobalt hover:text-blue-700 hover:bg-blue-50 font-bold transition-colors">Logos (10)</a>
+          <a href="/contact" class="px-2.5 py-2 text-slate-700 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Contact</a>
+        </nav>
+
+        <!-- Header Action CTA -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
+            <span>(407) 917-5250</span>
+          </a>
+          <a href="/contact" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+            Dispatch Request
+          </a>
+          <!-- Mobile Menu Toggle Button -->
+          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-brand-slate border border-brand-line hover:bg-slate-100" aria-label="Toggle Navigation Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="font-mono text-[11px] text-slate-500 mb-6 flex items-center gap-2 uppercase tracking-wider" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-brand-cobalt">Home</a>
+      <span>/</span>
+      <a href="/services" class="hover:text-brand-cobalt">Services</a>
+      <span>/</span>
+      <span class="text-brand-slate font-bold">SYS-01</span>
+    </nav>
+
+    <!-- Practice Hero Section -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-8 shadow-sm">
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 hairline-b">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-blue-50 border border-blue-200 font-mono text-[10px] font-bold uppercase tracking-wider text-brand-cobalt mb-4">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            SYS-01 // CLOUD & IDENTITY GOVERNANCE
+          </div>
+          <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-slate tracking-tight">
+            Microsoft Office & M365 Organization Management
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            Architectural tenant governance, Entra ID zero-trust posture, strict email deliverability enforcement, and data boundary protection for organizations running on Microsoft 365.
+          </p>
+        </div>
+
+        <div class="shrink-0 flex flex-col gap-2 w-full lg:w-auto">
+          <a href="/contact?service=SYS-01" class="px-5 py-3 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider text-center shadow-sm transition-colors">
+            Request Architecture Review &rarr;
+          </a>
+          <a href="tel:+14079175250" class="px-5 py-2.5 bg-white hover:bg-slate-50 text-brand-slate border border-brand-line font-mono text-xs font-bold text-center transition-colors">
+            Direct Dispatch: (407) 917-5250
+          </a>
+        </div>
+      </div>
+
+      <!-- Architectural Schematic Viewer Container -->
+      <div class="mt-8">
+        <div class="flex items-center justify-between pb-2 mb-3 font-mono text-xs text-slate-500">
+          <span class="font-bold text-brand-slate flex items-center gap-2">
+            <span class="inline-block w-2 h-2 bg-emerald-500"></span>
+            ARCHITECTURAL SCHEMATIC: SYS-01 TOPOLOGY
+          </span>
+          <span class="text-[10px] text-slate-400">VECTOR SVG RENDERING &bull; AIR-GAPPED FABRIC</span>
+        </div>
+        <div class="border border-brand-line bg-slate-900 p-2 sm:p-4 overflow-hidden">
+          <img src="/images/schematics/m365-tenant-posture.svg" alt="Microsoft 365 and Entra ID Tenant Posture Architectural Schematic" class="w-full h-auto max-h-[520px] object-contain mx-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Column Technical Metrics Bar -->
+    <section class="hairline-grid bg-white p-6 sm:p-8 mb-10 shadow-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono">
+        
+        <div class="sm:border-r border-brand-line sm:pr-4">
+          <span class="text-[10px] text-slate-500 uppercase tracking-wider block mb-1">DMARC POSTURE</span>
+          <div class="font-heading text-lg sm:text-xl font-bold text-brand-slate tracking-tight">p=reject (100% Strict)</div>
+          <p class="text-[11px] text-slate-500 mt-1">Zero executive spoofing risk</p>
+        </div>
+        
+        <div class="sm:border-r border-brand-line sm:pr-4">
+          <span class="text-[10px] text-slate-500 uppercase tracking-wider block mb-1">MFA ADOPTION</span>
+          <div class="font-heading text-lg sm:text-xl font-bold text-brand-slate tracking-tight">FIDO2 / Number Match</div>
+          <p class="text-[11px] text-slate-500 mt-1">Passkey & conditional access</p>
+        </div>
+        
+        <div class="sm:border-r border-brand-line sm:pr-4">
+          <span class="text-[10px] text-slate-500 uppercase tracking-wider block mb-1">PRIVILEGE MODEL</span>
+          <div class="font-heading text-lg sm:text-xl font-bold text-brand-slate tracking-tight">Zero Standing Admin</div>
+          <p class="text-[11px] text-slate-500 mt-1">Entra PIM just-in-time access</p>
+        </div>
+        
+        <div class="">
+          <span class="text-[10px] text-slate-500 uppercase tracking-wider block mb-1">BACKUP RETENTION</span>
+          <div class="font-heading text-lg sm:text-xl font-bold text-brand-slate tracking-tight">Air-Gapped Immutable</div>
+          <p class="text-[11px] text-slate-500 mt-1">Exchange & SharePoint BCDR</p>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Deep-Dive Architectural Capabilities & Deliverables Table -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-10 shadow-sm">
+      <div class="mb-6 pb-4 hairline-b">
+        <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block mb-1">
+          CAPABILITY CATALOG // SYS-01
+        </span>
+        <h2 class="font-heading text-2xl font-bold text-brand-slate">
+          Architectural Capabilities &amp; Deliverables
+        </h2>
+        <p class="text-xs text-slate-600 mt-1">Specific technical interventions, deployment baselines, and governance deliverables included in this practice.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>Entra ID & Identity Posture</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Risk-based Conditional Access policies, FIDO2 hardware passkey enforcement, trusted compliance device binding, impossible travel detection, and automated sign-in token protection.
+          </p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>Exchange Online & Mail Flow</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Strict DMARC p=reject implementation, dual-selector 2048-bit DKIM key rotation, hardened SPF -all syntax, inbound anti-phishing threshold tuning, and Zero-Hour Auto Purge (ZAP).
+          </p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>SharePoint & Teams Data Governance</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Comprehensive permission audits, elimination of anonymous public file sharing links, Microsoft Purview sensitivity labeling, containerized guest access, and DLP exfiltration blocks.
+          </p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>Intune MDM & Device Compliance</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Automated BitLocker encryption key escrow to Entra ID, Windows Autopilot zero-touch enrollment profiles, and Mobile Application Management (MAM) protection for iOS and Android.
+          </p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>Licensing Optimization & Sizing</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Exhaustive SKU review (Business Premium vs E3/E5) eliminating redundant third-party SaaS subscriptions (standalone anti-spam, duplicate MDM, expensive e-sign).
+          </p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-brand-line">
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-brand-slate">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            <span>Copilot Pre-Activation Sanitization</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Pre-AI permission hardening across all document libraries to ensure Microsoft 365 Copilot never indexes or surfaces confidential HR, payroll, or executive records to unauthorized staff.
+          </p>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Supported Platforms, Hardware & Protocols Matrix -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-10 shadow-sm">
+      <div class="mb-6 pb-4 hairline-b">
+        <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block mb-1">
+          TECHNOLOGY ECOSYSTEM // PLATFORMS &amp; STANDARDS
+        </span>
+        <h2 class="font-heading text-2xl font-bold text-brand-slate">
+          Supported Technology Stacks &amp; Protocols
+        </h2>
+        <p class="text-xs text-slate-600 mt-1">Vendor-neutral integration across enterprise hardware, hypervisors, and cloud environments.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
+        
+        <div class="space-y-3">
+          <span class="font-bold text-brand-slate uppercase text-[11px] block pb-1 border-b border-brand-line">
+            Identity & Access
+          </span>
+          <ul class="space-y-1.5 text-slate-600">
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Microsoft Entra ID (P1/P2)</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Privileged Identity Management (PIM)</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Conditional Access</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Self-Service Password Reset (SSPR)</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div class="space-y-3">
+          <span class="font-bold text-brand-slate uppercase text-[11px] block pb-1 border-b border-brand-line">
+            Productivity & Mail
+          </span>
+          <ul class="space-y-1.5 text-slate-600">
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Exchange Online Protection (EOP)</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>SharePoint Online</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Microsoft Teams</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>OneDrive for Business</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div class="space-y-3">
+          <span class="font-bold text-brand-slate uppercase text-[11px] block pb-1 border-b border-brand-line">
+            Security & Compliance
+          </span>
+          <ul class="space-y-1.5 text-slate-600">
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Microsoft Defender for Office 365</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Microsoft Purview DLP</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>DMARC Analyzer</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>eDiscovery Standard</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div class="space-y-3">
+          <span class="font-bold text-brand-slate uppercase text-[11px] block pb-1 border-b border-brand-line">
+            Device Management
+          </span>
+          <ul class="space-y-1.5 text-slate-600">
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Microsoft Intune</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Windows Autopilot</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Apple Business Manager Integration</span>
+            </li>
+            
+            <li class="flex items-center gap-1.5">
+              <span class="text-brand-cobalt font-bold">&bull;</span>
+              <span>Android Enterprise Work Profile</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Case Architecture Blueprint -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-10 shadow-sm">
+      <div class="mb-6 pb-4 hairline-b">
+        <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block mb-1">
+          PROVEN FIELD EXECUTION // CASE STUDY
+        </span>
+        <h2 class="font-heading text-2xl font-bold text-brand-slate">
+          Healthcare Organization: Zero-Trust M365 Transformation
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+        <div class="p-4 bg-red-50/40 border border-red-200">
+          <span class="font-bold text-red-900 uppercase block mb-2 text-[11px]">The Challenge</span>
+          <p class="text-slate-700 leading-relaxed font-sans text-xs">
+            An 85-seat healthcare services provider experienced recurring executive email spoofing attempts and possessed over 140 unmonitored public SharePoint document links created by former contractors.
+          </p>
+        </div>
+
+        <div class="p-4 bg-blue-50/40 border border-blue-200">
+          <span class="font-bold text-brand-cobalt uppercase block mb-2 text-[11px]">Engineering Solution</span>
+          <p class="text-slate-700 leading-relaxed font-sans text-xs">
+            Steve Cormier conducted an exhaustive tenant audit, implemented strict DMARC p=reject with 2048-bit DKIM rotation, deployed Entra ID Conditional Access requiring FIDO2 number matching, revoked all external sharing links, and established Purview sensitivity labels.
+          </p>
+        </div>
+
+        <div class="p-4 bg-emerald-50/40 border border-emerald-200">
+          <span class="font-bold text-emerald-900 uppercase block mb-2 text-[11px]">Quantified Outcome</span>
+          <p class="text-slate-700 leading-relaxed font-sans text-xs">
+            Zero email spoofing compromises over 24 months, complete compliance with HIPAA Technical Safeguards, and a 28% monthly licensing cost reduction through Business Premium consolidation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Engagement CTA Bar -->
+    <section class="bg-brand-slate text-white p-8 sm:p-10 hairline-grid mb-12">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="font-mono text-[10px] font-bold text-sky-400 uppercase tracking-widest block mb-2">
+            DIRECT ENGAGEMENT WITH STEVE CORMIER
+          </span>
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold">
+            Ready to Architect Your Microsoft 365 Architecture?
+          </h3>
+          <p class="font-mono text-xs text-slate-300 mt-2 max-w-2xl leading-relaxed">
+            Direct consultation with a 36-year Principal Systems Architect. Zero sales reps, zero vendor markups, and zero guesswork.
+          </p>
+        </div>
+
+        <div class="shrink-0 flex flex-wrap items-center gap-3">
+          <a href="tel:+14079175250" class="px-5 py-3 bg-white hover:bg-slate-100 text-brand-slate font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+            Call Direct: (407) 917-5250
+          </a>
+          <a href="/contact?service=SYS-01" class="px-5 py-3 bg-brand-cobalt hover:bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+            Request SYS-01 Triage &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Links: Other 9 Practice Areas -->
+    <section class="hairline-grid bg-white p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+        <span class="font-bold text-brand-slate uppercase">Explore Other Practice Areas (9)</span>
+        <a href="/services" class="text-brand-cobalt hover:underline">View All 10 &rarr;</a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 font-mono text-xs">
+        
+        <a href="/services/virtualization" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-02</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Virtual Machines & Servers</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/hardening" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-03</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Server & Network Hardening</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/voip-ippbx" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-04</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">VoIP Phone Systems & SIP</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/network-management" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-05</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Enterprise Network Mgmt</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/mobile-device-management" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-06</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Mobile Device Management</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/remote-desktop" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-07</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Remote Desktop Services</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/onsite-support" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-08</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Onsite Support & Dispatch</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/it-consultancy" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-09</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">IT Consultancy & vCTO</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+        <a href="/services/ai-implementation" class="p-3 bg-slate-50 border border-brand-line hover:border-brand-cobalt hover:bg-white transition-colors group flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold text-brand-cobalt block">SYS-10</span>
+            <span class="text-brand-slate font-bold group-hover:text-brand-cobalt">Enterprise AI & Copilot</span>
+          </div>
+          <span class="text-slate-400 group-hover:text-brand-cobalt">&rarr;</span>
+        </a>
+        
+      </div>
+    </section>
+
+  </main>
+
+  
+  <!-- ===================================================================== -->
+  <!-- STRUCTURAL BLUEPRINT FOOTER                                           -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white hairline-t mt-16">
+    <!-- Top Footer Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Col 1: Identity & Credentials -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="/images/logos/concept-01-hypervisor-blades.svg" alt="Technology Specialist" class="h-10 w-auto object-contain" />
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Technology Specialist provides mission-critical enterprise virtualization, M365 tenant governance, VoIP telephony, network engineering, and enterprise AI implementation. Principal-led by Steve Cormier since 1990.
+          </p>
+          <div class="font-mono text-[10px] text-slate-500 bg-slate-50 p-3 border border-brand-line space-y-1">
+            <div class="text-brand-slate font-bold">Steve Cormier, Principal Systems Architect</div>
+            <div>&bull; 36 Years Enterprise Architecture (Est. 1990)</div>
+            <div>&bull; VP Technical &amp; Customer Support, Sonitor (2010 - Pres.)</div>
+            <div>&bull; U.S. Air Force Veteran (Security Police, Offutt AFB)</div>
+            <div>&bull; Microsoft Certified Systems Professional</div>
+            <div>&bull; Lead Instructor, Track Day Xperience (TDX) @ Sebring</div>
+          </div>
+          <div class="font-mono text-[10px] text-slate-500">
+            <div>3523 Forest Ridge Ln. &bull; Kissimmee, FL 34741</div>
+            <div class="text-brand-slate font-bold mt-1">Direct Dispatch: <a href="tel:+14079175250" class="text-brand-cobalt hover:underline">(407) 917-5250</a></div>
+          </div>
+        </div>
+
+        <!-- Col 2: Practice Areas 01-05 -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            PRACTICE MATRIX (PART I)
+          </span>
+          <ul class="space-y-2 font-mono text-xs text-slate-600">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt transition-colors">SYS-01: Microsoft 365 Architecture</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt transition-colors">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt transition-colors">SYS-03: Server &amp; Network Hardening</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt transition-colors">SYS-04: VoIP &amp; SIP Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt transition-colors">SYS-05: Enterprise L2/L3 Network</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Practice Areas 06-10 -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            PRACTICE MATRIX (PART II)
+          </span>
+          <ul class="space-y-2 font-mono text-xs text-slate-600">
+            <li><a href="/services/mobile-device-management" class="hover:text-brand-cobalt transition-colors">SYS-06: Mobile Device Management</a></li>
+            <li><a href="/services/remote-desktop" class="hover:text-brand-cobalt transition-colors">SYS-07: Remote Desktop Farms</a></li>
+            <li><a href="/services/onsite-support" class="hover:text-brand-cobalt transition-colors">SYS-08: Onsite Central FL Support</a></li>
+            <li><a href="/services/it-consultancy" class="hover:text-brand-cobalt transition-colors">SYS-09: Principal IT Consultancy</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt text-brand-cobalt font-bold transition-colors">SYS-10: Enterprise AI &amp; Copilot</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform & Direct Dispatch -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            SOVEREIGN PLATFORM &amp; ACCESS
+          </span>
+          <div class="font-mono text-[11px] text-slate-600 space-y-2 mb-4">
+            <div>&bull; Runtime: GreenTree Sovereign Spoke v3.0</div>
+            <div>&bull; Vault: Dedicated PostgreSQL 16</div>
+            <div>&bull; Telemetry: East-West Air-Gapped Monitoring</div>
+            <div>&bull; Security: CIS Level 2 Benchmarks</div>
+          </div>
+          <div class="space-y-2">
+            <a href="/about" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              About Steve Cormier &rarr;
+            </a>
+            <a href="/contact" class="block w-full py-2 px-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              Dispatch Request &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & SLA Strip -->
+    <div class="bg-slate-50 py-4 px-4 sm:px-6 lg:px-8 hairline-t text-[11px] font-mono text-slate-500">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div>
+          &copy; 1990 - 2026 Technology Specialist. All rights reserved. Technology Advice You Can Trust.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>Kissimmee, FL 34741</span>
+          <span>&bull;</span>
+          <a href="tel:+14079175250" class="text-brand-slate font-bold hover:underline">(407) 917-5250</a>
+          <span>&bull;</span>
+          <a href="/logos" class="text-brand-cobalt hover:underline">Vector Logo Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+</body>
+</html>

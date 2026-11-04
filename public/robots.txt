@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /gate/
+Disallow: /api/
+
+Sitemap: https://technologyspecialist.org/sitemap.xml

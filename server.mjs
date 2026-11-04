@@ -31,6 +31,7 @@ const __dirname = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "0.0.0.0";
 const DIST_DIR = path.join(__dirname, "dist");
+const PUBLIC_DIR = path.join(__dirname, "public");
 const SEED_FILE = path.join(__dirname, "data", "pinboard-seed.json");
 const DATA_DIR =
   process.env.PIN_BOARD_DATA_DIR || path.join(__dirname, ".data", "pin-board");
@@ -2222,6 +2223,44 @@ const server = http.createServer(async (req, res) => {
     }
 
     // ========================================================================
+    // MOD-SITE-TREE-MEGA-MENU Endpoint (Complete Site Route Hierarchy)
+    // ========================================================================
+    if (pathname === "/api/mod/site-tree" && req.method === "GET") {
+      const siteTree = [
+        { path: "/", title: "Technology Specialist Home", category: "Core" },
+        { path: "/about", title: "About Steve Cormier & Technology Specialist", category: "Company" },
+        { path: "/contact", title: "Engineering Dispatch & Contact", category: "Company" },
+        { path: "/tools", title: "Interactive Engineering Calculators & AI Audit", category: "Tools" },
+        { path: "/logos", title: "Brand Identity & Vector Logo Studio", category: "Brand" },
+        { path: "/services", title: "All 10 Practice Area Specifications", category: "Services" },
+        { path: "/services/microsoft-365", title: "SYS-01: Microsoft 365 Architecture & Governance", category: "Services" },
+        { path: "/services/virtualization", title: "SYS-02: VMware ESXi & Hyper-V Virtualization", category: "Services" },
+        { path: "/services/hardening", title: "SYS-03: Server & Network Hardening (CIS Level 2)", category: "Services" },
+        { path: "/services/voip-ippbx", title: "SYS-04: VoIP Phone Systems & IP-PBX SIP Trunking", category: "Services" },
+        { path: "/services/network-management", title: "SYS-05: Enterprise Network Management & L2/L3", category: "Services" },
+        { path: "/services/mobile-device-management", title: "SYS-06: Mobile Device Management (MDM / Intune)", category: "Services" },
+        { path: "/services/remote-desktop", title: "SYS-07: Secure Remote Desktop & RDS Infrastructure", category: "Services" },
+        { path: "/services/onsite-support", title: "SYS-08: Onsite Systems Support & Hardware Dispatch", category: "Services" },
+        { path: "/services/it-consultancy", title: "SYS-09: Enterprise IT Consultancy & vCTO Advisory", category: "Services" },
+        { path: "/services/ai-implementation", title: "SYS-10: Enterprise AI & Copilot Implementation", category: "Services" },
+      ];
+
+      res.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "public, max-age=300",
+      });
+      res.end(
+        JSON.stringify({
+          ok: true,
+          siteKey: SITE_KEY,
+          total: siteTree.length,
+          tree: siteTree,
+        })
+      );
+      return;
+    }
+
+    // ========================================================================
     // MOD-STICKER-STUDIO Endpoint (Strictly Isolated Tenant State)
     // ========================================================================
     if (pathname.startsWith("/api/admin/sticker-studio")) {
@@ -2236,6 +2275,94 @@ const server = http.createServer(async (req, res) => {
           studioState = JSON.parse(fs.readFileSync(stateFile, "utf8"));
         }
       } catch {}
+
+      if (!studioState.stickers || studioState.stickers.length === 0) {
+        studioState = {
+          folders: [
+            { id: "all-stickers", name: "All Stickers (Master Library)", icon: "📁", parentId: null, isSystem: true },
+            { id: "techspec-masters", name: "🖥️ Technology Specialist Master Badges", icon: "🖥️", parentId: null, isSystem: true },
+            { id: "ts-rack-badges", name: "Rack & Hardware Asset Tags", icon: "🏷️", parentId: "techspec-masters" },
+            { id: "ts-zero-trust", name: "Zero-Trust & CIS Security Seals", icon: "🛡️", parentId: "techspec-masters" },
+            { id: "ts-motorsport", name: "Sebring & TDX Motorsport Decals", icon: "🏎️", parentId: "techspec-masters" }
+          ],
+          stickers: [
+            {
+              id: "ts-sticker-01",
+              name: "ENGINEERED BY TECHNOLOGY SPECIALIST // EST. 1990",
+              imageUrl: "/images/logos/concept-01-hypervisor-blades-1200w.png",
+              folderId: "ts-rack-badges",
+              concept: "High-contrast industrial server rack badge with dual hypervisor blade icon and Est. 1990 heritage mark.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-02",
+              name: "ZERO-TRUST HARDENED // CIS LEVEL 2",
+              imageUrl: "/images/logos/concept-04-rams-industrial-badge-1200w.png",
+              folderId: "ts-zero-trust",
+              concept: "Dieter Rams circular industrial hardware asset seal certified for CIS Benchmark Level 2 server lockdown.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-03",
+              name: "HYPERVISOR CLUSTER ACTIVE // ESXI + HYPER-V",
+              imageUrl: "/images/logos/concept-05-dual-cluster-failover-1200w.png",
+              folderId: "ts-rack-badges",
+              concept: "Dual-node high-availability clustering and live vMotion failover badge for server chassis.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-04",
+              name: "USAF SECURITY POLICE VETERAN // OFFUTT AFB",
+              imageUrl: "/images/logos/concept-02-swiss-circuit-monogram-1200w.png",
+              folderId: "ts-zero-trust",
+              concept: "Precision Swiss circuit monogram honoring Steve Cormiers United States Air Force Security Police service at Offutt AFB.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-05",
+              name: "SEBRING TRACK DAY XPERIENCE // LEAD INSTRUCTOR TELEMETRY",
+              imageUrl: "/images/steve/steve-sebring-pitlane.jpg",
+              folderId: "ts-motorsport",
+              concept: "Sebring International Raceway pit-lane badge featuring Lead Instructor telemetry coaching credentials.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-06",
+              name: "ENTERPRISE FIBER TOPOLOGY // 10G/40G CORE FABRIC",
+              imageUrl: "/images/logos/concept-03-fiber-topology-matrix-1200w.png",
+              folderId: "ts-rack-badges",
+              concept: "Optical fiber mesh topology badge for high-density core switching and SAN fabric cabinets.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-07",
+              name: "TECHNOLOGY SPECIALIST // INDUSTRIAL ASSET PLATE",
+              imageUrl: "/images/logos/concept-06-minimal-architectural-wordmark-1200w.png",
+              folderId: "ts-rack-badges",
+              concept: "Die-cut brushed aluminum asset plate with architectural typography and Kissimmee Florida coordinates.",
+              inPrintPack: true
+            },
+            {
+              id: "ts-sticker-08",
+              name: "ENTERPRISE AI READY // M365 COPILOT GOVERNED",
+              imageUrl: "/images/schematics/ai-rag-copilot-pipeline.svg",
+              folderId: "ts-zero-trust",
+              concept: "Neural pipeline and SharePoint governance badge verifying M365 Copilot data readiness.",
+              inPrintPack: true
+            }
+          ],
+          printPack: {
+            selectedStickerIds: [
+              "ts-sticker-01", "ts-sticker-02", "ts-sticker-03", "ts-sticker-04",
+              "ts-sticker-05", "ts-sticker-06", "ts-sticker-07", "ts-sticker-08"
+            ]
+          }
+        };
+        try {
+          if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+          fs.writeFileSync(stateFile, JSON.stringify(studioState, null, 2), "utf8");
+        } catch {}
+      }
 
       if (req.method === "GET") {
         res.writeHead(200, {
@@ -2873,10 +3000,13 @@ const server = http.createServer(async (req, res) => {
       path.join(DIST_DIR, cleanRel),
       path.join(DIST_DIR, cleanRel, "index.html"),
       path.join(DIST_DIR, `${cleanRel}.html`),
+      path.join(PUBLIC_DIR, cleanRel),
+      path.join(PUBLIC_DIR, cleanRel, "index.html"),
+      path.join(PUBLIC_DIR, `${cleanRel}.html`),
     ];
 
     for (const candidate of candidates) {
-      if (!candidate.startsWith(DIST_DIR)) continue;
+      if (!candidate.startsWith(DIST_DIR) && !candidate.startsWith(PUBLIC_DIR)) continue;
       if (await serveStaticFile(res, candidate, 200)) {
         return;
       }

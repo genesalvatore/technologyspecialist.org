@@ -53,13 +53,15 @@
     var combined = (sk + ' ' + dom).toLowerCase();
     var isBackstage = combined.indexOf('backstage') !== -1;
     var isGeneTravels = combined.indexOf('genetravels') !== -1;
-    var scopeKey = isBackstage ? 'backstageimagesri' : (isGeneTravels ? 'genetravels' : (sk || dom || 'default'));
+    var isTechSpec = combined.indexOf('technologyspecialist') !== -1 || combined.indexOf('techspec') !== -1;
+    var scopeKey = isBackstage ? 'backstageimagesri' : (isGeneTravels ? 'genetravels' : (isTechSpec ? 'technologyspecialist' : (sk || dom || 'default')));
     return {
       scopeKey: scopeKey,
       isBackstage: isBackstage,
       isGeneTravels: isGeneTravels,
-      siteName: siteName || (isBackstage ? 'Backstage Images RI' : (isGeneTravels ? 'GeneTravels' : (dom || 'Brand Studio'))),
-      domain: dom || (isBackstage ? 'backstageimagesri.com' : (isGeneTravels ? 'genetravels.com' : 'greentreehosting.com'))
+      isTechSpec: isTechSpec,
+      siteName: siteName || (isBackstage ? 'Backstage Images RI' : (isGeneTravels ? 'GeneTravels' : (isTechSpec ? 'Technology Specialist' : (dom || 'Brand Studio')))),
+      domain: dom || (isBackstage ? 'backstageimagesri.com' : (isGeneTravels ? 'genetravels.com' : (isTechSpec ? 'technologyspecialist.org' : 'greentreehosting.com')))
     };
   }
 
@@ -94,6 +96,13 @@
         { id: 'gt-bumpers', name: '🏁 Bumper Strips & High-Speed Decals', icon: '🏁', parentId: 'genetravels-reference' },
         { id: 'gt-crew-editions', name: '⭐ All-Access & Crew Editions', icon: '⭐', parentId: 'genetravels-reference' }
       );
+    } else if (scope.isTechSpec) {
+      base.push(
+        { id: 'techspec-masters', name: '🖥️ Technology Specialist Master Badges', icon: '🖥️', parentId: null, isSystem: true },
+        { id: 'ts-rack-badges', name: 'Rack & Hardware Asset Tags', icon: '🏷️', parentId: 'techspec-masters' },
+        { id: 'ts-zero-trust', name: 'Zero-Trust & CIS Security Seals', icon: '🛡️', parentId: 'techspec-masters' },
+        { id: 'ts-motorsport', name: 'Sebring & TDX Motorsport Decals', icon: '🏎️', parentId: 'techspec-masters' }
+      );
     }
     base.push(
       { id: 'print-candidates', name: '📦 500-Pack Print Run Candidates', icon: '📦', parentId: null },
@@ -111,6 +120,74 @@
       return INITIAL_STICKERS.filter(function (s) { return s.isGeneTravels === true && !s.isJohnny; }).map(function (s, idx) {
         return Object.assign({}, s, { inPrintPack: idx < 10 });
       });
+    }
+    if (scope.isTechSpec) {
+      return [
+        {
+          id: 'ts-sticker-01',
+          name: 'ENGINEERED BY TECHNOLOGY SPECIALIST // EST. 1990',
+          imageUrl: '/images/logos/concept-01-hypervisor-blades-1200w.png',
+          folderId: 'ts-rack-badges',
+          concept: 'High-contrast industrial server rack badge with dual hypervisor blade icon and Est. 1990 heritage mark.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-02',
+          name: 'ZERO-TRUST HARDENED // CIS LEVEL 2',
+          imageUrl: '/images/logos/concept-04-rams-industrial-badge-1200w.png',
+          folderId: 'ts-zero-trust',
+          concept: 'Dieter Rams circular industrial hardware asset seal certified for CIS Benchmark Level 2 server lockdown.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-03',
+          name: 'HYPERVISOR CLUSTER ACTIVE // ESXI + HYPER-V',
+          imageUrl: '/images/logos/concept-05-dual-cluster-failover-1200w.png',
+          folderId: 'ts-rack-badges',
+          concept: 'Dual-node high-availability clustering and live vMotion failover badge for server chassis.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-04',
+          name: 'USAF SECURITY POLICE VETERAN // OFFUTT AFB',
+          imageUrl: '/images/logos/concept-02-swiss-circuit-monogram-1200w.png',
+          folderId: 'ts-zero-trust',
+          concept: 'Precision Swiss circuit monogram honoring Steve Cormiers United States Air Force Security Police service at Offutt AFB.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-05',
+          name: 'SEBRING TRACK DAY XPERIENCE // LEAD INSTRUCTOR TELEMETRY',
+          imageUrl: '/images/steve/steve-sebring-pitlane.jpg',
+          folderId: 'ts-motorsport',
+          concept: 'Sebring International Raceway pit-lane badge featuring Lead Instructor telemetry coaching credentials.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-06',
+          name: 'ENTERPRISE FIBER TOPOLOGY // 10G/40G CORE FABRIC',
+          imageUrl: '/images/logos/concept-03-fiber-topology-matrix-1200w.png',
+          folderId: 'ts-rack-badges',
+          concept: 'Optical fiber mesh topology badge for high-density core switching and SAN fabric cabinets.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-07',
+          name: 'TECHNOLOGY SPECIALIST // INDUSTRIAL ASSET PLATE',
+          imageUrl: '/images/logos/concept-06-minimal-architectural-wordmark-1200w.png',
+          folderId: 'ts-rack-badges',
+          concept: 'Die-cut brushed aluminum asset plate with architectural typography and Kissimmee Florida coordinates.',
+          inPrintPack: true
+        },
+        {
+          id: 'ts-sticker-08',
+          name: 'ENTERPRISE AI READY // M365 COPILOT GOVERNED',
+          imageUrl: '/images/schematics/ai-rag-copilot-pipeline.svg',
+          folderId: 'ts-zero-trust',
+          concept: 'Neural pipeline and SharePoint governance badge verifying M365 Copilot data readiness.',
+          inPrintPack: true
+        }
+      ];
     }
     return [];
   }

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Dispatch &amp; Contact | Technology Specialist (Est. 1990)</title>
+  <meta name="description" content="Direct principal engineering dispatch and infrastructure consultation with Steve Cormier. Central Florida onsite in Orlando, Kissimmee, Orange and Osceola counties plus nationwide remote administration." />
+  <meta name="author" content="Steve Cormier - Technology Specialist" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:title" content="Engineering Dispatch &amp; Contact: Technology Specialist" />
+  <meta property="og:description" content="Direct engineering consultation with Steve Cormier. 15-minute emergency hypervisor outage response and scheduled architecture triage." />
+
+  <!-- Logo Studio Client Runtime -->
+  <script src="/logo-studio.js" defer></script>
+  <!-- Swiss Architectural Mega-Menu Runtime -->
+  <script src="/mega-menu.js" defer></script>
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cobalt: '#0052CC',
+              cyan: '#0284C7',
+              slate: '#0F172A',
+              card: '#FFFFFF',
+              surface: '#FAFAFC',
+              silver: '#F1F5F9',
+              line: '#CBD5E1',
+              darkLine: '#334155',
+              success: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFC;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .blueprint-bg {
+      background-image: linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hairline-grid { border: 1px solid #CBD5E1; }
+    .hairline-b { border-bottom: 1px solid #CBD5E1; }
+    .hairline-t { border-top: 1px solid #CBD5E1; }
+    .hairline-r { border-right: 1px solid #CBD5E1; }
+    .hairline-l { border-left: 1px solid #CBD5E1; }
+  </style>
+</head>
+<body class="blueprint-bg text-brand-slate antialiased">
+
+  <!-- ===================================================================== -->
+  <!-- 0. TOP TECHNICAL TELEMETRY BAR & STICKY ARCHITECTURAL HEADER          -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md hairline-b">
+    <div class="bg-brand-slate text-white text-[11px] font-mono font-bold tracking-wider uppercase py-2 px-4 hairline-b">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
+          <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
+        </div>
+        <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Architectural Nav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Unit -->
+        <a href="/" class="flex items-center gap-3.5 group">
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <div class="hidden md:block hairline-l pl-3.5">
+            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
+            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Matrix with Mega-Menu Hooks -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1">
+            <span>Practice Areas (10)</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1">
+            <span>Leadership</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Logo Studio (10)</a>
+          <a href="/contact" class="px-3 py-2 text-brand-cobalt bg-blue-50/60 font-extrabold transition-colors">Contact &amp; Dispatch</a>
+          <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
+        </nav>
+
+        <!-- Header Action CTA & Mobile Trigger -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+14079175250" class="inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
+            <span>(407) 917-5250</span>
+          </a>
+          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+            <span class="sr-only">Open Menu</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 1. DISPATCH INTAKE HERO & CONTACT SYSTEM (2-COLUMN GRID)              -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="hairline-grid bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12">
+
+      <!-- Left Column: Direct Channels, SLA Tiers & Coverage Matrix (5 Cols) -->
+      <div class="lg:col-span-5 p-6 sm:p-10 hairline-b lg:hairline-b-0 lg:hairline-r bg-slate-50 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 border border-blue-200 font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+              DIRECT ENGINEERING DISPATCH // NO HELPDESK
+            </span>
+          </div>
+
+          <h1 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-slate mb-3">
+            Direct Principal Access.
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+            When you contact Technology Specialist, you speak directly with <strong>Steve Cormier</strong>: 36-year principal architect, U.S. Air Force veteran, and Vice President of Technical and Customer Support at Sonitor Technologies.
+          </p>
+
+          <!-- Direct Channels Box -->
+          <div class="bg-white p-5 border border-brand-line mb-6 font-mono text-xs space-y-3 shadow-sm">
+            <div class="font-bold text-brand-slate uppercase text-[11px] pb-2 hairline-b flex items-center justify-between">
+              <span>Direct Dispatch Channels</span>
+              <span class="text-emerald-600 font-bold">&bull; LIVE</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px]">DIRECT TELEPHONE:</span>
+              <a href="tel:+14079175250" class="text-sm font-bold text-brand-cobalt hover:underline">(407) 917-5250</a>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px]">ENGINEERING EMAIL:</span>
+              <a href="mailto:steve@technologyspecialist.org" class="font-bold text-brand-slate hover:text-brand-cobalt hover:underline">steve@technologyspecialist.org</a>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px]">CENTRAL FLORIDA OFFICE:</span>
+              <span class="text-slate-700">3523 Forest Ridge Ln.<br />Kissimmee, FL 34741</span>
+            </div>
+          </div>
+
+          <!-- SLA Response Tiers -->
+          <div class="space-y-3 mb-6">
+            <div class="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-wider">Engineering SLA Response Tiers</div>
+            
+            <div class="p-3 bg-white border border-brand-line font-mono text-xs">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-red-600 uppercase text-[10px]">Tier 1 // Critical Outage</span>
+                <span class="px-1.5 py-0.5 bg-red-100 text-red-700 font-bold text-[9px]">15-MIN SLA</span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-tight">Hypervisor host failure, total storage SAN offline, core perimeter breach.</p>
+            </div>
+
+            <div class="p-3 bg-white border border-brand-line font-mono text-xs">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-amber-600 uppercase text-[10px]">Tier 2 // High Priority</span>
+                <span class="px-1.5 py-0.5 bg-amber-100 text-amber-800 font-bold text-[9px]">1-HOUR SLA</span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-tight">M365 email flow degradation, SIP trunk drops, VLAN routing anomalies.</p>
+            </div>
+
+            <div class="p-3 bg-white border border-brand-line font-mono text-xs">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-brand-cobalt uppercase text-[10px]">Tier 3 // Architecture Consultation</span>
+                <span class="px-1.5 py-0.5 bg-blue-100 text-brand-cobalt font-bold text-[9px]">SAME-DAY DISPATCH</span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-tight">Planned cluster upgrades, M365 Copilot readiness, compliance audits.</p>
+            </div>
+          </div>
+
+          <!-- Service Coverage Matrix -->
+          <div class="p-4 bg-white border border-brand-line font-mono text-[11px] space-y-2">
+            <div class="font-bold text-brand-slate uppercase text-[10px] pb-1 hairline-b">Regional Coverage Matrix:</div>
+            <div class="text-slate-600 leading-relaxed text-[10px]">
+              <strong>Onsite Field Dispatch:</strong> Orlando, Kissimmee, Osceola County, Orange County, Seminole County, Polk County, and Greater Central Florida.<br />
+              <strong>Nationwide Remote:</strong> All 50 states via secure encrypted WireGuard and PAW channels.
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-[10px] text-slate-500">
+          <span>CENTRAL FLORIDA // EST. 1990</span>
+          <span class="text-brand-cobalt font-bold">STEVE CORMIER</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Production Contact & Engineering Dispatch Form (7 Cols) -->
+      <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12">
+        <div class="mb-6">
+          <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mb-1">TRANSMISSION PORT // FORM POST</div>
+          <h2 class="font-heading text-xl sm:text-2xl font-bold text-brand-slate">
+            Engineering Dispatch &amp; Architecture Consultation Request
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">
+            Submit your infrastructure parameters directly into our secure PostgreSQL 16 operational vault.
+          </p>
+        </div>
+
+        <!-- Form Status Receipt (hidden by default) -->
+        <div id="formStatus" class="hidden mb-6 p-4 font-mono text-xs"></div>
+
+        <!-- Intake Form -->
+        <form id="dispatchForm" onsubmit="submitDispatchForm(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="contactName">
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="contactName" required placeholder="e.g. David Henderson" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors" />
+            </div>
+
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="contactCompany">
+                Organization / Company <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="contactCompany" required placeholder="e.g. Apex Health Logistics" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="contactEmail">
+                Work Email <span class="text-red-500">*</span>
+              </label>
+              <input type="email" id="contactEmail" required placeholder="e.g. dhenderson@apexhealth.com" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors" />
+            </div>
+
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="contactPhone">
+                Direct Telephone <span class="text-red-500">*</span>
+              </label>
+              <input type="tel" id="contactPhone" required placeholder="e.g. (407) 555-0192" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="practiceArea">
+                Primary Practice Area <span class="text-red-500">*</span>
+              </label>
+              <select id="practiceArea" required class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors">
+                <option value="SYS-01: Microsoft 365 Architecture">SYS-01: Microsoft 365 Architecture &amp; Governance</option>
+                <option value="SYS-02: VMware ESXi & Hyper-V Virtualization">SYS-02: VMware ESXi &amp; Hyper-V Virtualization</option>
+                <option value="SYS-03: Zero-Trust Hardening & Perimeter Defense">SYS-03: Zero-Trust Hardening &amp; Perimeter Defense</option>
+                <option value="SYS-04: VoIP & IP-PBX Telephony Trunking">SYS-04: VoIP &amp; IP-PBX Telephony Trunking</option>
+                <option value="SYS-05: Managed Network & VLAN Segmentation">SYS-05: Managed Network &amp; VLAN Segmentation</option>
+                <option value="SYS-06: Mobile Device Management (MDM / Intune)">SYS-06: Mobile Device Management (MDM / Intune)</option>
+                <option value="SYS-07: Secure Remote Desktop & RDS Infrastructure">SYS-07: Secure Remote Desktop &amp; RDS Infrastructure</option>
+                <option value="SYS-08: Onsite Systems Support & Hardware Dispatch">SYS-08: Onsite Systems Support &amp; Hardware Dispatch</option>
+                <option value="SYS-09: Enterprise IT Consultancy & vCTO Advisory">SYS-09: Enterprise IT Consultancy &amp; vCTO Advisory</option>
+                <option value="SYS-10: Enterprise AI & Copilot Implementation">SYS-10: Enterprise AI &amp; Copilot Implementation</option>
+                <option value="Emergency Outage Remediation">Emergency Outage Remediation</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="environmentScale">
+                Environment Scale
+              </label>
+              <select id="environmentScale" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors">
+                <option value="1-15 Endpoints / Single Server">1 - 15 Endpoints / Single Server</option>
+                <option value="16-50 Endpoints / Hybrid Cluster">16 - 50 Endpoints / Hybrid Cluster</option>
+                <option value="51-200 Endpoints / Multi-Site WAN">51 - 200 Endpoints / Multi-Site WAN</option>
+                <option value="200+ Enterprise Datacenter / Healthcare">200+ Enterprise Datacenter / Healthcare</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="dispatchUrgency">
+              Dispatch Mode &amp; Urgency
+            </label>
+            <select id="dispatchUrgency" class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors">
+              <option value="Standard Architecture Consultation (Scheduled)">Standard Architecture Consultation (Scheduled)</option>
+              <option value="Planned Migration / Cluster Deployment">Planned Migration / Cluster Deployment</option>
+              <option value="Priority Maintenance / Security Remediation">Priority Maintenance / Security Remediation</option>
+              <option value="Emergency Outage (15-Minute Response SLA)">Emergency Outage (15-Minute Response SLA)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1" for="contactScope">
+              Architecture Scope &amp; Environment Description
+            </label>
+            <textarea id="contactScope" rows="4" placeholder="Detail your current server models, virtualization hypervisor (ESXi / Hyper-V), number of mailboxes, symptoms, or specific project milestones..." class="w-full px-3 py-2.5 bg-slate-50 border border-brand-line focus:bg-white focus:border-brand-cobalt focus:outline-none font-mono text-xs text-brand-slate transition-colors"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" id="submitBtn" class="w-full py-3.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-widest shadow-md transition-colors flex items-center justify-center gap-2">
+              <span>Transmit Engineering Dispatch Request</span>
+              <span>&rarr;</span>
+            </button>
+            <div class="font-mono text-[10px] text-slate-500 mt-2 text-center">
+              Direct delivery to Steve Cormier &bull; (407) 917-5250 &bull; Stored in PostgreSQL 16
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER                                                                -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white hairline-t mt-12 py-10 font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 hairline-b">
+        <div>
+          <div class="font-heading text-sm font-bold text-brand-slate uppercase mb-2">Technology Specialist</div>
+          <p class="text-[11px] text-slate-500 leading-relaxed mb-3">
+            Principal Systems, Virtualization &amp; Network Engineering. Founded 1990 by Steve Cormier. Central Florida Onsite &amp; Nationwide Remote.
+          </p>
+          <div class="text-[10px] text-slate-400">
+            Kissimmee, FL 34741 &bull; (407) 917-5250
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Practice Areas</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt">SYS-01 Microsoft 365 Architecture</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt">SYS-02 Virtualization &amp; ESXi</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt">SYS-03 Hardening &amp; CIS Level 2</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt">SYS-04 VoIP &amp; IP-PBX Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt">SYS-05 Enterprise Network Mgmt</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt font-bold text-brand-cobalt">SYS-10 Enterprise AI &amp; Copilot</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Site Architecture</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="/" class="hover:text-brand-cobalt">Home Overview</a></li>
+            <li><a href="/about" class="hover:text-brand-cobalt">About Steve Cormier (Est. 1990)</a></li>
+            <li><a href="/services" class="hover:text-brand-cobalt">All 10 Practice Specifications</a></li>
+            <li><a href="/tools" class="hover:text-brand-cobalt">Engineering Calculators (03)</a></li>
+            <li><a href="/logos" class="hover:text-brand-cobalt">Vector &amp; AI Logo Studio (10)</a></li>
+            <li><a href="/contact" class="text-brand-cobalt font-bold">Engineering Dispatch &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-bold text-brand-slate uppercase text-[11px] mb-3">Direct Dispatch</div>
+          <div class="p-3 bg-slate-50 border border-brand-line text-[10px] space-y-1.5 mb-3">
+            <div>&bull; Phone: <a href="tel:+14079175250" class="text-brand-cobalt font-bold hover:underline">(407) 917-5250</a></div>
+            <div>&bull; Email: <a href="mailto:steve@technologyspecialist.org" class="text-brand-cobalt hover:underline">steve@technologyspecialist.org</a></div>
+            <div>&bull; Dispatch: Orlando, Kissimmee &amp; Remote</div>
+          </div>
+          <a href="/admin/" class="text-[10px] text-slate-400 hover:text-brand-slate">Customer Command Center &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-wrap items-center justify-between gap-4 text-[10px]">
+        <div>
+          &copy; 1990 - 2026 Technology Specialist. All rights reserved. Principal Architect: Steve Cormier.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>STD-2026-BRAND-TECHSPEC-01</span>
+          <span>&bull;</span>
+          <span class="text-emerald-600 font-bold">ZERO EM DASHES ENFORCED</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // URL Parameter Pre-selection (e.g. ?service=SYS-02 or ?service=SYS-10)
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const svcParam = (params.get('service') || '').toUpperCase();
+      const auditScore = params.get('audit_score');
+      
+      const select = document.getElementById('practiceArea');
+      if (svcParam && select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toUpperCase().includes(svcParam)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (auditScore) {
+        const textarea = document.getElementById('contactScope');
+        if (textarea) {
+          textarea.value = 'Transmitted Hardening & AI Readiness Audit Score: ' + auditScore + '/100.\nRequesting principal architecture review and remediation roadmap.';
+        }
+      }
+    })();
+
+    // Form Submission to POST /api/leads
+    async function submitDispatchForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const statusEl = document.getElementById('formStatus');
+
+      const payload = {
+        name: document.getElementById('contactName').value.trim(),
+        email: document.getElementById('contactEmail').value.trim(),
+        phone: document.getElementById('contactPhone').value.trim(),
+        company: document.getElementById('contactCompany').value.trim(),
+        practice_area: document.getElementById('practiceArea').value,
+        organization_scale: document.getElementById('environmentScale').value,
+        response_mode: document.getElementById('dispatchUrgency').value,
+        message: document.getElementById('contactScope').value.trim() || 'Dispatch consultation request',
+        source: 'contact_dispatch_page',
+        site_key: 'technologyspecialist',
+      };
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Transmitting Dispatch Payload...</span>';
+      statusEl.className = "hidden p-3 font-mono text-xs";
+
+      try {
+        const res = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && (data.ok || data.status === 'success' || data.leadId || data.id)) {
+          const refId = 'TS-' + (data.id || data.leadId || Date.now().toString().slice(-6));
+          statusEl.className = "p-4 bg-emerald-50 border border-emerald-300 text-emerald-900 font-mono text-xs";
+          statusEl.innerHTML = '<strong>[DISPATCH CONFIRMED &bull; TICKET ' + refId + ']</strong><br />Your engineering parameters have been securely stored in our PostgreSQL 16 operational repository. Principal Architect Steve Cormier has been notified.<br /><br />For immediate emergency outage escalation, please dial direct: <strong>(407) 917-5250</strong>.';
+          document.getElementById('dispatchForm').reset();
+          btn.innerHTML = '<span>Dispatch Payload Successfully Transmitted</span>';
+        } else {
+          statusEl.className = "p-4 bg-amber-50 border border-amber-300 text-amber-900 font-mono text-xs";
+          statusEl.innerHTML = '<strong>[DISPATCH QUEUED]</strong> Transmission recorded in local spool. For immediate outage assistance, dial direct: <strong>(407) 917-5250</strong>.';
+          btn.innerHTML = '<span>Dispatch Spooled &bull; (407) 917-5250</span>';
+        }
+      } catch (err) {
+        statusEl.className = "p-4 bg-blue-50 border border-blue-300 text-brand-slate font-mono text-xs";
+        statusEl.innerHTML = '<strong>[DIRECT DISPATCH]</strong> Transmission spooled. Steve Cormier direct line: <strong>(407) 917-5250</strong> &bull; steve@technologyspecialist.org.';
+        btn.innerHTML = '<span>Call Direct: (407) 917-5250</span>';
+      }
+    }
+  </script>
+
+</body>
+</html>

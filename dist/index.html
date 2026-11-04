@@ -17,6 +17,7 @@
 
   <!-- Logo Studio Client Runtime -->
   <script src="/logo-studio.js" defer></script>
+  <script src="/mega-menu.js" defer></script>
 
   <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,7 +111,8 @@
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
         <div class="flex items-center gap-4 text-[10px] shrink-0">
-          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
+          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
           <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
           <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
         </div>
@@ -131,11 +133,11 @@
 
         <!-- Desktop Navigation Matrix -->
         <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
-          <a href="#matrix" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Practice Matrix (09)</a>
-          <a href="#inspector" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Hypervisor Inspector</a>
-          <a href="#triage" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Architecture Triage</a>
-          <a href="#heritage" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Since 1990</a>
-          <a href="/logos" class="px-3 py-2 text-brand-cobalt hover:text-blue-700 hover:bg-blue-50 font-bold transition-colors">Logo Studio (10)</a>
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1"><span>Practice Areas (10)</span><span class="text-[9px] text-slate-400">&darr;</span></a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1"><span>Leadership</span><span class="text-[9px] text-slate-400">&darr;</span></a>
+          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Logo Studio (10)</a>
+          <a href="/contact" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Contact &amp; Dispatch</a>
           <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
         </nav>
 
@@ -144,9 +146,13 @@
           <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
             <span>(407) 917-5250</span>
           </a>
-          <a href="#triage" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
-            Request Engineering Support
+          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+            Request Dispatch
           </a>
+          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+            <span class="sr-only">Open Menu</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -183,7 +189,7 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap items-center gap-3 mb-10">
-            <a href="#triage" class="px-6 py-3.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow transition-colors flex items-center gap-2">
+            <a href="/contact" class="px-6 py-3.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow transition-colors flex items-center gap-2">
               <span>Initiate Infrastructure Triage</span>
               <span>&rarr;</span>
             </a>
@@ -277,11 +283,11 @@
       <div>
         <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block mb-1">PRACTICE ARCHITECTURE</span>
         <h2 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-brand-slate">
-          The 9 Enterprise Systems Disciplines
+          The 10 Enterprise Systems Disciplines
         </h2>
       </div>
       <div class="font-mono text-xs text-slate-500">
-        SYS-01 THROUGH SYS-09 &bull; EXPAND ANY DISCIPLINE FOR PROTOCOL SPECS
+        SYS-01 THROUGH SYS-10 &bull; EXPAND ANY DISCIPLINE FOR PROTOCOL SPECS
       </div>
     </div>
 
@@ -318,6 +324,11 @@
           <div>&bull; DKIM dual-key 2048-bit cryptographic rotation</div>
           <div>&bull; Microsoft Defender for Office 365 Plan 2 Safe Attachments</div>
           <div>&bull; Multi-Geo tenant data residency and retention lifecycles</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/virtualization" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-02 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -351,6 +362,11 @@
           <div>&bull; Dell PowerEdge, HPE ProLiant, and Cisco UCS compute chassis</div>
           <div>&bull; Zero-downtime rolling firmware &amp; hypervisor patch cycles</div>
           <div>&bull; Veeam Hardened Linux Repositories with S3 object immutability</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/hardening" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-03 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -384,6 +400,11 @@
           <div>&bull; Host-based EDR deployment and real-time behavioral watch</div>
           <div>&bull; Strict AppLocker / Software Restriction Policies</div>
           <div>&bull; Encrypted RPC &amp; Kerberos-only Active Directory communication</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/voip-ippbx" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-04 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -417,6 +438,11 @@
           <div>&bull; Codec support: G.711u, G.722 HD Audio, Opus wideband</div>
           <div>&bull; Microsoft Teams Direct Routing gateway integration</div>
           <div>&bull; Survivable Remote Site Telephony (SRST) for branch continuity</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/network-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-05 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -450,6 +476,11 @@
           <div>&bull; WireGuard kernel-speed mesh tunnels with AES-GCM encryption</div>
           <div>&bull; Link Aggregation (802.3ad LACP) across redundant switch stacks</div>
           <div>&bull; Deep packet inspection with flow export (NetFlow / sFlow)</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/mobile-device-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-06 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -483,6 +514,11 @@
           <div>&bull; Automated per-app VPN and micro-tunnels for corporate assets</div>
           <div>&bull; Real-time jailbreak/root detection with automatic quarantine</div>
           <div>&bull; Remote selective wipe leaving personal employee photos intact</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/remote-desktop" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-07 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -516,6 +552,11 @@
           <div>&bull; Duo Security &amp; Microsoft Entra ID Conditional Access MFA</div>
           <div>&bull; RemoteApp application delivery without desktop overhead</div>
           <div>&bull; Automated idle session logoff and lock timeouts</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/onsite-support" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-08 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -549,6 +590,11 @@
           <div>&bull; Online double-conversion UPS battery runtime calibration</div>
           <div>&bull; Server motherboard, RAID controller &amp; SAS drive replacement</div>
           <div>&bull; Datacenter cable dressing and rack thermal airflow management</div>
+        <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/it-consultancy" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-09 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -764,7 +810,102 @@
     </div>
   </section>
 
+    <!-- ===================================================================== -->
+  <!-- 3.5 EXECUTIVE PRINCIPAL SPOTLIGHT (STEVE CORMIER)                     -->
   <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="hairline-grid bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0">
+      
+      <!-- Photo Column (4 Cols) -->
+      <div class="lg:col-span-4 p-6 sm:p-8 bg-slate-50 hairline-b lg:hairline-b-0 lg:hairline-r flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3 font-mono text-[10px] text-slate-500 pb-2 hairline-b">
+            <span>PRINCIPAL SPOTLIGHT</span>
+            <span class="text-brand-cobalt font-bold">EST. 1990</span>
+          </div>
+          <div class="bg-white p-2 border border-brand-line shadow-sm">
+            <img src="/images/steve/steve-cormier-portrait.png" alt="Steve Cormier" class="w-full h-auto object-cover border border-slate-200" />
+            <div class="mt-2.5 pt-2 hairline-t flex items-center justify-between font-mono text-[10px] text-slate-500">
+              <span class="font-bold text-brand-slate">STEVE CORMIER</span>
+              <span>ORLANDO / KISSIMMEE</span>
+            </div>
+          </div>
+          
+          <div class="mt-4 space-y-1.5 font-mono text-[11px]">
+            <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 text-[10px]">PRACTICE:</span>
+              <span class="font-bold text-brand-slate">Founder (1990 - Pres.)</span>
+            </div>
+            <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 text-[10px]">SONITOR:</span>
+              <span class="font-bold text-brand-cobalt">VP Support (2010 - Pres.)</span>
+            </div>
+            <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
+              <span class="text-slate-500 text-[10px]">MOTORSPORT:</span>
+              <span class="font-bold text-slate-800">Lead Instructor TDX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 hairline-t">
+          <a href="/about" class="block w-full py-2 bg-slate-100 hover:bg-slate-200 text-brand-slate text-center font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+            View Full Biography &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Credentials & Narrative Column (8 Cols) -->
+      <div class="lg:col-span-8 p-6 sm:p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 border border-blue-200 font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+              EXECUTIVE LEADERSHIP &bull; DIRECT PRINCIPAL ENGINEERING
+            </span>
+          </div>
+
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-brand-slate mb-2">
+            Steve Cormier
+          </h2>
+          <p class="font-heading text-base sm:text-lg text-brand-cobalt font-semibold mb-4">
+            Founder &amp; Principal Systems Architect, Technology Specialist<br />
+            Vice President, Technical &amp; Customer Support at Sonitor Technologies
+          </p>
+
+          <div class="p-3 bg-slate-50 border border-brand-line mb-5 font-mono text-xs text-slate-600 flex flex-wrap items-center gap-2">
+            <span class="px-2 py-0.5 bg-white border border-brand-line font-bold text-brand-slate">U.S. Air Force Veteran</span>
+            <span class="px-2 py-0.5 bg-white border border-brand-line font-bold text-brand-slate">Microsoft Certified</span>
+            <span class="px-2 py-0.5 bg-white border border-brand-line font-bold text-brand-slate">B.S. Criminal Justice</span>
+            <span class="px-2 py-0.5 bg-white border border-brand-line font-bold text-brand-cobalt">Lead Instructor, Track Day Xperience (TDX)</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+            Steve Cormier has led support at Sonitor since 2010, first as Director of Support and now as Vice President, Technical &amp; Customer Support. He built a complete global support organization, diagnostic tooling, and escalation processes supporting major healthcare providers as their highest-level technical resource and final point of escalation.
+          </p>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+            Before Sonitor, Steve served on active duty in the U.S. Air Force Security Police at Offutt Air Force Base in Nebraska. Since 1990, he has operated his own IT network design, server virtualization (VMware ESXi and Windows Hyper-V), and support business for Orlando and Central Florida organizations. Off the clock, Steve is the Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway, bringing track-tested telemetry precision to enterprise systems architecture.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-5 hairline-t flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <a href="/about" class="px-5 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+              Read Full Executive Biography &rarr;
+            </a>
+            <a href="/contact" class="px-5 py-2.5 bg-slate-50 hover:bg-white text-brand-slate border border-brand-line font-mono text-xs font-bold uppercase tracking-wider transition-colors">
+              Consult with Steve &rarr;
+            </a>
+          </div>
+          <div class="font-mono text-xs text-slate-500">
+            Direct Line: <strong class="text-brand-slate">(407) 917-5250</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ===================================================================== -->
   <!-- 4. HERITAGE & PRINCIPAL SYSTEMS ENGINEERING ("SINCE 1990")            -->
   <!-- ===================================================================== -->
   <section id="heritage" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -895,11 +1036,11 @@
             PRACTICE MATRIX (PART I)
           </span>
           <ul class="space-y-1.5 font-mono text-xs text-slate-600">
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-01: Microsoft 365 &amp; Entra ID</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-03: Server &amp; Network Hardening</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-04: VoIP &amp; SIP Trunking</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-05: Enterprise L2/L3 Network</a></li>
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt">SYS-01: Microsoft 365 &amp; Entra ID</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt">SYS-03: Server &amp; Network Hardening</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt">SYS-04: VoIP &amp; SIP Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt">SYS-05: Enterprise L2/L3 Network</a></li>
           </ul>
         </div>
 
@@ -909,11 +1050,14 @@
             PRACTICE MATRIX (PART II)
           </span>
           <ul class="space-y-1.5 font-mono text-xs text-slate-600">
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-06: Mobile Device Management</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-07: Remote Desktop Farms</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-08: Onsite Central FL Support</a></li>
-            <li><a href="#matrix" class="hover:text-brand-cobalt">SYS-09: Principal IT Consultancy</a></li>
-            <li><a href="#triage" class="hover:text-brand-cobalt text-brand-cobalt font-bold">&bull; Infrastructure Triage</a></li>
+            <li><a href="/services/mobile-device-management" class="hover:text-brand-cobalt">SYS-06: Mobile Device Management</a></li>
+            <li><a href="/services/remote-desktop" class="hover:text-brand-cobalt">SYS-07: Remote Desktop Farms</a></li>
+            <li><a href="/services/onsite-support" class="hover:text-brand-cobalt">SYS-08: Onsite Central FL Support</a></li>
+            <li><a href="/services/it-consultancy" class="hover:text-brand-cobalt">SYS-09: Principal IT Consultancy</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt font-bold text-brand-cobalt">SYS-10: Enterprise AI &amp; Copilot</a></li>
+            <li><a href="/tools" class="hover:text-brand-cobalt text-sky-600 font-bold">&bull; Engineering Calculators (03)</a></li>
+            <li><a href="/about" class="hover:text-brand-cobalt">&bull; About Steve Cormier (Est. 1990)</a></li>
+            <li><a href="/contact" class="hover:text-brand-cobalt text-brand-cobalt font-bold">&bull; Dispatch &amp; Consultation</a></li>
           </ul>
         </div>
 

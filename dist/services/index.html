@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise Systems Practice Catalog (10 Practices) | Technology Specialist</title>
+  <meta name="description" content="Complete 10-Practice Enterprise Engineering Catalog and SLA Comparison Matrix. Principal systems architecture by Steve Cormier since 1990." />
+  <meta name="author" content="Steve Cormier - Technology Specialist" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" id="site-favicon" />
+  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="twitter:image" content="/images/og-image.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <!-- Logo Studio Client Runtime & Mega Menu -->
+  <script src="/logo-studio.js" defer></script>
+  <script src="/mega-menu.js" defer></script>
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cobalt: '#0052CC',
+              cyan: '#0284C7',
+              slate: '#0F172A',
+              card: '#FFFFFF',
+              surface: '#FAFAFC',
+              silver: '#F1F5F9',
+              line: '#CBD5E1',
+              darkLine: '#334155',
+              success: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --color-brand: #0052CC;
+      --color-cyan: #0284C7;
+      --color-slate: #0F172A;
+      --color-surface: #FAFAFC;
+      --color-hairline: #CBD5E1;
+      --color-success: #059669;
+    }
+    body {
+      background-color: #FAFAFC;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .blueprint-bg {
+      background-image: linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hairline-grid {
+      border: 1px solid #CBD5E1;
+    }
+    .hairline-b {
+      border-bottom: 1px solid #CBD5E1;
+    }
+    .hairline-t {
+      border-top: 1px solid #CBD5E1;
+    }
+    .hairline-r {
+      border-right: 1px solid #CBD5E1;
+    }
+    .hairline-l {
+      border-left: 1px solid #CBD5E1;
+    }
+  </style>
+</head>
+<body class="blueprint-bg text-brand-slate antialiased">
+
+  
+  <!-- ===================================================================== -->
+  <!-- 0. TOP TECHNICAL TELEMETRY BAR & STICKY ARCHITECTURAL HEADER          -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md hairline-b">
+    <!-- Monospace Telemetry Strip -->
+    <div class="bg-brand-slate text-white text-[11px] font-mono font-bold tracking-wider uppercase py-2 px-4 hairline-b">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
+          <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
+        </div>
+        <div class="flex items-center gap-4 text-[10px] shrink-0">
+          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+          <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Architectural Nav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Monogram Unit -->
+        <a href="/" class="flex items-center gap-3.5 group">
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <div class="hidden md:block hairline-l pl-3.5">
+            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
+            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Matrix -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
+          <a href="/" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Home</a>
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 text-brand-cobalt bg-slate-50">
+            <span>Practice Matrix (10)</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/services/virtualization" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Virtualization</a>
+          <a href="/services/microsoft-365" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">M365 &amp; Cloud</a>
+          <a href="/services/voip-ippbx" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">VoIP &amp; SIP</a>
+          <a href="/services/hardening" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Hardening</a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 ">
+            <span>About Steve</span>
+            <span class="text-[9px] text-slate-400">&darr;</span>
+          </a>
+          <a href="/tools" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
+          <a href="/logos" class="px-2.5 py-2 text-brand-cobalt hover:text-blue-700 hover:bg-blue-50 font-bold transition-colors">Logos (10)</a>
+          <a href="/contact" class="px-2.5 py-2 text-slate-700 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ">Contact</a>
+        </nav>
+
+        <!-- Header Action CTA -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
+            <span>(407) 917-5250</span>
+          </a>
+          <a href="/contact" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+            Dispatch Request
+          </a>
+          <!-- Mobile Menu Toggle Button -->
+          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-brand-slate border border-brand-line hover:bg-slate-100" aria-label="Toggle Navigation Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="font-mono text-[11px] text-slate-500 mb-6 flex items-center gap-2 uppercase tracking-wider" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-brand-cobalt">Home</a>
+      <span>/</span>
+      <span class="text-brand-slate font-bold">Services Directory</span>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-10 shadow-sm">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 hairline-b">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-slate-100 border border-brand-line font-mono text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-4">
+            <span class="w-1.5 h-1.5 bg-brand-cobalt"></span>
+            CATALOG // 10 SPECIALIZED ARCHITECTURAL PRACTICES
+          </div>
+          <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-slate tracking-tight">
+            Enterprise Systems Engineering Catalog
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            For 36 years since 1990, Technology Specialist has delivered vendor-neutral infrastructure engineering, hypervisor clustering, identity hardening, and practical enterprise AI. Every practice area is designed, implemented, and maintained directly under Principal Systems Architect Steve Cormier.
+          </p>
+        </div>
+
+        <div class="font-mono text-xs text-slate-500 bg-slate-50 p-4 border border-brand-line shrink-0 space-y-1.5">
+          <div class="text-brand-slate font-bold uppercase tracking-wide">Emergency Direct Dispatch</div>
+          <div class="text-lg font-bold text-brand-cobalt">
+            <a href="tel:+14079175250" class="hover:underline">(407) 917-5250</a>
+          </div>
+          <div class="text-[10px] text-slate-500">Central Florida Onsite &bull; Nationwide Remote</div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 font-mono text-xs">
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase block">Principal Experience</span>
+          <span class="font-bold text-base text-brand-slate">36 Years (1990)</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase block">Active Practices</span>
+          <span class="font-bold text-base text-brand-slate">10 Full Disciplines</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase block">Response SLA</span>
+          <span class="font-bold text-base text-brand-cobalt">&lt; 15 Min Priority</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase block">Vendor Position</span>
+          <span class="font-bold text-base text-emerald-600">100% Vendor Neutral</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master 10-Practice Grid -->
+    <section class="mb-14">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-brand-slate uppercase tracking-tight">
+            Comprehensive Practice Matrix
+          </h2>
+          <p class="font-mono text-xs text-slate-500 mt-1">Select any practice area below for deep-dive specifications, schematics, and case blueprints.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-01</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Cloud & Identity Governance</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/microsoft-365">Microsoft Office & M365 Organization Management</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Architectural tenant governance, Entra ID zero-trust posture, strict email deliverability enforcement, and data boundary protection for organizations running on Microsoft 365.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Entra ID & Identity Posture:</strong> Risk-based Conditional Access policies.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Exchange Online & Mail Flow:</strong> Strict DMARC p=reject implementation.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>SharePoint & Teams Data Governance:</strong> Comprehensive permission audits.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>p=reject (100% Strict)</strong></span>
+            <a href="/services/microsoft-365" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-02</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Compute & Hypervisor Infrastructure</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/virtualization">Virtual Machine & Server Management (VMware ESXi & Windows Hyper-V)</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Mission-critical hypervisor cluster engineering, all-flash storage networking, zero-downtime workload migrations, and hardened server virtualization built for continuous uptime.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>High-Availability Hypervisor Clusters:</strong> VMware vSphere ESXi 7.0/8.0 and Windows Server 2022/2025 Hyper-V Failover Clusters.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>SAN, NAS & All-Flash Storage Fabrics:</strong> High-performance iSCSI.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>P2V & Cross-Platform Migrations:</strong> Live physical-to-virtual (P2V) server conversions.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>99.999% Availability</strong></span>
+            <a href="/services/virtualization" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-03</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Security & Hardening Architecture</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/hardening">Server & Network Hardening</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Defensive systems engineering, CIS Benchmark OS lockdowns, zero-trust East-West network segmentation, and Active Directory privilege tiering to eliminate ransomware lateral movement.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>CIS Benchmark OS Hardening:</strong> Automated Group Policy and PowerShell DSC baselines implementing Center for Internet Security (CIS) Level 1 and Level 2 security controls across Windows Server and Linux hosts..</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>East-West Internal Segmentation:</strong> Elimination of flat corporate networks through Layer 3 inter-VLAN stateful inspection.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Active Directory Privilege Tiering:</strong> Strict structural separation between Tier 0 (Domain Controllers.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>CIS Level 2 Hardened</strong></span>
+            <a href="/services/hardening" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-04</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Telephony & Voice Systems</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/voip-ippbx">VoIP Phone Systems & IP-PBX SIP Trunking</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Carrier-grade IP-PBX telephony architecture, redundant SIP trunk routing, Layer 2/3 QoS voice prioritization, and dynamic E911 compliance for modern distributed businesses.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Enterprise IP-PBX Telephony Architecture:</strong> On-premises appliance.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Redundant SIP Trunking & Failover:</strong> Dual-carrier SIP trunk connections with automated route advance.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Voice VLAN Segmentation & DSCP QoS:</strong> Dedicated 802.1Q voice VLANs configured with 802.1p CoS and DiffServ DSCP 46 Expedited Forwarding (EF) queues to prevent voice stutter during peak file transfers..</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>MOS Score 4.4+ Peak</strong></span>
+            <a href="/services/voip-ippbx" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-05</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Network & Core Switching Fabric</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/network-management">Enterprise Network Management</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Rock-solid enterprise network engineering, managed Layer 2/3 core switching, multi-gigabit Wi-Fi 6E/7 coverage, multi-WAN carrier failover, and deep packet diagnostics.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Managed Layer 2/3 Core Switching:</strong> Core.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>High-Density Enterprise Wi-Fi:</strong> Predictive RF spectrum planning.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Multi-WAN Failover & Dynamic Routing:</strong> Dual-carrier WAN integration with sub-second health probing.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>Line-Rate Multi-Gig</strong></span>
+            <a href="/services/network-management" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-06</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Endpoint & Mobility Architecture</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/mobile-device-management">Mobile Device Management (MDM)</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Unified mobile endpoint governance, zero-touch Apple and Android device enrollment, air-gapped BYOD application protection, and rapid cryptographic remote wiping.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Zero-Touch Automated Provisioning:</strong> Integration with Apple Business Manager (ABM).</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>BYOD Containerization (MAM):</strong> Mobile Application Management without enrollment.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Conditional Access Posture Checks:</strong> Blocking authentication requests from devices that fail compliance benchmarks (outdated OS versions.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>Zero-Touch Enrollment</strong></span>
+            <a href="/services/mobile-device-management" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-07</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Virtual Workspace & RDS</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/remote-desktop">Remote Desktop & Workforce Infrastructure</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Hardened remote workspace engineering, secure DMZ reverse proxy gateways, multi-factor authentication, low-latency session farms, and sub-3-second profile load times.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Hardened DMZ Gateway Architecture:</strong> Terminating external remote workforce connections exclusively over HTTPS port 443 with strict TLS 1.3 ciphers.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Mandatory Multi-Factor Authentication:</strong> Integrating Microsoft Entra ID MFA.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>High-Availability RDSH Server Farms:</strong> Load-balanced Windows Server 2022/2025 Remote Desktop Session Host clusters with connection broker intelligence.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>Port 443 HTTPS Only</strong></span>
+            <a href="/services/remote-desktop" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-08</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Field Engineering & Physical Infrastructure</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/onsite-support">Onsite Engineering & Field Support</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Rapid physical onsite dispatch across Orlando, Kissimmee, and Central Florida. Server rack buildouts, structured cabling certification, and emergency hardware recovery led directly by Steve Cormier.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Orlando & Kissimmee Emergency Onsite Dispatch:</strong> Rapid physical presence for critical server room outages.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Server Rack Buildouts & Elevation Standards:</strong> Professional 42U rack mounting.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Structured Cabling Certification & Repair:</strong> Testing and certification of Category 6/6A copper and OM3/OM4 fiber optic runs using calibrated Fluke Networks analyzers for wiremap.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>Orlando & Kissimmee</strong></span>
+            <a href="/services/onsite-support" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-09</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Strategic Advisory & vCTO</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/it-consultancy">Principal IT Consultancy & Systems Architecture</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Vendor-neutral systems architecture, comprehensive infrastructure audits, M&A technical due diligence, and strategic cap-ex budgeting backed by 36 years of executive technology leadership.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>36-Year Vendor-Neutral Infrastructure Audits:</strong> Uncompromising technical assessments examining physical cabling.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>M&A Technical Due Diligence:</strong> Pre-acquisition evaluations identifying hidden IT debt.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Cap-Ex & Op-Ex Strategic Lifecycle Roadmaps:</strong> 3-to-5 year capital expense budgeting plans that align hardware refresh cycles with corporate growth.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>36 Years Systems Leadership</strong></span>
+            <a href="/services/it-consultancy" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="hairline-grid bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-brand-cobalt transition-colors group">
+          <div>
+            <div class="flex items-center justify-between pb-3 mb-4 hairline-b font-mono text-xs">
+              <span class="font-bold text-brand-cobalt bg-blue-50 px-2 py-0.5 border border-blue-200">SYS-10</span>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Enterprise AI & Automation</span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-slate group-hover:text-brand-cobalt transition-colors">
+              <a href="/services/ai-implementation">Enterprise AI Implementation, Copilot Governance & Workflow Automation</a>
+            </h3>
+
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              Practical enterprise artificial intelligence deployment, pre-Copilot permission governance, sovereign air-gapped LLM systems, and intelligent workflow automation built for data sovereignty.
+            </p>
+
+            <!-- Key Capabilities List -->
+            <div class="mt-5 pt-4 hairline-t space-y-1.5 font-mono text-[11px] text-slate-600">
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Microsoft 365 Copilot Permission Auditing:</strong> Exhaustive pre-AI security audit across SharePoint.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Private & Sovereign LLM Deployment:</strong> On-premises and sovereign cloud deployment of open-weight models (Llama 3.</span>
+              </div>
+              
+              <div class="flex items-start gap-2">
+                <span class="text-brand-cobalt font-bold shrink-0">&bull;</span>
+                <span><strong>Enterprise Retrieval-Augmented Generation (RAG):</strong> High-accuracy vector knowledge bases built on PostgreSQL 16 pgvector.</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-500 text-[10px]">SLA: <strong>100% Air-Gapped Option</strong></span>
+            <a href="/services/ai-implementation" class="inline-flex items-center gap-1 font-bold text-brand-cobalt hover:underline">
+              <span>View Full Specification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Enterprise SLA & Support Tier Comparison Matrix -->
+    <section class="hairline-grid bg-white p-6 sm:p-10 mb-14 shadow-sm">
+      <div class="mb-6 pb-4 hairline-b">
+        <span class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-widest block mb-1">
+          OPERATIONAL READINESS &bull; SLA MATRIX
+        </span>
+        <h2 class="font-heading text-2xl font-bold text-brand-slate">
+          Support Tiers &amp; Service Level Agreements
+        </h2>
+        <p class="text-xs text-slate-600 mt-1">Direct escalation pathways with guaranteed response time windows and principal engineering lead.</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left font-mono text-xs border border-brand-line">
+          <thead>
+            <tr class="bg-brand-slate text-white text-[11px] uppercase tracking-wider">
+              <th class="p-3 border-r border-slate-700">Service Tier</th>
+              <th class="p-3 border-r border-slate-700">Target Response</th>
+              <th class="p-3 border-r border-slate-700">Coverage Window</th>
+              <th class="p-3 border-r border-slate-700">Dispatch Mode</th>
+              <th class="p-3">Included Practices</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brand-line">
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-brand-slate border-r border-brand-line">Tier 1: Critical Incident</td>
+              <td class="p-3 text-red-600 font-bold border-r border-brand-line">&lt; 15 Minutes</td>
+              <td class="p-3 border-r border-brand-line">24/7/365 Continuous</td>
+              <td class="p-3 border-r border-brand-line">Direct Phone / Rapid Dispatch</td>
+              <td class="p-3">Hypervisor outage, SAN failover, ransomware containment, WAN drop</td>
+            </tr>
+            <tr class="hover:bg-slate-50 bg-slate-50/50">
+              <td class="p-3 font-bold text-brand-slate border-r border-brand-line">Tier 2: Managed Operations</td>
+              <td class="p-3 text-brand-cobalt font-bold border-r border-brand-line">&lt; 1 Hour</td>
+              <td class="p-3 border-r border-brand-line">Mon - Fri, 7 AM - 7 PM EST</td>
+              <td class="p-3 border-r border-brand-line">Postgres Lead Vault / Portal</td>
+              <td class="p-3">M365 user administration, VLAN modifications, backup audits, VoIP adjustments</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-brand-slate border-r border-brand-line">Tier 3: Strategic Architecture</td>
+              <td class="p-3 font-bold text-slate-700 border-r border-brand-line">Scheduled Sprints</td>
+              <td class="p-3 border-r border-brand-line">Project Maintenance Windows</td>
+              <td class="p-3 border-r border-brand-line">Onsite Audit / Exec Reviews</td>
+              <td class="p-3">Enterprise AI integration, M&amp;A due diligence, datacenter cutovers, 5yr CapEx</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Steve Cormier Architectural Pedigree Banner -->
+    <section class="hairline-grid bg-white p-6 sm:p-8 mb-14">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="/images/steve/steve-cormier-portrait.png" alt="Steve Cormier" class="w-24 h-24 sm:w-28 sm:h-28 object-cover border border-brand-line shrink-0" onerror="this.src='/images/logo.png';" />
+        <div class="flex-1">
+          <div class="font-mono text-[10px] font-bold text-brand-cobalt uppercase tracking-wider mb-1">
+            PRINCIPAL ENGINEERING GOVERNANCE // SINCE 1990
+          </div>
+          <h3 class="font-heading text-xl font-bold text-brand-slate">
+            Direct Principal Accountability on Every System
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Technology Specialist is not an anonymous call center or rotating technician dispatch. Every architecture plan, hypervisor migration, firewall rule, and AI deployment is overseen personally by Steve Cormier. U.S. Air Force Veteran (Security Police, Offutt AFB), VP of Technical &amp; Customer Support at Sonitor since 2010, Microsoft Certified, and Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway.
+          </p>
+        </div>
+        <div class="shrink-0 flex flex-col gap-2 w-full md:w-auto">
+          <a href="/about" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-brand-slate font-mono text-xs font-bold uppercase tracking-wider text-center border border-brand-line transition-colors">
+            Read Full Biography &rarr;
+          </a>
+          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider text-center transition-colors">
+            Contact Steve Direct &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <!-- ===================================================================== -->
+  <!-- STRUCTURAL BLUEPRINT FOOTER                                           -->
+  <!-- ===================================================================== -->
+  <footer class="bg-white hairline-t mt-16">
+    <!-- Top Footer Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Col 1: Identity & Credentials -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="/images/logos/concept-01-hypervisor-blades.svg" alt="Technology Specialist" class="h-10 w-auto object-contain" />
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed font-normal">
+            Technology Specialist provides mission-critical enterprise virtualization, M365 tenant governance, VoIP telephony, network engineering, and enterprise AI implementation. Principal-led by Steve Cormier since 1990.
+          </p>
+          <div class="font-mono text-[10px] text-slate-500 bg-slate-50 p-3 border border-brand-line space-y-1">
+            <div class="text-brand-slate font-bold">Steve Cormier, Principal Systems Architect</div>
+            <div>&bull; 36 Years Enterprise Architecture (Est. 1990)</div>
+            <div>&bull; VP Technical &amp; Customer Support, Sonitor (2010 - Pres.)</div>
+            <div>&bull; U.S. Air Force Veteran (Security Police, Offutt AFB)</div>
+            <div>&bull; Microsoft Certified Systems Professional</div>
+            <div>&bull; Lead Instructor, Track Day Xperience (TDX) @ Sebring</div>
+          </div>
+          <div class="font-mono text-[10px] text-slate-500">
+            <div>3523 Forest Ridge Ln. &bull; Kissimmee, FL 34741</div>
+            <div class="text-brand-slate font-bold mt-1">Direct Dispatch: <a href="tel:+14079175250" class="text-brand-cobalt hover:underline">(407) 917-5250</a></div>
+          </div>
+        </div>
+
+        <!-- Col 2: Practice Areas 01-05 -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            PRACTICE MATRIX (PART I)
+          </span>
+          <ul class="space-y-2 font-mono text-xs text-slate-600">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt transition-colors">SYS-01: Microsoft 365 Architecture</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt transition-colors">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt transition-colors">SYS-03: Server &amp; Network Hardening</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt transition-colors">SYS-04: VoIP &amp; SIP Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt transition-colors">SYS-05: Enterprise L2/L3 Network</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Practice Areas 06-10 -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            PRACTICE MATRIX (PART II)
+          </span>
+          <ul class="space-y-2 font-mono text-xs text-slate-600">
+            <li><a href="/services/mobile-device-management" class="hover:text-brand-cobalt transition-colors">SYS-06: Mobile Device Management</a></li>
+            <li><a href="/services/remote-desktop" class="hover:text-brand-cobalt transition-colors">SYS-07: Remote Desktop Farms</a></li>
+            <li><a href="/services/onsite-support" class="hover:text-brand-cobalt transition-colors">SYS-08: Onsite Central FL Support</a></li>
+            <li><a href="/services/it-consultancy" class="hover:text-brand-cobalt transition-colors">SYS-09: Principal IT Consultancy</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt text-brand-cobalt font-bold transition-colors">SYS-10: Enterprise AI &amp; Copilot</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform & Direct Dispatch -->
+        <div>
+          <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
+            SOVEREIGN PLATFORM &amp; ACCESS
+          </span>
+          <div class="font-mono text-[11px] text-slate-600 space-y-2 mb-4">
+            <div>&bull; Runtime: GreenTree Sovereign Spoke v3.0</div>
+            <div>&bull; Vault: Dedicated PostgreSQL 16</div>
+            <div>&bull; Telemetry: East-West Air-Gapped Monitoring</div>
+            <div>&bull; Security: CIS Level 2 Benchmarks</div>
+          </div>
+          <div class="space-y-2">
+            <a href="/about" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              About Steve Cormier &rarr;
+            </a>
+            <a href="/contact" class="block w-full py-2 px-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              Dispatch Request &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & SLA Strip -->
+    <div class="bg-slate-50 py-4 px-4 sm:px-6 lg:px-8 hairline-t text-[11px] font-mono text-slate-500">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div>
+          &copy; 1990 - 2026 Technology Specialist. All rights reserved. Technology Advice You Can Trust.
+        </div>
+        <div class="flex items-center gap-3">
+          <span>Kissimmee, FL 34741</span>
+          <span>&bull;</span>
+          <a href="tel:+14079175250" class="text-brand-slate font-bold hover:underline">(407) 917-5250</a>
+          <span>&bull;</span>
+          <a href="/logos" class="text-brand-cobalt hover:underline">Vector Logo Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+</body>
+</html>
