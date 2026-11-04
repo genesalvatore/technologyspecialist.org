@@ -209,7 +209,7 @@ const spotlightHtml = `  <!-- ==================================================
               <span class="font-bold text-brand-slate">Founder (1990 - Pres.)</span>
             </div>
             <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
-              <span class="text-slate-500 text-[10px]">SONITOR:</span>
+              <span class="text-slate-500 text-[10px]">HEALTHCARE RTLS:</span>
               <span class="font-bold text-brand-cobalt">VP Support (2010 - Pres.)</span>
             </div>
             <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
@@ -241,7 +241,7 @@ const spotlightHtml = `  <!-- ==================================================
           </h2>
           <p class="font-heading text-base sm:text-lg text-brand-cobalt font-semibold mb-4">
             Founder &amp; Principal Systems Architect, Technology Specialist<br />
-            Vice President, Technical &amp; Customer Support at Sonitor Technologies
+            Vice President, Global Technical &amp; Customer Support in Enterprise Healthcare RTLS
           </p>
 
           <div class="p-3 bg-slate-50 border border-brand-line mb-5 font-mono text-xs text-slate-600 flex flex-wrap items-center gap-2">
@@ -252,10 +252,10 @@ const spotlightHtml = `  <!-- ==================================================
           </div>
 
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-            Steve Cormier has led support at Sonitor since 2010, first as Director of Support and now as Vice President, Technical &amp; Customer Support. He built a complete global support organization, diagnostic tooling, and escalation processes supporting major healthcare providers as their highest-level technical resource and final point of escalation.
+            Steve Cormier has led global support for an enterprise healthcare RTLS leader since 2010, first as Director of Support and now as Vice President, Technical &amp; Customer Support. He built a complete global support organization, diagnostic tooling, and escalation processes supporting major healthcare providers as their highest-level technical resource and final point of escalation.
           </p>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-            Before Sonitor, Steve served on active duty in the U.S. Air Force Security Police at Offutt Air Force Base in Nebraska. Since 1990, he has operated his own IT network design, server virtualization (VMware ESXi and Windows Hyper-V), and support business for Orlando and Central Florida organizations. Off the clock, Steve is the Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway, bringing track-tested telemetry precision to enterprise systems architecture.
+            Prior to his healthcare technology leadership, Steve served on active duty in the U.S. Air Force Security Police at Offutt Air Force Base in Nebraska. Since 1990, he has operated his own IT network design, server virtualization (VMware ESXi and Windows Hyper-V), and support business for Orlando and Central Florida organizations. Off the clock, Steve is the Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway, bringing track-tested telemetry precision to enterprise systems architecture.
           </p>
         </div>
 

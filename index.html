@@ -54,6 +54,15 @@
   </script>
 
   <style>
+    html, body {
+      overflow-x: clip !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      position: relative;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     :root {
       --color-brand: #0052CC;
       --color-cyan: #0284C7;
@@ -110,10 +119,10 @@
           <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
-        <div class="flex items-center gap-4 text-[10px] shrink-0">
-          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
-          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
-          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] min-w-0">
+          <a href="/tools" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors whitespace-nowrap">DIRECT DISPATCH: (407) 917-5250</a>
           <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
         </div>
       </div>
@@ -121,10 +130,10 @@
 
     <!-- Main Architectural Nav -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
         <!-- Logo & Monogram Unit -->
         <a href="/" class="flex items-center gap-3.5 group">
-          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-8 sm:h-11 max-w-[165px] sm:max-w-none w-auto object-contain shrink-0" />
           <div class="hidden md:block hairline-l pl-3.5">
             <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
             <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
@@ -142,14 +151,14 @@
         </nav>
 
         <!-- Header Action CTA -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
             <span>(407) 917-5250</span>
           </a>
-          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+          <a href="/contact" class="px-2.5 py-2 sm:px-4 sm:py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
             Request Dispatch
           </a>
-          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
             <span class="sr-only">Open Menu</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
@@ -266,8 +275,8 @@
         </div>
 
         <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[9px] font-mono text-slate-400">
-          <span>HOST: APPS1.GREENTREE CLUSTER</span>
-          <a href="#matrix" class="text-cyan-400 hover:underline">DRILL DOWN MATRIX (09) &rarr;</a>
+          <span>NOC: ORLANDO / KISSIMMEE, FL // EST. 1990</span>
+          <a href="#matrix" class="text-cyan-400 hover:underline">DRILL DOWN MATRIX (10) &rarr;</a>
         </div>
       </div>
 
@@ -275,7 +284,7 @@
   </section>
 
   <!-- ===================================================================== -->
-  <!-- 2. THE 9 CORE PRACTICE AREAS (SYS-01 TO SYS-09)                       -->
+  <!-- 2. THE 10 CORE PRACTICE AREAS (SYS-01 TO SYS-10)                      -->
   <!-- ===================================================================== -->
   <section id="matrix" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <!-- Section Header -->
@@ -325,8 +334,8 @@
           <div>&bull; Microsoft Defender for Office 365 Plan 2 Safe Attachments</div>
           <div>&bull; Multi-Geo tenant data residency and retention lifecycles</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/virtualization" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-02 Page &rarr;
+            <a href="/services/microsoft-365" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-01 Page &rarr;
             </a>
           </div>
         </div>
@@ -363,8 +372,8 @@
           <div>&bull; Zero-downtime rolling firmware &amp; hypervisor patch cycles</div>
           <div>&bull; Veeam Hardened Linux Repositories with S3 object immutability</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/hardening" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-03 Page &rarr;
+            <a href="/services/virtualization" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-02 Page &rarr;
             </a>
           </div>
         </div>
@@ -401,8 +410,8 @@
           <div>&bull; Strict AppLocker / Software Restriction Policies</div>
           <div>&bull; Encrypted RPC &amp; Kerberos-only Active Directory communication</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/voip-ippbx" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-04 Page &rarr;
+            <a href="/services/hardening" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-03 Page &rarr;
             </a>
           </div>
         </div>
@@ -439,8 +448,8 @@
           <div>&bull; Microsoft Teams Direct Routing gateway integration</div>
           <div>&bull; Survivable Remote Site Telephony (SRST) for branch continuity</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/network-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-05 Page &rarr;
+            <a href="/services/voip-ippbx" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-04 Page &rarr;
             </a>
           </div>
         </div>
@@ -477,8 +486,8 @@
           <div>&bull; Link Aggregation (802.3ad LACP) across redundant switch stacks</div>
           <div>&bull; Deep packet inspection with flow export (NetFlow / sFlow)</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/mobile-device-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-06 Page &rarr;
+            <a href="/services/network-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-05 Page &rarr;
             </a>
           </div>
         </div>
@@ -515,15 +524,15 @@
           <div>&bull; Real-time jailbreak/root detection with automatic quarantine</div>
           <div>&bull; Remote selective wipe leaving personal employee photos intact</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/remote-desktop" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-07 Page &rarr;
+            <a href="/services/mobile-device-management" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-06 Page &rarr;
             </a>
           </div>
         </div>
       </div>
 
       <!-- SYS-07: Remote Desktop & RDS -->
-      <div class="p-6 hairline-b lg:hairline-b-0 lg:hairline-r flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
+      <div class="p-6 hairline-b lg:hairline-r flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
         <div>
           <div class="flex items-center justify-between font-mono text-[10px] font-bold mb-3">
             <span class="text-brand-cobalt">SYS-07 // RDS-FARM</span>
@@ -553,15 +562,15 @@
           <div>&bull; RemoteApp application delivery without desktop overhead</div>
           <div>&bull; Automated idle session logoff and lock timeouts</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/onsite-support" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-08 Page &rarr;
+            <a href="/services/remote-desktop" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-07 Page &rarr;
             </a>
           </div>
         </div>
       </div>
 
       <!-- SYS-08: Onsite Engineering & Field Support -->
-      <div class="p-6 hairline-b lg:hairline-b-0 lg:hairline-r flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
+      <div class="p-6 hairline-b lg:hairline-r flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
         <div>
           <div class="flex items-center justify-between font-mono text-[10px] font-bold mb-3">
             <span class="text-brand-cobalt">SYS-08 // ONSITE-FIELD</span>
@@ -591,15 +600,15 @@
           <div>&bull; Server motherboard, RAID controller &amp; SAS drive replacement</div>
           <div>&bull; Datacenter cable dressing and rack thermal airflow management</div>
         <div class="mt-2 pt-2 border-t border-brand-line">
-            <a href="/services/it-consultancy" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
-              Dedicated SYS-09 Page &rarr;
+            <a href="/services/onsite-support" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-08 Page &rarr;
             </a>
           </div>
         </div>
       </div>
 
       <!-- SYS-09: Principal IT Consultancy -->
-      <div class="p-6 flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
+      <div class="p-6 hairline-b flex flex-col justify-between hover:bg-slate-50/60 transition-colors">
         <div>
           <div class="flex items-center justify-between font-mono text-[10px] font-bold mb-3">
             <span class="text-brand-cobalt">SYS-09 // PRINCIPAL-ADVISORY</span>
@@ -628,6 +637,49 @@
           <div>&bull; Server lifecycle replacement &amp; SAN warranty management</div>
           <div>&bull; Vendor contract negotiation (Internet carriers, SIP, Microsoft)</div>
           <div>&bull; Disaster recovery planning with RPO and RTO verification</div>
+          <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/it-consultancy" class="block w-full py-1.5 bg-slate-100 hover:bg-brand-cobalt hover:text-white text-brand-slate text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-09 Page &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYS-10: Enterprise AI Implementation & Copilot Governance -->
+      <div class="p-6 md:col-span-2 lg:col-span-3 bg-blue-50/30 flex flex-col justify-between hover:bg-blue-50/50 transition-colors">
+        <div>
+          <div class="flex items-center justify-between font-mono text-[10px] font-bold mb-3">
+            <span class="text-brand-cobalt font-bold">SYS-10 // ENTERPRISE-AI</span>
+            <span class="bg-brand-cobalt text-white px-2 py-0.5 uppercase tracking-wider text-[9px]">NEW // AI DISCIPLINE</span>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-brand-slate mb-2">
+            Enterprise AI Implementation, Copilot Governance &amp; Workflow Automation
+          </h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Practical enterprise artificial intelligence deployment, pre-Copilot permission governance, sovereign air-gapped LLM systems, private RAG knowledge retrieval, and intelligent workflow automation built for data sovereignty.
+          </p>
+          <div class="font-mono text-[10px] text-slate-500 space-y-1 mb-4 bg-white p-2.5 border border-brand-line">
+            <div>&bull; COPILOT READINESS: Data classification, DLP airlocks, and Entra permission scoping</div>
+            <div>&bull; PRIVATE RAG: On-prem and isolated cloud vector embeddings for corporate knowledge</div>
+            <div>&bull; AUTOMATION: Automated agent workflows, ticketing triage, and sovereign inference</div>
+          </div>
+        </div>
+        <button onclick="toggleSpecDrawer('drawer-10')" class="w-full py-2 border border-brand-line bg-white hover:bg-slate-100 font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider flex items-center justify-between px-3 cursor-pointer">
+          <span>Technical Specifications</span>
+          <span id="drawer-arrow-10">&darr;</span>
+        </button>
+        <div id="drawer-10" class="spec-drawer-content font-mono text-[10px] text-slate-600 mt-2 bg-white p-3 border border-brand-line space-y-1.5">
+          <div class="font-bold text-brand-slate uppercase">Protocols &amp; Platforms:</div>
+          <div>&bull; Microsoft 365 Copilot tenant governance, semantic indexing and oversharing remediation</div>
+          <div>&bull; Sovereign on-premise local inference nodes (Ollama, vLLM, private GPU workstations)</div>
+          <div>&bull; Enterprise RAG knowledge base integration over SharePoint, NAS, and PostgreSQL</div>
+          <div>&bull; Zero data leakage policies preventing corporate prompts from training public models</div>
+          <div>&bull; Agentic operations: automated alert synthesis, telemetry analysis, and dispatch routing</div>
+          <div class="mt-2 pt-2 border-t border-brand-line">
+            <a href="/services/ai-implementation" class="block w-full py-1.5 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[10px] font-bold uppercase tracking-wider transition-colors">
+              Dedicated SYS-10 Page &rarr;
+            </a>
+          </div>
         </div>
       </div>
 
@@ -837,7 +889,7 @@
               <span class="font-bold text-brand-slate">Founder (1990 - Pres.)</span>
             </div>
             <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
-              <span class="text-slate-500 text-[10px]">SONITOR:</span>
+              <span class="text-slate-500 text-[10px]">HEALTHCARE RTLS:</span>
               <span class="font-bold text-brand-cobalt">VP Support (2010 - Pres.)</span>
             </div>
             <div class="bg-white p-2 border border-brand-line flex items-center justify-between">
@@ -869,7 +921,7 @@
           </h2>
           <p class="font-heading text-base sm:text-lg text-brand-cobalt font-semibold mb-4">
             Founder &amp; Principal Systems Architect, Technology Specialist<br />
-            Vice President, Technical &amp; Customer Support at Sonitor Technologies
+            Vice President, Global Technical &amp; Customer Support in Enterprise Healthcare RTLS
           </p>
 
           <div class="p-3 bg-slate-50 border border-brand-line mb-5 font-mono text-xs text-slate-600 flex flex-wrap items-center gap-2">
@@ -880,10 +932,10 @@
           </div>
 
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-            Steve Cormier has led support at Sonitor since 2010, first as Director of Support and now as Vice President, Technical &amp; Customer Support. He built a complete global support organization, diagnostic tooling, and escalation processes supporting major healthcare providers as their highest-level technical resource and final point of escalation.
+            Steve Cormier has led global support for an enterprise healthcare RTLS leader since 2010, first as Director of Support and now as Vice President, Technical &amp; Customer Support. He built a complete global support organization, diagnostic tooling, and escalation processes supporting major healthcare providers as their highest-level technical resource and final point of escalation.
           </p>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-            Before Sonitor, Steve served on active duty in the U.S. Air Force Security Police at Offutt Air Force Base in Nebraska. Since 1990, he has operated his own IT network design, server virtualization (VMware ESXi and Windows Hyper-V), and support business for Orlando and Central Florida organizations. Off the clock, Steve is the Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway, bringing track-tested telemetry precision to enterprise systems architecture.
+            Prior to his healthcare technology leadership, Steve served on active duty in the U.S. Air Force Security Police at Offutt Air Force Base in Nebraska. Since 1990, he has operated his own IT network design, server virtualization (VMware ESXi and Windows Hyper-V), and support business for Orlando and Central Florida organizations. Off the clock, Steve is the Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway, bringing track-tested telemetry precision to enterprise systems architecture.
           </p>
         </div>
 

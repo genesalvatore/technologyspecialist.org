@@ -537,7 +537,7 @@ const services = [
       },
       {
         area: 'Helpdesk & Ticket Triage Automation',
-        desc: 'Intelligent triage and ticket routing agents built on Steve’s 16+ years architecting global customer support organizations at Sonitor, deflecting routine issues and accelerating escalations.'
+        desc: 'Intelligent triage and ticket routing agents built on Steve’s 16+ years architecting global customer support organizations in enterprise healthcare RTLS, deflecting routine issues and accelerating escalations.'
       },
       {
         area: 'AI Security Policy & Inbound Prompt WAF',
@@ -659,7 +659,7 @@ function renderFooter() {
           <div class="font-mono text-[10px] text-slate-500 bg-slate-50 p-3 border border-brand-line space-y-1">
             <div class="text-brand-slate font-bold">Steve Cormier, Principal Systems Architect</div>
             <div>&bull; 36 Years Enterprise Architecture (Est. 1990)</div>
-            <div>&bull; VP Technical &amp; Customer Support, Sonitor (2010 - Pres.)</div>
+            <div>&bull; VP Global Technical &amp; Customer Support, Enterprise RTLS (2010 - Pres.)</div>
             <div>&bull; U.S. Air Force Veteran (Security Police, Offutt AFB)</div>
             <div>&bull; Microsoft Certified Systems Professional</div>
             <div>&bull; Lead Instructor, Track Day Xperience (TDX) @ Sebring</div>
@@ -1007,7 +1007,7 @@ function generateServicesMasterPage() {
             Direct Principal Accountability on Every System
           </h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Technology Specialist is not an anonymous call center or rotating technician dispatch. Every architecture plan, hypervisor migration, firewall rule, and AI deployment is overseen personally by Steve Cormier. U.S. Air Force Veteran (Security Police, Offutt AFB), VP of Technical &amp; Customer Support at Sonitor since 2010, Microsoft Certified, and Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway.
+            Technology Specialist is not an anonymous call center or rotating technician dispatch. Every architecture plan, hypervisor migration, firewall rule, and AI deployment is overseen personally by Steve Cormier. U.S. Air Force Veteran (Security Police, Offutt AFB), VP of Technical &amp; Customer Support in Enterprise Healthcare RTLS since 2010, Microsoft Certified, and Lead Instructor for Track Day Xperience (TDX) at Sebring International Raceway.
           </p>
         </div>
         <div class="shrink-0 flex flex-col gap-2 w-full md:w-auto">
@@ -1384,7 +1384,7 @@ function buildAll() {
         scanDir(fullPath);
       } else if (f.endsWith('.html')) {
         const content = fs.readFileSync(fullPath, 'utf8');
-        const matches = content.match(/ - /g);
+        const matches = content.match(/[—]|&mdash;|&#8212;/g);
         if (matches) {
           console.error(`EM DASH FOUND in ${fullPath}: ${matches.length} instances`);
           emDashCount += matches.length;
