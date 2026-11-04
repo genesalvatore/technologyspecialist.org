@@ -221,7 +221,7 @@
   const CLOSE_SVG = '<path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
 
   function updateHamburgerIcons(isOpen) {
-    const buttons = document.querySelectorAll('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn, header button.lg\\:hidden');
+    const buttons = document.querySelectorAll('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn');
     buttons.forEach(btn => {
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       btn.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
@@ -1047,7 +1047,7 @@
     // Universal Mobile Hamburger button handler with event delegation and debounce
     let lastToggleTime = 0;
     function handleMobileToggle(e) {
-      const btn = e.target.closest('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn, header button.lg\\:hidden');
+      const btn = e.target.closest('[data-mobile-menu-btn], #mobile-menu-btn, .mobile-menu-btn');
       if (!btn) return;
       const now = Date.now();
       if (now - lastToggleTime < 250) {
