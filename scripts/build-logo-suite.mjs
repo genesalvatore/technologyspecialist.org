@@ -126,14 +126,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typographic Hierarchy -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Live Signal Pill -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#059669"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#059669" letter-spacing="0.1em">STATUS: NOMINAL // 36 YRS ENTERPRISE SYSTEMS</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   },
 
@@ -209,14 +203,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typography -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Monogram Specification -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#0284C7"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#0284C7" letter-spacing="0.1em">SWISS GRID ARCHITECTURE // INTERLOCKING MONOGRAM</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   },
 
@@ -304,14 +292,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typography -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Topology Sub-label -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#0052CC"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#0052CC" letter-spacing="0.1em">FABRIC MATRIX // MULTI-PATH ROUTING // ZERO-DOWNTIME</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   },
 
@@ -392,14 +374,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typography -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Spec Plate Sub-label -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#059669"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#059669" letter-spacing="0.1em">HARDWARE SPECIFICATION PLATE // CHASSIS ID: TS-1990</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   },
 
@@ -475,14 +451,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typography -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Cluster Sub-label -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#059669"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#059669" letter-spacing="0.1em">ACTIVE-ACTIVE FAILOVER // ESXI &amp; HYPER-V CLUSTERS</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   },
 
@@ -572,14 +542,8 @@ export const CONCEPTS = [
   <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
 
   <!-- Typography -->
-  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
-  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
-  
-  <!-- Datum Sub-label -->
-  <g transform="translate(92, 54)">
-    <rect width="5" height="5" fill="#0F172A"/>
-    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#0F172A" letter-spacing="0.1em">42U RACK UNIT SCALE RULE // SWISS EDITORIAL HIERARCHY</text>
-  </g>
+  <text x="92" y="34" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="0.03em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="52" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.1em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
 </svg>`
   }
 ];

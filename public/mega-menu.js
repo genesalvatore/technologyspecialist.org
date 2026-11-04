@@ -135,12 +135,33 @@
       color: #0052CC !important;
     }
 
+    /* Header Logo Mark & Navigation Layout Hardening */
+    #site-header-logo {
+      width: 40px !important;
+      height: 40px !important;
+      max-width: 44px !important;
+      max-height: 44px !important;
+      object-fit: contain !important;
+      flex-shrink: 0 !important;
+    }
+    @media (min-width: 640px) {
+      #site-header-logo {
+        width: 44px !important;
+        height: 44px !important;
+      }
+    }
+    header nav {
+      white-space: nowrap !important;
+    }
+    header nav a {
+      white-space: nowrap !important;
+    }
+    header a[href="/contact"] {
+      white-space: nowrap !important;
+    }
+
     /* Mobile and Responsive Utilities */
     @media (max-width: 639px) {
-      #site-header-logo {
-        max-width: 165px !important;
-        height: 32px !important;
-      }
       .ts-telemetry-hide-mobile {
         display: none !important;
       }
@@ -405,7 +426,7 @@
                   <span class="text-brand-cobalt font-bold">&rarr;</span>
                 </a>
                 <a href="/contact" class="block w-full py-2.5 px-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[11px] font-bold uppercase tracking-wider shadow-sm transition-colors">
-                  Request Dispatch &rarr;
+                  Contact Steve &rarr;
                 </a>
               </div>
             </div>
@@ -563,7 +584,7 @@
               <span class="text-[9px] text-slate-400 uppercase">&rarr;</span>
             </a>
             <a href="/contact" class="block px-3 py-3 bg-brand-cobalt hover:bg-blue-700 text-white font-bold text-center uppercase tracking-wider shadow-sm transition-colors mt-2">
-              Request Dispatch &amp; Contact &rarr;
+              Contact Steve &rarr;
             </a>
           </div>
         </div>

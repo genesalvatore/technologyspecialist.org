@@ -589,43 +589,40 @@ function renderHeader(activePath = '') {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <!-- Logo & Monogram Unit -->
-        <a href="/" class="flex items-center gap-3.5 group">
-          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
-          <div class="hidden md:block hairline-l pl-3.5">
-            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
-            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
+        <a href="/" class="flex items-center gap-3 group shrink-0">
+          <img id="site-header-logo" src="/images/logos/concept-01-mark.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0" />
+          <div class="flex flex-col justify-center whitespace-nowrap">
+            <div class="font-heading text-base sm:text-lg font-extrabold tracking-tight text-brand-slate leading-none uppercase">
+              TECHNOLOGY <span class="text-brand-cobalt">SPECIALIST</span>
+            </div>
+            <div class="font-mono text-[9px] sm:text-[10px] font-bold text-slate-500 tracking-widest uppercase mt-1 leading-none">
+              EST. 1990 // ENTERPRISE SYSTEMS
+            </div>
           </div>
         </a>
 
         <!-- Desktop Navigation Matrix -->
-        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
-          <a href="/" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/' ? 'text-brand-cobalt bg-slate-50' : ''}">Home</a>
-          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 ${activePath.startsWith('/services') ? 'text-brand-cobalt bg-slate-50' : ''}">
-            <span>Practice Matrix (10)</span>
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700 whitespace-nowrap">
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap ${activePath.startsWith('/services') ? 'text-brand-cobalt bg-slate-50' : ''}">
+            <span>Practice Areas</span>
             <span class="text-[9px] text-slate-400">&darr;</span>
           </a>
-          <a href="/services/virtualization" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/services/virtualization' ? 'text-brand-cobalt font-extrabold' : ''}">Virtualization</a>
-          <a href="/services/microsoft-365" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/services/microsoft-365' ? 'text-brand-cobalt font-extrabold' : ''}">M365 &amp; Cloud</a>
-          <a href="/services/voip-ippbx" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/services/voip-ippbx' ? 'text-brand-cobalt font-extrabold' : ''}">VoIP &amp; SIP</a>
-          <a href="/services/hardening" class="px-2.5 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/services/hardening' ? 'text-brand-cobalt font-extrabold' : ''}">Hardening</a>
-          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 ${activePath === '/about' ? 'text-brand-cobalt bg-slate-50' : ''}">
-            <span>About Steve</span>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap ${activePath === '/about' ? 'text-brand-cobalt bg-slate-50' : ''}">
+            <span>Leadership</span>
             <span class="text-[9px] text-slate-400">&darr;</span>
           </a>
-          <a href="/logos" class="px-2.5 py-2 text-brand-cobalt hover:text-blue-700 hover:bg-blue-50 font-bold transition-colors">Logos (10)</a>
-          <a href="/contact" class="px-2.5 py-2 text-slate-700 hover:text-brand-cobalt hover:bg-slate-50 transition-colors ${activePath === '/contact' ? 'text-brand-cobalt font-extrabold' : ''}">Contact</a>
+          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ${activePath === '/tools' ? 'text-brand-cobalt font-extrabold' : ''}">Calculators</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ${activePath === '/logos' ? 'text-brand-cobalt font-extrabold' : ''}">Logo Studio</a>
         </nav>
 
         <!-- Header Action CTA -->
-        <div class="flex items-center gap-2.5 sm:gap-3">
-          <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
-            <span>(407) 917-5250</span>
-          </a>
-          <a href="/contact" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
-            Dispatch Request
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
+            Contact Steve
           </a>
           <!-- Mobile Menu Toggle Button -->
-          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-brand-slate border border-brand-line hover:bg-slate-100" aria-label="Toggle Navigation Menu">
+          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
+            <span class="sr-only">Open Menu</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>

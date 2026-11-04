@@ -95,29 +95,31 @@
     <!-- Main Architectural Nav -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
-        <!-- Logo Unit -->
-        <a href="/" class="flex items-center gap-3.5 group">
-          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" alt="Technology Specialist Logo" class="h-8 sm:h-11 max-w-[165px] sm:max-w-none w-auto object-contain shrink-0" />
-          <div class="hidden md:block hairline-l pl-3.5">
-            <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
-            <span class="font-mono text-[9px] text-slate-500 tracking-wider block">IDENTITY SUITE // EST. 1990</span>
+        <!-- Logo & Monogram Unit -->
+        <a href="/" class="flex items-center gap-3 group shrink-0">
+          <img id="site-header-logo" src="/images/logos/concept-01-mark.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0" />
+          <div class="flex flex-col justify-center whitespace-nowrap">
+            <div class="font-heading text-base sm:text-lg font-extrabold tracking-tight text-brand-slate leading-none uppercase">
+              TECHNOLOGY <span class="text-brand-cobalt">SPECIALIST</span>
+            </div>
+            <div class="font-mono text-[9px] sm:text-[10px] font-bold text-slate-500 tracking-widest uppercase mt-1 leading-none">
+              EST. 1990 // ENTERPRISE SYSTEMS
+            </div>
           </div>
         </a>
 
-        <!-- Navigation Matrix -->
-        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700">
-          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1"><span>Practice Areas (10)</span><span class="text-[9px] text-slate-400">&darr;</span></a>
-          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1"><span>Leadership</span><span class="text-[9px] text-slate-400">&darr;</span></a>
-          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Calculators (03)</a>
-          <a href="/logos" class="px-3 py-2 text-brand-cobalt bg-blue-50/60 font-extrabold transition-colors">Logo Studio (10)</a>
-          <a href="/contact" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors">Contact &amp; Dispatch</a>
-          <a href="/admin/" class="px-3 py-2 text-slate-500 hover:text-brand-slate hover:bg-slate-50 transition-colors">Portal</a>
+        <!-- Desktop Navigation Matrix -->
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700 whitespace-nowrap">
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap "><span>Practice Areas</span><span class="text-[9px] text-slate-400">&darr;</span></a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap "><span>Leadership</span><span class="text-[9px] text-slate-400">&darr;</span></a>
+          <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ">Calculators</a>
+          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap text-brand-cobalt bg-blue-50/60 font-extrabold">Logo Studio</a>
         </nav>
 
-        <!-- Dispatch CTA -->
+        <!-- Header Action CTA -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a href="tel:+14079175250" class="hidden sm:inline-flex px-3 py-2 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
-            (407) 917-5250
+          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
+            Contact Steve
           </a>
           <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
             <span class="sr-only">Open Menu</span>

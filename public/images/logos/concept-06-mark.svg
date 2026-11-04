@@ -2,7 +2,7 @@
   <rect width="64" height="64" rx="10" fill="#0F172A"/>
   <rect x="2.5" y="2.5" width="59" height="59" rx="7.5" stroke="#1E293B" stroke-width="1"/>
 
-  <!-- 42U Calibrated Rack Rail Ticks (Left and Right) -->
+  <!-- 42U Calibrated Rack Rail Ticks (Left & Right) -->
   <g stroke="#334155" stroke-width="1">
     <line x1="8" y1="12" x2="13" y2="12"/>
     <line x1="8" y1="17" x2="11" y2="17"/>

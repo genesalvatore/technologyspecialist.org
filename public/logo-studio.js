@@ -133,10 +133,10 @@
   function applyConcept(conceptId, persist = true) {
     const concept = CONCEPTS.find(c => c.id === conceptId) || CONCEPTS[0];
     
-    // Update header logo image
-    const headerLogos = document.querySelectorAll("#siteHeaderLogo, a[href='/'] img, header a img");
+    // Update header logo mark icon (swapping crisp square mark so wordmark is never duplicated)
+    const headerLogos = document.querySelectorAll("#site-header-logo, #siteHeaderLogo, header a[href='/'] img, header a img");
     headerLogos.forEach(img => {
-      img.src = concept.svg || concept.png;
+      img.src = concept.markSvg || concept.markPng || concept.svg;
       img.alt = concept.name;
     });
 

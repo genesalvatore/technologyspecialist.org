@@ -24,7 +24,7 @@
   <!-- Sub Label Left -->
   <text x="13" y="47" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="700" fill="#64748B">SPEC</text>
 
-  <!-- Right Compartment: Technical Metadata and Status -->
+  <!-- Right Compartment: Technical Metadata & Status -->
   <text x="44" y="24" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.05em">1990</text>
   <!-- Cobalt Bar -->
   <rect x="36" y="27" width="16" height="2.5" fill="#0052CC"/>
