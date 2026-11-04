@@ -2831,7 +2831,15 @@ const server = http.createServer(async (req, res) => {
     // ========================================================================
     // 7. Static Files & Prerendered Astro Routes from `dist/`
     // ========================================================================
-    if (PREVIEW_GATE_ENABLED && !isAuthenticated) {
+    const isGatePublicAsset =
+      pathname === "/favicon.svg" ||
+      pathname === "/favicon-32x32.png" ||
+      pathname === "/apple-touch-icon.png" ||
+      pathname === "/favicon.ico" ||
+      pathname.startsWith("/images/") ||
+      pathname.startsWith("/assets/");
+
+    if (PREVIEW_GATE_ENABLED && !isAuthenticated && !isGatePublicAsset) {
       await serveStaticFile(
         res,
         path.join(__dirname, "modules", "MOD-PREVIEW-GATE", "gate.html"),
