@@ -1889,6 +1889,8 @@ const server = http.createServer(async (req, res) => {
       pathname === "/api/feedback/" ||
       pathname === "/api/feedback/binary" ||
       pathname === "/api/command/pin-action" ||
+      pathname === "/api/mod/site-images" ||
+      pathname.startsWith("/api/admin/sticker-studio") ||
       pathname.startsWith("/api/social/") ||
       ((pathname === "/api/submissions" ||
         pathname === "/.netlify/functions/submissions" ||
@@ -2139,6 +2141,146 @@ const server = http.createServer(async (req, res) => {
           "Content-Type": "application/javascript; charset=utf-8",
           "Cache-Control": "public, max-age=3600",
         });
+        return;
+      }
+    }
+
+    // ========================================================================
+    // MOD-IMAGE-GUARD & MOD-WATERMARK-SHIELD (/api/mod/site-images)
+    // ========================================================================
+    if (pathname === "/api/mod/site-images" && req.method === "GET") {
+      const foundImages = [];
+      const seenUrls = new Set();
+
+      function scanDirForSiteImages(baseDir, urlPrefix = "", depth = 0) {
+        if (depth > 4 || foundImages.length >= 500) return;
+        let entries = [];
+        try {
+          entries = fs.readdirSync(baseDir, { withFileTypes: true });
+        } catch {
+          return;
+        }
+        for (const ent of entries) {
+          if (foundImages.length >= 500) break;
+          const name = ent.name;
+          if (
+            name.startsWith(".") ||
+            name === "node_modules" ||
+            name === "fonts" ||
+            name === "gate" ||
+            name === "admin"
+          ) {
+            continue;
+          }
+          const fullPath = path.join(baseDir, name);
+          const relUrl = `${urlPrefix}/${name}`.replace(/\/+/g, "/");
+          if (ent.isDirectory()) {
+            scanDirForSiteImages(fullPath, relUrl, depth + 1);
+          } else if (ent.isFile() && /\.(?:webp|jpg|jpeg|png|svg)$/i.test(name)) {
+            if (seenUrls.has(relUrl)) continue;
+            let stat;
+            try {
+              stat = fs.statSync(fullPath);
+            } catch {
+              continue;
+            }
+            if (stat.size < 512) continue;
+            seenUrls.add(relUrl);
+
+            foundImages.push({
+              url: relUrl,
+              path: relUrl,
+              filename: name,
+              label: name,
+              bytes: stat.size,
+              sizeKb: Math.round(stat.size / 1024),
+              category: "general_photo",
+              categoryLabel: "Site Graphic",
+              willWatermark: true,
+            });
+          }
+        }
+      }
+
+      scanDirForSiteImages(DIST_DIR, "", 0);
+
+      res.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+      });
+      res.end(
+        JSON.stringify({
+          ok: true,
+          siteKey: SITE_KEY,
+          total: foundImages.length,
+          watermarkedCount: foundImages.length,
+          excludedCount: 0,
+          images: foundImages,
+        })
+      );
+      return;
+    }
+
+    // ========================================================================
+    // MOD-STICKER-STUDIO Endpoint (Strictly Isolated Tenant State)
+    // ========================================================================
+    if (pathname.startsWith("/api/admin/sticker-studio")) {
+      const stateFile = path.join(DATA_DIR, "sticker-studio-state.json");
+      let studioState = {
+        folders: [],
+        stickers: [],
+        printPack: { selectedStickerIds: [] },
+      };
+      try {
+        if (fs.existsSync(stateFile)) {
+          studioState = JSON.parse(fs.readFileSync(stateFile, "utf8"));
+        }
+      } catch {}
+
+      if (req.method === "GET") {
+        res.writeHead(200, {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": "no-store",
+        });
+        res.end(
+          JSON.stringify({
+            ok: true,
+            siteKey: SITE_KEY,
+            state: studioState,
+            folders: studioState.folders || [],
+            categories: studioState.folders || [],
+            stickers: studioState.stickers || [],
+            printPackIds: (studioState.printPack && studioState.printPack.selectedStickerIds) || [],
+          })
+        );
+        return;
+      }
+
+      if (req.method === "POST" || req.method === "PATCH" || req.method === "DELETE") {
+        const rawBody = await readRequestBody(req);
+        try {
+          const body = JSON.parse(rawBody || "{}");
+          if (body.state) {
+            studioState = body.state;
+          } else if (pathname.endsWith("/folders") && body.name) {
+            const newFolder = {
+              id: `folder-${Date.now()}`,
+              name: String(body.name).trim(),
+              createdAt: new Date().toISOString(),
+            };
+            studioState.folders = studioState.folders || [];
+            studioState.folders.push(newFolder);
+          }
+          if (!fs.existsSync(DATA_DIR)) {
+            fs.mkdirSync(DATA_DIR, { recursive: true });
+          }
+          fs.writeFileSync(stateFile, JSON.stringify(studioState, null, 2), "utf8");
+        } catch {}
+        res.writeHead(200, {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": "no-store",
+        });
+        res.end(JSON.stringify({ ok: true, state: studioState }));
         return;
       }
     }

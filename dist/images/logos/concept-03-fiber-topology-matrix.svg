@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" fill="none">
+  <!-- Mark Container on Left -->
+  <g transform="translate(10, 8)">
+    <rect width="56" height="56" rx="9" fill="#0F172A"/>
+    <rect x="2" y="2" width="52" height="52" rx="7" stroke="#1E293B" stroke-width="1"/>
+
+    <!-- Hex Facets -->
+    <polygon points="28,10 43,18 28,27 13,18" fill="#0284C7" fill-opacity="0.35"/>
+    <polygon points="13,18 28,27 28,44 13,35" fill="#0052CC" fill-opacity="0.45"/>
+    <polygon points="28,27 43,18 43,35 28,44" fill="#0F172A" fill-opacity="0.6"/>
+
+    <!-- Spine Links -->
+    <polygon points="28,10 43,18 43,35 28,44 13,35 13,18" fill="none" stroke="#0052CC" stroke-width="1.75"/>
+    <line x1="28" y1="10" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+    <line x1="13" y1="18" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+    <line x1="43" y1="18" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+    <line x1="13" y1="35" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+    <line x1="43" y1="35" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+    <line x1="28" y1="44" x2="28" y2="27" stroke="#38BDF8" stroke-width="1.5"/>
+
+    <!-- Peripheral Nodes -->
+    <circle cx="28" cy="10" r="2.2" fill="#FFFFFF"/>
+    <circle cx="43" cy="18" r="2.2" fill="#0284C7"/>
+    <circle cx="43" cy="35" r="2.2" fill="#0052CC"/>
+    <circle cx="28" cy="44" r="2.2" fill="#0284C7"/>
+    <circle cx="13" cy="35" r="2.2" fill="#0052CC"/>
+    <circle cx="13" cy="18" r="2.2" fill="#38BDF8"/>
+
+    <!-- Center Hub -->
+    <circle cx="28" cy="27" r="3.5" fill="#059669"/>
+    <circle cx="28" cy="27" r="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="78" y1="14" x2="78" y2="58" stroke="#CBD5E1" stroke-width="1.25"/>
+
+  <!-- Typography -->
+  <text x="92" y="32" font-family="'Space Grotesk', 'Segoe UI', -apple-system, system-ui, Arial, sans-serif" font-size="16.5" font-weight="800" letter-spacing="0.04em" fill="#0F172A">TECHNOLOGY <tspan fill="#0052CC">SPECIALIST</tspan></text>
+  <text x="92" y="47" font-family="'JetBrains Mono', 'Consolas', 'SF Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.12em" fill="#64748B">INFRASTRUCTURE &amp; VIRTUALIZATION // EST. 1990</text>
+  
+  <!-- Topology Sub-label -->
+  <g transform="translate(92, 54)">
+    <rect width="5" height="5" fill="#0052CC"/>
+    <text x="9" y="4.5" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="6.5" font-weight="700" fill="#0052CC" letter-spacing="0.1em">FABRIC MATRIX // MULTI-PATH ROUTING // ZERO-DOWNTIME</text>
+  </g>
+</svg>

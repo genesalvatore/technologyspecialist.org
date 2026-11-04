@@ -1,16 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="2" fill="#0F172A"/>
-  <path d="M8 8h48v48H8V8z" stroke="#0052CC" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
-  <!-- Structural Hairlines -->
-  <line x1="32" y1="8" x2="32" y2="56" stroke="#1E293B" stroke-width="1"/>
-  <line x1="8" y1="32" x2="56" y2="32" stroke="#1E293B" stroke-width="1"/>
-  <!-- T Letterform -->
-  <path d="M14 18h20M24 18v28" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="square"/>
-  <!-- S Letterform -->
-  <path d="M50 24c-1-3-4-5-8-5s-7 2.5-7 6c0 5 13 4 13 11 0 4-3 7-8 7s-8-3-9-6" stroke="#0052CC" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter"/>
-  <!-- Precision Corner Nodes -->
-  <rect x="7" y="7" width="3" height="3" fill="#0284C7"/>
-  <rect x="54" y="7" width="3" height="3" fill="#0284C7"/>
-  <rect x="7" y="54" width="3" height="3" fill="#0284C7"/>
-  <rect x="54" y="54" width="3" height="3" fill="#059669"/>
+  <rect width="64" height="64" rx="10" fill="#0F172A"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="7.5" stroke="#1E293B" stroke-width="1"/>
+  
+  <!-- Calibrated Grid Hairlines -->
+  <line x1="8" y1="32" x2="56" y2="32" stroke="#1E293B" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <line x1="32" y1="8" x2="32" y2="56" stroke="#1E293B" stroke-width="0.75" stroke-dasharray="2 2"/>
+
+  <!-- Blade 1: Top Server Tray (Crossbar of T) -->
+  <path d="M 12 14 H 52 V 22 H 12 Z" fill="url(#c1-grad-top)"/>
+  <path d="M 12 14 L 16 18 V 22 L 12 22 Z" fill="#003D99" opacity="0.6"/>
+  <rect x="18" y="17" width="5" height="2" fill="#38BDF8"/>
+  <rect x="25" y="17" width="5" height="2" fill="#38BDF8"/>
+  <rect x="32" y="17" width="5" height="2" fill="#38BDF8"/>
+  <!-- Telemetry LED -->
+  <circle cx="47" cy="18" r="2.2" fill="#059669"/>
+  <circle cx="47" cy="18" r="0.9" fill="#A7F3D0"/>
+
+  <!-- Blade 2: Middle Tray (T-Stem / S-Upper Turn) -->
+  <path d="M 22 26 H 42 V 34 H 22 Z" fill="url(#c1-grad-mid)"/>
+  <path d="M 42 26 H 52 V 34 H 47 V 30 H 42 Z" fill="#0284C7"/>
+  <rect x="25" y="29" width="4" height="2" fill="#FFFFFF" opacity="0.85"/>
+  <rect x="32" y="29" width="4" height="2" fill="#38BDF8"/>
+  <line x1="12" y1="30" x2="19" y2="30" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Blade 3: Bottom Tray (S-Base Return) -->
+  <path d="M 12 38 H 22 V 42 H 16 V 46 H 52 V 50 H 12 Z" fill="url(#c1-grad-bot)"/>
+  <rect x="24" y="47" width="5" height="2" fill="#38BDF8"/>
+  <rect x="31" y="47" width="5" height="2" fill="#38BDF8"/>
+  <circle cx="47" cy="48" r="1.5" fill="#0284C7"/>
+
+  <!-- Micro Signal Traces -->
+  <line x1="22" y1="14" x2="22" y2="50" stroke="#38BDF8" stroke-width="0.75" opacity="0.35"/>
+  <line x1="42" y1="14" x2="42" y2="50" stroke="#38BDF8" stroke-width="0.75" opacity="0.35"/>
+
+  <!-- Corner Datum Marks -->
+  <circle cx="6" cy="6" r="1.2" fill="#0284C7"/>
+  <circle cx="58" cy="6" r="1.2" fill="#0284C7"/>
+  <circle cx="6" cy="58" r="1.2" fill="#0284C7"/>
+  <circle cx="58" cy="58" r="1.2" fill="#059669"/>
+
+  <defs>
+    <linearGradient id="c1-grad-top" x1="12" y1="14" x2="52" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0052CC"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="c1-grad-mid" x1="22" y1="26" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0052CC"/>
+    </linearGradient>
+    <linearGradient id="c1-grad-bot" x1="12" y1="38" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0052CC"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
 </svg>

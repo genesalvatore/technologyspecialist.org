@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="10" fill="#0F172A"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="7.5" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- 42U Calibrated Rack Rail Ticks (Left & Right) -->
+  <g stroke="#334155" stroke-width="1">
+    <line x1="8" y1="12" x2="13" y2="12"/>
+    <line x1="8" y1="17" x2="11" y2="17"/>
+    <line x1="8" y1="22" x2="13" y2="22"/>
+    <line x1="8" y1="27" x2="11" y2="27"/>
+    <line x1="8" y1="32" x2="14" y2="32" stroke="#0284C7"/>
+    <line x1="8" y1="37" x2="11" y2="37"/>
+    <line x1="8" y1="42" x2="13" y2="42"/>
+    <line x1="8" y1="47" x2="11" y2="47"/>
+    <line x1="8" y1="52" x2="13" y2="52"/>
+
+    <line x1="51" y1="12" x2="56" y2="12"/>
+    <line x1="53" y1="17" x2="56" y2="17"/>
+    <line x1="51" y1="22" x2="56" y2="22"/>
+    <line x1="53" y1="27" x2="56" y2="27"/>
+    <line x1="50" y1="32" x2="56" y2="32" stroke="#059669"/>
+    <line x1="53" y1="37" x2="56" y2="37"/>
+    <line x1="51" y1="42" x2="56" y2="42"/>
+    <line x1="53" y1="47" x2="56" y2="47"/>
+    <line x1="51" y1="52" x2="56" y2="52"/>
+  </g>
+
+  <!-- Vertical Rail Guidelines -->
+  <line x1="14" y1="10" x2="14" y2="54" stroke="#1E293B" stroke-width="1"/>
+  <line x1="50" y1="10" x2="50" y2="54" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Architectural Central Glyph: TS Monolithic Forms -->
+  <!-- T -->
+  <path d="M 18 18 H 34 M 26 18 V 46" stroke="#0052CC" stroke-width="4.5" stroke-linecap="square"/>
+  <!-- S -->
+  <path d="M 46 24 C 44 20 40 18 36 18 C 30 18 28 22 28 26 C 28 32 46 30 46 38 C 46 43 41 46 36 46 C 30 46 27 42 27 38" stroke="#FFFFFF" stroke-width="4.5" fill="none" stroke-linecap="square"/>
+
+  <!-- Telemetry Pulse Wave Across Datum -->
+  <path d="M 14 32 L 24 32 L 27 27 L 31 37 L 34 32 L 50 32" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Top Beacon Node -->
+  <circle cx="32" cy="11" r="2.2" fill="#059669"/>
+  <circle cx="32" cy="11" r="1" fill="#A7F3D0"/>
+</svg>
