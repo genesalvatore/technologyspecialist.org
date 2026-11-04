@@ -63,7 +63,7 @@ const DEFAULT_NOTIFY_EMAIL = (
 const SHARED_COOKIE_DOMAIN =
   process.env.SHARED_COOKIE_DOMAIN || "greentreehosting.com";
 let PREVIEW_GATE_ENABLED =
-  String(process.env.PREVIEW_GATE_ENABLED || "true").toLowerCase() === "true";
+  String(process.env.PREVIEW_GATE_ENABLED || "false").toLowerCase() === "true";
 
 // Central Command Center Federation Config (Runtime-only secrets - fail closed if unset)
 const GREENTREE_HUB_SECRET = String(
@@ -895,7 +895,7 @@ async function loadMetaAndPins() {
       );
       items = fallbackRes.rows.map((r) => r.item).filter(Boolean);
     }
-    if (typeof meta?.settings?.previewGateEnabled === "boolean") {
+    if (typeof meta?.settings?.previewGateEnabled === "boolean" && process.env.PREVIEW_GATE_ENABLED === undefined) {
       PREVIEW_GATE_ENABLED = meta.settings.previewGateEnabled;
     }
     return { meta, items };
@@ -937,9 +937,9 @@ async function loadMetaAndPins() {
     }
   }
   items.sort((a, b) => (b.pinNumber || 0) - (a.pinNumber || 0));
-  if (typeof meta?.settings?.previewGateEnabled === "boolean") {
-      PREVIEW_GATE_ENABLED = meta.settings.previewGateEnabled;
-    }
+  if (typeof meta?.settings?.previewGateEnabled === "boolean" && process.env.PREVIEW_GATE_ENABLED === undefined) {
+    PREVIEW_GATE_ENABLED = meta.settings.previewGateEnabled;
+  }
     return { meta, items };
 }
 
@@ -1898,6 +1898,9 @@ const server = http.createServer(async (req, res) => {
       pathname === "/api/command/deep-help" ||
       pathname === "/api/command/licenses" ||
       pathname === "/api/command/security-report" ||
+      pathname === "/api/command/status" ||
+      pathname.startsWith("/api/command/") ||
+      pathname.startsWith("/api/admin/") ||
       pathname === "/api/pins" ||
       pathname === "/api/leads" ||
       pathname === "/api/settings" ||
@@ -1907,7 +1910,6 @@ const server = http.createServer(async (req, res) => {
       pathname === "/api/feedback/binary" ||
       pathname === "/api/command/pin-action" ||
       pathname === "/api/mod/site-images" ||
-      pathname.startsWith("/api/admin/sticker-studio") ||
       pathname.startsWith("/api/social/") ||
       ((pathname === "/api/submissions" ||
         pathname === "/.netlify/functions/submissions" ||
@@ -2028,6 +2030,28 @@ const server = http.createServer(async (req, res) => {
             storageEngine: storageEngineName,
             smtp: smtpCfg,
           },
+        })
+      );
+      return;
+    }
+
+    // Local handler for `/api/command/status` (Spoke Fleet Health & Gate State)
+    if (pathname === "/api/command/status" && req.method === "GET") {
+      const { items } = await loadMetaAndPins();
+      res.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+        "X-Robots-Tag": "noindex, nofollow",
+      });
+      res.end(
+        JSON.stringify({
+          ok: true,
+          status: "healthy",
+          siteKey: SITE_KEY,
+          domain: SITE_DOMAIN_DEFAULT,
+          previewGateEnabled: PREVIEW_GATE_ENABLED,
+          uptimeSeconds: Math.round(process.uptime()),
+          totalPins: items.length,
         })
       );
       return;
