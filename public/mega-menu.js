@@ -286,8 +286,8 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </button>
 
-          <!-- Action 2: Visual Pin Board Trigger (Crosshair) -->
-          <button type="button" onclick="window.openTSPinBoard && window.openTSPinBoard()" class="flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-brand-cobalt hover:bg-blue-50 transition-colors shrink-0" title="Visual Pin Board Collaboration Tool" aria-label="Visual Pin Board">
+          <!-- Action 2: Visual Pin Board Trigger (Crosshair - Admin Only) -->
+          <button type="button" data-ts-pin-trigger="header" style="display:none;" onclick="window.openTSPinBoard && window.openTSPinBoard()" class="hidden items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-brand-cobalt hover:bg-blue-50 transition-colors shrink-0" title="Visual Pin Board Collaboration Tool (Admin)" aria-label="Visual Pin Board">
             <svg class="w-4 h-4 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="7" stroke-width="2" stroke="currentColor"/>
               <line x1="12" y1="2" x2="12" y2="5" stroke-width="2" stroke-linecap="square"/>
@@ -796,11 +796,19 @@
               <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">36 years enterprise engineering, USAF veteran, VP Global Support.</p>
             </a>
 
-            <button type="button" onclick="window.closeAllPanels && window.closeAllPanels(); window.openTSPinBoard && window.openTSPinBoard();" class="w-full text-left p-2.5 bg-white border border-brand-line hover:border-brand-cobalt transition-colors">
+            <a href="/contact" class="block p-2.5 bg-slate-50 border border-brand-line hover:border-brand-cobalt transition-colors">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-brand-slate">Engineering Dispatch &amp; Contact</span>
+                <span class="text-[9px] text-slate-400 font-mono">&rarr;</span>
+              </div>
+              <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">Direct priority triage with Steve Cormier in Kissimmee, Orlando &amp; nationwide.</p>
+            </a>
+
+            <button type="button" data-ts-pin-trigger="mobile" style="display:none;" onclick="window.closeAllPanels && window.closeAllPanels(); window.openTSPinBoard && window.openTSPinBoard();" class="hidden w-full text-left p-2.5 bg-white border border-brand-line hover:border-brand-cobalt transition-colors">
               <div class="flex items-center justify-between">
                 <span class="font-bold text-brand-slate flex items-center gap-1.5">
                   <svg class="w-3.5 h-3.5 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-                  <span>Visual Pin Board Collaboration</span>
+                  <span>Visual Pin Board Collaboration (Admin)</span>
                 </span>
                 <span class="text-[9px] text-slate-400 font-mono">&rarr;</span>
               </div>
@@ -834,6 +842,7 @@
 
     // Setup mobile tab switching
     setupMobileTabs();
+    verifyAdminSessionForPinBoard();
   }
 
   // Setup Mobile 4-Tab Switching
@@ -1248,15 +1257,49 @@
   });
 
   // =========================================================================
-  // 4. Visual Pin Board Trigger Integration
+  // 4. Visual Pin Board Trigger Integration (Admin-Authenticated Only)
   // =========================================================================
+  let isAdminAuthenticated = false;
+
+  function revealAdminPinBoardControls() {
+    document.querySelectorAll('[data-ts-pin-trigger], button[onclick*="openTSPinBoard"]').forEach(el => {
+      if (!isAdminAuthenticated) {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+        el.style.display = 'none';
+      } else {
+        el.classList.remove('hidden');
+        if (el.getAttribute('data-ts-pin-trigger') === 'mobile') {
+          el.style.display = 'block';
+        } else {
+          el.classList.add('flex');
+          el.style.display = 'flex';
+        }
+      }
+    });
+  }
+
+  function verifyAdminSessionForPinBoard() {
+    revealAdminPinBoardControls();
+    fetch('/api/auth/check', { credentials: 'same-origin', cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        isAdminAuthenticated = Boolean(data && data.authenticated === true);
+        revealAdminPinBoardControls();
+      })
+      .catch(() => {
+        isAdminAuthenticated = false;
+        revealAdminPinBoardControls();
+      });
+  }
+
   window.openTSPinBoard = function() {
+    if (!isAdminAuthenticated) return;
     if (window.gtPinBoard && typeof window.gtPinBoard.toggle === 'function') {
       window.gtPinBoard.toggle();
       return;
     }
     window.dispatchEvent(new CustomEvent('gt:pin-board:open'));
-    // If pin-board script is present, trigger it, otherwise alert status
     const existingScript = document.querySelector('script[src*="pin-board.js"]');
     if (!existingScript) {
       const script = document.createElement('script');

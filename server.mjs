@@ -1916,6 +1916,16 @@ const server = http.createServer(async (req, res) => {
         pathname === "/api/rfq") &&
         req.method !== "POST");
 
+    if (req.method === "GET" && pathname === "/api/auth/check") {
+      res.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+        "X-Robots-Tag": "noindex, nofollow",
+      });
+      res.end(JSON.stringify({ ok: true, authenticated: Boolean(isAuthenticated) }));
+      return;
+    }
+
     if (isProtectedSpokeApi && !isAuthenticated && !verifyHubSyncAuth(req, "")) {
       res.writeHead(401, {
         "Content-Type": "application/json; charset=utf-8",
