@@ -1862,6 +1862,20 @@ const server = http.createServer(async (req, res) => {
       "Modz2026!",
     ];
     const isMasterQueryKey = Boolean(qKey) && validKeys.some((k) => safeEqualStrings(qKey.toLowerCase(), k.toLowerCase()));
+    if (isMasterQueryKey) {
+      const signedVal = createSignedCookieValue(CONFIGURED_PASSCODE || "TechSpec2026");
+      const cookieHeader = `${COOKIE_NAME}=${signedVal}${domainAttr}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${MAX_AGE_SECONDS}`;
+      const existing = res.getHeader("Set-Cookie");
+      if (existing) {
+        if (Array.isArray(existing)) {
+          res.setHeader("Set-Cookie", [...existing, cookieHeader]);
+        } else {
+          res.setHeader("Set-Cookie", [existing, cookieHeader]);
+        }
+      } else {
+        res.setHeader("Set-Cookie", cookieHeader);
+      }
+    }
     const rawCookieVal = String(cookies[COOKIE_NAME] || cookies[LEGACY_COOKIE_NAME] || cookies["admin_passcode"] || "").trim();
     const isDirectCookiePass = Boolean(rawCookieVal) && validKeys.some((k) => safeEqualStrings(rawCookieVal.toLowerCase(), k.toLowerCase()));
     const isAuthenticated =
@@ -2965,6 +2979,11 @@ const server = http.createServer(async (req, res) => {
       pathname === "/favicon-32x32.png" ||
       pathname === "/apple-touch-icon.png" ||
       pathname === "/favicon.ico" ||
+      pathname === "/mega-menu.js" ||
+      pathname === "/logo-studio.js" ||
+      pathname === "/mod-sticker-studio-ui.js" ||
+      pathname === "/robots.txt" ||
+      pathname === "/sitemap.xml" ||
       pathname.startsWith("/images/") ||
       pathname.startsWith("/assets/");
 

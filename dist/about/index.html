@@ -53,6 +53,15 @@
   </script>
 
   <style>
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      position: relative;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       background-color: #FAFAFC;
       color: #0F172A;
@@ -83,20 +92,20 @@
           <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
-        <div class="flex items-center gap-4 text-[10px] shrink-0">
-          <a href="/tools" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
-          <a href="/logos" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
-          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] min-w-0">
+          <a href="/tools" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="/logos" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold">LOGO STUDIO (10)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors whitespace-nowrap">DIRECT DISPATCH: (407) 917-5250</a>
         </div>
       </div>
     </div>
 
     <!-- Main Architectural Nav -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
         <!-- Logo Unit -->
         <a href="/" class="flex items-center gap-3.5 group">
-          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 sm:h-12 w-auto object-contain" />
+          <img id="site-header-logo" src="/images/logos/concept-01-hypervisor-blades.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-8 sm:h-11 max-w-[165px] sm:max-w-none w-auto object-contain shrink-0" />
           <div class="hidden md:block hairline-l pl-3.5">
             <span class="font-heading text-xs font-bold tracking-tight text-brand-slate block uppercase">Technology Specialist</span>
             <span class="font-mono text-[9px] text-slate-500 tracking-wider block">PRINCIPAL SYSTEMS ENGINEERING // 1990</span>
@@ -120,14 +129,14 @@
         </nav>
 
         <!-- Header Action CTA & Mobile Trigger -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="tel:+14079175250" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-brand-line bg-white hover:bg-slate-50 font-mono text-xs font-bold text-brand-slate transition-colors">
             <span>(407) 917-5250</span>
           </a>
-          <a href="/contact" class="px-4 py-2 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors">
+          <a href="/contact" class="px-2.5 py-2 sm:px-4 sm:py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
             Request Dispatch
           </a>
-          <button data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white">
+          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
             <span class="sr-only">Open Menu</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>

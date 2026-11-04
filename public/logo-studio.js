@@ -192,6 +192,9 @@
     launcher.style.border = "1px solid #334155";
     launcher.style.borderRadius = "0px";
     launcher.style.boxShadow = "0 10px 25px -5px rgba(15, 23, 42, 0.4)";
+    launcher.style.maxWidth = "calc(100vw - 24px)";
+    launcher.style.boxSizing = "border-box";
+    launcher.style.whiteSpace = "nowrap";
     launcher.style.cursor = "pointer";
     launcher.style.transition = "transform 0.15s ease, background-color 0.15s ease";
 
