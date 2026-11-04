@@ -512,12 +512,12 @@ const services = [
     category: 'Enterprise AI & Automation',
     title: 'Enterprise AI Implementation, Copilot Governance & Workflow Automation',
     shortTitle: 'Enterprise AI & Copilot',
-    metaDesc: 'Enterprise AI implementation, Microsoft 365 Copilot permission audits, sovereign air-gapped LLM deployment, and support workflow automation by Steve Cormier.',
+    metaDesc: 'Enterprise AI implementation, Microsoft 365 Copilot permission audits, private air-gapped LLM deployment, and support workflow automation by Steve Cormier.',
     schematic: '/images/schematics/ai-rag-copilot-pipeline.svg',
     schematicAlt: 'Enterprise AI Architecture, Copilot Governance and RAG Pipeline Schematic',
-    lead: 'Practical enterprise artificial intelligence deployment, pre-Copilot permission governance, sovereign air-gapped LLM systems, and intelligent workflow automation built for data sovereignty.',
+    lead: 'Practical enterprise artificial intelligence deployment, pre-Copilot permission governance, private air-gapped LLM systems, and intelligent workflow automation built for data privacy and enterprise isolation.',
     metrics: [
-      { label: 'DATA SOVEREIGNTY', value: '100% Air-Gapped Option', sub: 'Zero data leakage to external models' },
+      { label: 'DATA ISOLATION', value: '100% Air-Gapped Option', sub: 'Zero data leakage to external models' },
       { label: 'COPILOT AUDITING', value: 'Zero Sensitive Oversharing', sub: 'SharePoint & Purview ACL lockdown' },
       { label: 'WORKFLOW TRIAGE', value: '65% Resolution Speedup', sub: 'Tier-1 ticket deflection agents' },
       { label: 'AUDIT PROVENANCE', value: 'Cryptographic Citation', sub: 'Verifiable document chunk provenance' }
@@ -528,12 +528,12 @@ const services = [
         desc: 'Exhaustive pre-AI security audit across SharePoint, Teams, and OneDrive to ensure confidential HR files, executive salaries, and strategic memos are never indexed or exposed by Copilot to unauthorized staff.'
       },
       {
-        area: 'Private & Sovereign LLM Deployment',
-        desc: 'On-premises and sovereign cloud deployment of open-weight models (Llama 3, Mistral, Qwen) using Ollama and vLLM where corporate data never leaves your hardware boundary.'
+        area: 'Private & Isolated LLM Deployment',
+        desc: 'On-premises and private cloud deployment of open-weight models (Llama 3, Mistral, Qwen) using Ollama and vLLM where corporate data never leaves your hardware boundary.'
       },
       {
         area: 'Enterprise Retrieval-Augmented Generation (RAG)',
-        desc: 'High-accuracy vector knowledge bases built on PostgreSQL 16 pgvector, BM25 hybrid search, and strict document-level access controls with verifiable citations.'
+        desc: 'High-accuracy vector knowledge bases built on isolated vector embeddings, BM25 hybrid search, and strict document-level access controls with verifiable citations.'
       },
       {
         area: 'Helpdesk & Ticket Triage Automation',
@@ -549,7 +549,7 @@ const services = [
       }
     ],
     platforms: [
-      { category: 'Enterprise AI Engines', items: ['Microsoft 365 Copilot', 'Microsoft Purview AI Hub', 'Ollama Sovereign Server', 'vLLM Inference Engine'] },
+      { category: 'Enterprise AI Engines', items: ['Microsoft 365 Copilot', 'Microsoft Purview AI Hub', 'Ollama Enterprise Server', 'vLLM Inference Engine'] },
       { category: 'Vector & Data Stacks', items: ['PostgreSQL 16 with pgvector', 'Hybrid BM25 Keyword Search', 'LlamaIndex Enterprise Framework', 'Sentence-Transformers'] },
       { category: 'Automation & Guardrails', items: ['NeMo Guardrails Prompt WAF', 'Presidio PII Redaction Engine', 'Webhook Workflow Automation', 'SmarterMail AI Triage Relay'] },
       { category: 'Open-Weight Models', items: ['Llama 3.3 70B & 8B', 'Mistral Large 2 & Nemo', 'DeepSeek R1 Distill Stacks', 'Qwen 2.5 Coder & Instruct'] }
@@ -578,7 +578,7 @@ function renderHeader(activePath = '') {
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
         <div class="flex items-center gap-4 text-[10px] shrink-0">
-          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
+          <a href="/tools" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
           <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
           <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
         </div>
@@ -612,16 +612,41 @@ function renderHeader(activePath = '') {
             <span class="text-[9px] text-slate-400">&darr;</span>
           </a>
           <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ${activePath === '/tools' ? 'text-brand-cobalt font-extrabold' : ''}">Calculators</a>
-          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ${activePath === '/logos' ? 'text-brand-cobalt font-extrabold' : ''}">Logo Studio</a>
         </nav>
 
-        <!-- Header Action CTA -->
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
-            Contact Steve
+        <!-- Header Action Suite: Search (Ctrl+K), Pin Board, Direct Contact, Hamburger -->
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <!-- Action 1: Search Trigger (Ctrl+K) -->
+          <button type="button" onclick="window.openTSSearch &amp;&amp; window.openTSSearch()" class="hidden lg:inline-flex items-center gap-2 px-2.5 py-1.5 border border-brand-line bg-slate-50 hover:bg-white text-slate-600 hover:text-brand-cobalt transition-colors font-mono text-xs" title="Search Practice Areas &amp; Tools (Ctrl+K)" aria-label="Search (Ctrl+K)">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span class="text-[11px] font-bold">Search</span>
+            <kbd class="px-1 py-0.2 bg-white border border-brand-line text-[9px] text-slate-500 font-mono">Ctrl+K</kbd>
+          </button>
+          <button type="button" onclick="window.openTSSearch &amp;&amp; window.openTSSearch()" class="lg:hidden flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-slate-700 hover:text-brand-cobalt hover:border-brand-cobalt transition-colors shrink-0" title="Search (Ctrl+K)" aria-label="Open Search">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+
+          <!-- Action 2: Visual Pin Board Trigger (Crosshair) -->
+          <button type="button" onclick="window.openTSPinBoard &amp;&amp; window.openTSPinBoard()" class="flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-brand-cobalt hover:bg-blue-50 transition-colors shrink-0" title="Visual Pin Board Collaboration Tool" aria-label="Visual Pin Board">
+            <svg class="w-4 h-4 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="7" stroke-width="2" stroke="currentColor"/>
+              <line x1="12" y1="2" x2="12" y2="5" stroke-width="2" stroke-linecap="square"/>
+              <line x1="12" y1="19" x2="12" y2="22" stroke-width="2" stroke-linecap="square"/>
+              <line x1="2" y1="12" x2="5" y2="12" stroke-width="2" stroke-linecap="square"/>
+              <line x1="19" y1="12" x2="22" y2="12" stroke-width="2" stroke-linecap="square"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+          </button>
+
+          <!-- Action 3: Direct Contact Icon Button (38x38 square, cobalt) -->
+          <a href="/contact" class="flex items-center justify-center w-[38px] h-[38px] bg-brand-cobalt hover:bg-blue-700 text-white transition-colors shrink-0" title="Contact Steve Cormier (Direct Dispatch)" aria-label="Contact Steve Cormier">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
           </a>
-          <!-- Mobile Menu Toggle Button -->
-          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
+
+          <!-- Action 4: Mobile Hamburger Menu Button (38x38 square, white border) -->
+          <button type="button" data-mobile-menu-btn class="lg:hidden flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-slate-700 hover:text-brand-cobalt hover:border-brand-cobalt transition-colors shrink-0" aria-label="Toggle Navigation Menu">
             <span class="sr-only">Open Menu</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -695,27 +720,56 @@ function renderFooter() {
           </ul>
         </div>
 
-        <!-- Col 4: Platform & Direct Dispatch -->
+        <!-- Col 4: Regional Dispatch & Coverage -->
         <div>
           <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
-            SOVEREIGN PLATFORM &amp; ACCESS
+            REGIONAL DISPATCH &amp; COVERAGE
           </span>
           <div class="font-mono text-[11px] text-slate-600 space-y-2 mb-4">
-            <div>&bull; Runtime: GreenTree Sovereign Spoke v3.0</div>
-            <div>&bull; Vault: Dedicated PostgreSQL 16</div>
-            <div>&bull; Telemetry: East-West Air-Gapped Monitoring</div>
-            <div>&bull; Security: CIS Level 2 Benchmarks</div>
+            <div>&bull; Onsite: Orlando, Kissimmee &amp; Central FL</div>
+            <div>&bull; Remote: Nationwide Enterprise Support</div>
+            <div>&bull; Triage SLA: &lt; 15-Minute Priority Response</div>
+            <div>&bull; Direct Line: <a href="tel:+14079175250" class="text-brand-cobalt font-bold hover:underline">(407) 917-5250</a></div>
           </div>
           <div class="space-y-2">
-            <a href="/about" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
-              About Steve Cormier &rarr;
+            <a href="/tools" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              Engineering Calculators (03) &rarr;
             </a>
             <a href="/contact" class="block w-full py-2 px-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
-              Dispatch Request &rarr;
+              Contact Steve &rarr;
             </a>
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- GreenTreeOS Compliance & Attribution Utility Bar -->
+    <div class="bg-slate-100/80 py-3 px-4 sm:px-6 lg:px-8 hairline-t text-[11px] font-mono text-slate-600">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <!-- Left: Compliance & Legal Modals -->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px]">
+          <button type="button" onclick="window.openTSModal('privacy')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">Privacy &amp; GPC</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('terms')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">Terms of Service</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('optout')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2 text-brand-cobalt font-bold">Do Not Sell / Share My Info</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('ada')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">ADA / WCAG 2.1 AA</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('sms')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">SMS 10DLC Terms</button>
+        </div>
+
+        <!-- Right: GreenTreeOS Attribution & Portability Guarantee -->
+        <div class="flex flex-wrap items-center gap-2 text-[11px]">
+          <button type="button" onclick="window.openTSModal('greentree')" class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-white border border-brand-line text-brand-slate hover:border-brand-cobalt hover:text-brand-cobalt font-bold transition-colors">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-none"></span>
+            <span>Engineered &amp; Hosted on GreenTreeOS &bull; Client Portability Guarantee</span>
+          </button>
+          <a href="https://www.greentreehosting.com" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-brand-slate transition-colors text-[10px]">
+            GreenTree Hosting, LLC (Est. 1997)
+          </a>
+        </div>
       </div>
     </div>
 
@@ -729,8 +783,6 @@ function renderFooter() {
           <span>Kissimmee, FL 34741</span>
           <span>&bull;</span>
           <a href="tel:+14079175250" class="text-brand-slate font-bold hover:underline">(407) 917-5250</a>
-          <span>&bull;</span>
-          <a href="/logos" class="text-brand-cobalt hover:underline">Vector Logo Studio</a>
         </div>
       </div>
     </div>

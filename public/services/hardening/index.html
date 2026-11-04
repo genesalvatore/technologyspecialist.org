@@ -103,9 +103,9 @@
           <span class="inline-block w-2 h-2 rounded-none bg-emerald-400 animate-pulse shrink-0"></span>
           <span class="truncate">EST. 1990 // 36 YEARS ENTERPRISE INFRASTRUCTURE ENGINEERING &bull; CENTRAL FLORIDA ONSITE &amp; NATIONWIDE REMOTE</span>
         </div>
-        <div class="flex items-center gap-4 text-[10px] shrink-0">
-          <a href="#logo-studio" onclick="window.TS_LOGO_STUDIO?.openModal(); return false;" class="text-sky-300 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>LOGO STUDIO (10)</a>
-          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors">DIRECT DISPATCH: (407) 917-5250</a>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] min-w-0">
+          <a href="/tools" class="hidden sm:flex text-sky-300 hover:text-white transition-colors items-center gap-1.5 font-mono text-[10px] font-bold"><span class="w-1.5 h-1.5 bg-emerald-400 animate-pulse"></span>CALCULATORS (03)</a>
+          <a href="tel:+14079175250" class="text-blue-200 hover:text-white transition-colors whitespace-nowrap">DIRECT DISPATCH: (407) 917-5250</a>
           <span class="text-emerald-400 font-extrabold hidden sm:inline">&bull; STATUS: ALL MANAGED CLUSTERS NOMINAL</span>
         </div>
       </div>
@@ -113,15 +113,15 @@
 
     <!-- Main Architectural Nav -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
         <!-- Logo & Monogram Unit -->
         <a href="/" class="flex items-center gap-3 group shrink-0">
           <img id="site-header-logo" src="/images/logos/concept-01-mark.svg" onerror="this.onerror=null;this.src='/images/logo.png';" alt="Technology Specialist Logo" class="h-10 w-10 sm:h-11 sm:w-11 object-contain shrink-0" />
           <div class="flex flex-col justify-center whitespace-nowrap">
-            <div class="font-heading text-base sm:text-lg font-extrabold tracking-tight text-brand-slate leading-none uppercase">
+            <div class="ts-brand-title font-heading text-base sm:text-lg font-extrabold tracking-tight text-brand-slate leading-none uppercase">
               TECHNOLOGY <span class="text-brand-cobalt">SPECIALIST</span>
             </div>
-            <div class="font-mono text-[9px] sm:text-[10px] font-bold text-slate-500 tracking-widest uppercase mt-1 leading-none">
+            <div class="ts-brand-subtitle font-mono text-[9px] sm:text-[10px] font-bold text-slate-500 tracking-widest uppercase mt-1 leading-none">
               EST. 1990 // ENTERPRISE SYSTEMS
             </div>
           </div>
@@ -129,25 +129,44 @@
 
         <!-- Desktop Navigation Matrix -->
         <nav class="hidden lg:flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-700 whitespace-nowrap">
-          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap text-brand-cobalt bg-slate-50">
-            <span>Practice Areas</span>
-            <span class="text-[9px] text-slate-400">&darr;</span>
-          </a>
-          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap ">
-            <span>Leadership</span>
-            <span class="text-[9px] text-slate-400">&darr;</span>
-          </a>
+          <a href="/services" data-mm-trigger="services" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap "><span>Practice Areas</span><span class="text-[9px] text-slate-400">&darr;</span></a>
+          <a href="/about" data-mm-trigger="company" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors flex items-center gap-1 whitespace-nowrap "><span>Leadership</span><span class="text-[9px] text-slate-400">&darr;</span></a>
           <a href="/tools" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ">Calculators</a>
-          <a href="/logos" class="px-3 py-2 hover:text-brand-cobalt hover:bg-slate-50 transition-colors whitespace-nowrap ">Logo Studio</a>
         </nav>
 
-        <!-- Header Action CTA -->
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a href="/contact" class="px-4 py-2.5 bg-brand-cobalt hover:bg-blue-700 text-white font-mono text-xs font-bold uppercase tracking-wider shadow-sm transition-colors whitespace-nowrap">
-            Contact Steve
+        <!-- Header Action Suite: Search (Ctrl+K), Pin Board, Direct Contact, Hamburger -->
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <!-- Action 1: Search Trigger (Ctrl+K) -->
+          <button type="button" onclick="window.openTSSearch &amp;&amp; window.openTSSearch()" class="hidden lg:inline-flex items-center gap-2 px-2.5 py-1.5 border border-brand-line bg-slate-50 hover:bg-white text-slate-600 hover:text-brand-cobalt transition-colors font-mono text-xs" title="Search Practice Areas &amp; Tools (Ctrl+K)" aria-label="Search (Ctrl+K)">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span class="text-[11px] font-bold">Search</span>
+            <kbd class="px-1 py-0.2 bg-white border border-brand-line text-[9px] text-slate-500 font-mono">Ctrl+K</kbd>
+          </button>
+          <button type="button" onclick="window.openTSSearch &amp;&amp; window.openTSSearch()" class="lg:hidden flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-slate-700 hover:text-brand-cobalt hover:border-brand-cobalt transition-colors shrink-0" title="Search (Ctrl+K)" aria-label="Open Search">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+
+          <!-- Action 2: Visual Pin Board Trigger (Crosshair) -->
+          <button type="button" onclick="window.openTSPinBoard &amp;&amp; window.openTSPinBoard()" class="flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-brand-cobalt hover:bg-blue-50 transition-colors shrink-0" title="Visual Pin Board Collaboration Tool" aria-label="Visual Pin Board">
+            <svg class="w-4 h-4 text-brand-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="7" stroke-width="2" stroke="currentColor"/>
+              <line x1="12" y1="2" x2="12" y2="5" stroke-width="2" stroke-linecap="square"/>
+              <line x1="12" y1="19" x2="12" y2="22" stroke-width="2" stroke-linecap="square"/>
+              <line x1="2" y1="12" x2="5" y2="12" stroke-width="2" stroke-linecap="square"/>
+              <line x1="19" y1="12" x2="22" y2="12" stroke-width="2" stroke-linecap="square"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+          </button>
+
+          <!-- Action 3: Direct Contact Icon Button (38x38 square, cobalt) -->
+          <a href="/contact" class="flex items-center justify-center w-[38px] h-[38px] bg-brand-cobalt hover:bg-blue-700 text-white transition-colors shrink-0" title="Contact Steve Cormier (Direct Dispatch)" aria-label="Contact Steve Cormier">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
           </a>
-          <!-- Mobile Menu Toggle Button -->
-          <button type="button" data-mobile-menu-btn class="lg:hidden p-2 text-slate-700 hover:text-brand-cobalt border border-brand-line bg-white shrink-0" aria-label="Toggle Navigation Menu">
+
+          <!-- Action 4: Mobile Hamburger Menu Button (38x38 square, white border) -->
+          <button type="button" data-mobile-menu-btn class="lg:hidden flex items-center justify-center w-[38px] h-[38px] border border-brand-line bg-white text-slate-700 hover:text-brand-cobalt hover:border-brand-cobalt transition-colors shrink-0" aria-label="Toggle Navigation Menu">
             <span class="sr-only">Open Menu</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -603,30 +622,27 @@
   <!-- ===================================================================== -->
   <!-- STRUCTURAL BLUEPRINT FOOTER                                           -->
   <!-- ===================================================================== -->
-  <footer class="bg-white hairline-t mt-16">
+  <footer class="bg-white hairline-t mt-12">
     <!-- Top Footer Grid -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         
-        <!-- Col 1: Identity & Credentials -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <img src="/images/logos/concept-01-hypervisor-blades.svg" alt="Technology Specialist" class="h-10 w-auto object-contain" />
-          </div>
+        <!-- Col 1: Identity -->
+        <div class="space-y-3">
+          <a href="/" class="flex items-center gap-3 group">
+            <img src="/images/logos/concept-01-mark.svg" alt="Technology Specialist" class="h-10 w-10 object-contain shrink-0" />
+            <div class="flex flex-col justify-center whitespace-nowrap">
+              <div class="font-heading text-base font-extrabold tracking-tight text-brand-slate leading-none uppercase">TECHNOLOGY <span class="text-brand-cobalt">SPECIALIST</span></div>
+              <div class="font-mono text-[9px] font-bold text-slate-500 tracking-widest uppercase mt-1 leading-none">EST. 1990 // ENTERPRISE SYSTEMS</div>
+            </div>
+          </a>
           <p class="text-xs text-slate-600 leading-relaxed font-normal">
-            Technology Specialist provides mission-critical enterprise virtualization, M365 tenant governance, VoIP telephony, network engineering, and enterprise AI implementation. Principal-led by Steve Cormier since 1990.
+            Technology Specialist provides mission-critical enterprise virtualization, M365 governance, VoIP systems, and network engineering. Principal-led by Steve Cormier since 1990.
           </p>
-          <div class="font-mono text-[10px] text-slate-500 bg-slate-50 p-3 border border-brand-line space-y-1">
-            <div class="text-brand-slate font-bold">Steve Cormier, Principal Systems Architect</div>
-            <div>&bull; 36 Years Enterprise Architecture (Est. 1990)</div>
-            <div>&bull; VP Global Technical &amp; Customer Support, Enterprise RTLS (2010 - Pres.)</div>
-            <div>&bull; U.S. Air Force Veteran (Security Police, Offutt AFB)</div>
-            <div>&bull; Microsoft Certified Systems Professional</div>
-            <div>&bull; Lead Instructor, Track Day Xperience (TDX) @ Sebring</div>
-          </div>
           <div class="font-mono text-[10px] text-slate-500">
-            <div>3523 Forest Ridge Ln. &bull; Kissimmee, FL 34741</div>
-            <div class="text-brand-slate font-bold mt-1">Direct Dispatch: <a href="tel:+14079175250" class="text-brand-cobalt hover:underline">(407) 917-5250</a></div>
+            <div>3523 Forest Ridge Ln.</div>
+            <div>Kissimmee, FL 34741</div>
+            <div class="text-brand-slate font-bold mt-1">Direct: (407) 917-5250</div>
           </div>
         </div>
 
@@ -635,12 +651,12 @@
           <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
             PRACTICE MATRIX (PART I)
           </span>
-          <ul class="space-y-2 font-mono text-xs text-slate-600">
-            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt transition-colors">SYS-01: Microsoft 365 Architecture</a></li>
-            <li><a href="/services/virtualization" class="hover:text-brand-cobalt transition-colors">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
-            <li><a href="/services/hardening" class="hover:text-brand-cobalt transition-colors">SYS-03: Server &amp; Network Hardening</a></li>
-            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt transition-colors">SYS-04: VoIP &amp; SIP Trunking</a></li>
-            <li><a href="/services/network-management" class="hover:text-brand-cobalt transition-colors">SYS-05: Enterprise L2/L3 Network</a></li>
+          <ul class="space-y-1.5 font-mono text-xs text-slate-600">
+            <li><a href="/services/microsoft-365" class="hover:text-brand-cobalt">SYS-01: Microsoft 365 &amp; Entra ID</a></li>
+            <li><a href="/services/virtualization" class="hover:text-brand-cobalt">SYS-02: VMware ESXi &amp; Hyper-V</a></li>
+            <li><a href="/services/hardening" class="hover:text-brand-cobalt">SYS-03: Server &amp; Network Hardening</a></li>
+            <li><a href="/services/voip-ippbx" class="hover:text-brand-cobalt">SYS-04: VoIP &amp; SIP Trunking</a></li>
+            <li><a href="/services/network-management" class="hover:text-brand-cobalt">SYS-05: Enterprise L2/L3 Network</a></li>
           </ul>
         </div>
 
@@ -649,36 +665,68 @@
           <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
             PRACTICE MATRIX (PART II)
           </span>
-          <ul class="space-y-2 font-mono text-xs text-slate-600">
-            <li><a href="/services/mobile-device-management" class="hover:text-brand-cobalt transition-colors">SYS-06: Mobile Device Management</a></li>
-            <li><a href="/services/remote-desktop" class="hover:text-brand-cobalt transition-colors">SYS-07: Remote Desktop Farms</a></li>
-            <li><a href="/services/onsite-support" class="hover:text-brand-cobalt transition-colors">SYS-08: Onsite Central FL Support</a></li>
-            <li><a href="/services/it-consultancy" class="hover:text-brand-cobalt transition-colors">SYS-09: Principal IT Consultancy</a></li>
-            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt text-brand-cobalt font-bold transition-colors">SYS-10: Enterprise AI &amp; Copilot</a></li>
+          <ul class="space-y-1.5 font-mono text-xs text-slate-600">
+            <li><a href="/services/mobile-device-management" class="hover:text-brand-cobalt">SYS-06: Mobile Device Management</a></li>
+            <li><a href="/services/remote-desktop" class="hover:text-brand-cobalt">SYS-07: Remote Desktop Farms</a></li>
+            <li><a href="/services/onsite-support" class="hover:text-brand-cobalt">SYS-08: Onsite Central FL Support</a></li>
+            <li><a href="/services/it-consultancy" class="hover:text-brand-cobalt">SYS-09: Principal IT Consultancy</a></li>
+            <li><a href="/services/ai-implementation" class="hover:text-brand-cobalt font-bold text-brand-cobalt">SYS-10: Enterprise AI &amp; Copilot</a></li>
+            <li><a href="/tools" class="hover:text-brand-cobalt text-sky-600 font-bold">&bull; Engineering Calculators (03)</a></li>
+            <li><a href="/about" class="hover:text-brand-cobalt">&bull; About Steve Cormier (Est. 1990)</a></li>
+            <li><a href="/contact" class="hover:text-brand-cobalt text-brand-cobalt font-bold">&bull; Dispatch &amp; Consultation</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Platform & Direct Dispatch -->
+        <!-- Col 4: Regional Dispatch & Coverage -->
         <div>
           <span class="font-mono text-[10px] font-bold text-brand-slate uppercase tracking-wider block mb-3 pb-1 border-b border-brand-line">
-            SOVEREIGN PLATFORM &amp; ACCESS
+            REGIONAL DISPATCH &amp; COVERAGE
           </span>
           <div class="font-mono text-[11px] text-slate-600 space-y-2 mb-4">
-            <div>&bull; Runtime: GreenTree Sovereign Spoke v3.0</div>
-            <div>&bull; Vault: Dedicated PostgreSQL 16</div>
-            <div>&bull; Telemetry: East-West Air-Gapped Monitoring</div>
-            <div>&bull; Security: CIS Level 2 Benchmarks</div>
+            <div>&bull; Onsite: Orlando, Kissimmee &amp; Central FL</div>
+            <div>&bull; Remote: Nationwide Enterprise Support</div>
+            <div>&bull; Triage SLA: &lt; 15-Minute Priority Response</div>
+            <div>&bull; Direct Line: <a href="tel:+14079175250" class="text-brand-cobalt font-bold hover:underline">(407) 917-5250</a></div>
           </div>
           <div class="space-y-2">
-            <a href="/about" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
-              About Steve Cormier &rarr;
+            <a href="/tools" class="block w-full py-2 px-3 bg-slate-50 hover:bg-slate-100 text-brand-slate border border-brand-line text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
+              Engineering Calculators (03) &rarr;
             </a>
             <a href="/contact" class="block w-full py-2 px-3 bg-brand-cobalt hover:bg-blue-700 text-white text-center font-mono text-[11px] font-bold uppercase tracking-wider transition-colors">
-              Dispatch Request &rarr;
+              Contact Steve &rarr;
             </a>
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- GreenTreeOS Compliance & Attribution Utility Bar -->
+    <div class="bg-slate-100/80 py-3 px-4 sm:px-6 lg:px-8 hairline-t text-[11px] font-mono text-slate-600">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <!-- Left: Compliance & Legal Modals -->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px]">
+          <button type="button" onclick="window.openTSModal('privacy')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">Privacy &amp; GPC</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('terms')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">Terms of Service</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('optout')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2 text-brand-cobalt font-bold">Do Not Sell / Share My Info</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('ada')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">ADA / WCAG 2.1 AA</button>
+          <span class="text-slate-300">&bull;</span>
+          <button type="button" onclick="window.openTSModal('sms')" class="hover:text-brand-cobalt transition-colors underline decoration-slate-300 underline-offset-2">SMS 10DLC Terms</button>
+        </div>
+
+        <!-- Right: GreenTreeOS Attribution & Portability Guarantee -->
+        <div class="flex flex-wrap items-center gap-2 text-[11px]">
+          <button type="button" onclick="window.openTSModal('greentree')" class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-white border border-brand-line text-brand-slate hover:border-brand-cobalt hover:text-brand-cobalt font-bold transition-colors">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-none"></span>
+            <span>Engineered &amp; Hosted on GreenTreeOS &bull; Client Portability Guarantee</span>
+          </button>
+          <a href="https://www.greentreehosting.com" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-brand-slate transition-colors text-[10px]">
+            GreenTree Hosting, LLC (Est. 1997)
+          </a>
+        </div>
       </div>
     </div>
 
@@ -692,8 +740,6 @@
           <span>Kissimmee, FL 34741</span>
           <span>&bull;</span>
           <a href="tel:+14079175250" class="text-brand-slate font-bold hover:underline">(407) 917-5250</a>
-          <span>&bull;</span>
-          <a href="/logos" class="text-brand-cobalt hover:underline">Vector Logo Studio</a>
         </div>
       </div>
     </div>

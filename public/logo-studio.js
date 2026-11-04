@@ -266,7 +266,7 @@
         <!-- Footer -->
         <div style="padding: 16px 24px; background-color: #FFFFFF; border-top: 1px solid #CBD5E1; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #64748B;">
           <span>Principal Engineer: Steve Cormier // Orlando &amp; Nationwide</span>
-          <span>Sovereign Cloud: GreenTree Hosting Coolify APPS1</span>
+          <span>Enterprise Cloud: GreenTreeOS Application Cluster</span>
         </div>
       </div>
     `;
@@ -376,14 +376,31 @@
     document.body.style.overflow = open ? "hidden" : "";
   }
 
-  // Auto-apply saved concept on initial load
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
+  function shouldMountStudioUI() {
+    try {
+      const path = window.location.pathname || "";
+      const search = window.location.search || "";
+      return (
+        path.startsWith("/logos") ||
+        path.startsWith("/admin") ||
+        search.includes("logoStudio=1")
+      );
+    } catch {
+      return false;
+    }
+  }
+
+  // Auto-apply saved concept on initial load; only mount UI on admin or /logos routes
+  function initStudio() {
+    if (shouldMountStudioUI()) {
       injectStudioUI();
-      applyConcept(getStoredConceptId(), false);
-    });
-  } else {
-    injectStudioUI();
+    }
     applyConcept(getStoredConceptId(), false);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initStudio);
+  } else {
+    initStudio();
   }
 })();

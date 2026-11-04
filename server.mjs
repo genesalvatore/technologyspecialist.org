@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * server.mjs - GreenTree Sovereign Fleet Runtime (v3.0) for technologyspecialist.org (Technology Specialist)
+ * server.mjs - GreenTreeOS Fleet Runtime (v3.0) for technologyspecialist.org (Technology Specialist)
  *
  * Includes:
  *   1. Coolify / Container Runtime on PORT=3000 with `GET /api/health` & `GET /healthz`
@@ -447,7 +447,7 @@ async function sendSubmissionEmail(subRecord, metaSettings = {}) {
 }
 
 /**
- * 7-Layer Sovereign Form & Anti-Spam Shield (`STD-2026-FORM-SHIELD-01` / `MOD-WAF-SHIELD`)
+ * 7-Layer Enterprise Form & Anti-Spam Shield (`STD-2026-FORM-SHIELD-01` / `MOD-WAF-SHIELD`)
  */
 function inspectWafAndBotShield(req, rawBody, fields) {
   const ct = String(req.headers["content-type"] || "").toLowerCase();
@@ -1930,6 +1930,9 @@ const server = http.createServer(async (req, res) => {
     // 3. Universal Spoke Admin Portal (`/admin` -> `MOD-ADMIN-PORTAL`)
     // ========================================================================
     if (
+      pathname === "/logos" ||
+      pathname === "/logos/" ||
+      pathname.startsWith("/logos/") ||
       pathname === "/admin" ||
       pathname === "/admin/" ||
       pathname.startsWith("/admin/") ||
@@ -2860,7 +2863,7 @@ const server = http.createServer(async (req, res) => {
         }
       }
 
-      // Enforce 7-Layer Sovereign Form & Anti-Spam Shield (`STD-2026-FORM-SHIELD-01`)
+      // Enforce 7-Layer Enterprise Form & Anti-Spam Shield (`STD-2026-FORM-SHIELD-01`)
       const shield = inspectWafAndBotShield(req, rawBody, fields);
       if (shield.blocked) {
         res.writeHead(shield.statusCode || 403, {
@@ -2996,6 +2999,51 @@ const server = http.createServer(async (req, res) => {
     }
 
     // ========================================================================
+    // 6B. Customer Privacy & PII Opt-Out (`POST /api/privacy/opt-out`)
+    // ========================================================================
+    if (req.method === "POST" && (pathname === "/api/privacy/opt-out" || pathname === "/api/privacy/opt-out/")) {
+      const rawBody = await readRequestBody(req);
+      let payload = {};
+      try {
+        payload = JSON.parse(rawBody || "{}");
+      } catch {
+        const params = new URLSearchParams(rawBody);
+        payload = Object.fromEntries(params.entries());
+      }
+      const email = String(payload.email || "").trim().slice(0, 160);
+      const name = String(payload.name || "").trim().slice(0, 120);
+      const optOutType = String(payload.optOutType || "do-not-sell-or-share").slice(0, 60);
+      const gpcActive = Boolean(payload.gpcActive);
+
+      const { meta } = await loadMetaAndPins();
+      if (!Array.isArray(meta.optOuts)) meta.optOuts = [];
+      meta.optOuts.push({
+        id: `optout_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+        email: email || "anonymous-gpc",
+        name: name || "Anonymous",
+        optOutType,
+        gpcActive,
+        userAgent: String(req.headers["user-agent"] || "").slice(0, 255),
+        ip: getClientIp(req),
+        timestamp: new Date().toISOString()
+      });
+      if (meta.optOuts.length > 500) meta.optOuts = meta.optOuts.slice(-500);
+      await saveMeta(meta);
+
+      res.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+      });
+      res.end(JSON.stringify({
+        ok: true,
+        success: true,
+        message: "Your opt-out request has been processed and recorded. Zero third-party sharing or selling.",
+        gpcHonored: true
+      }));
+      return;
+    }
+
+    // ========================================================================
     // 7. Static Files & Prerendered Astro Routes from `dist/`
     // ========================================================================
     const isGatePublicAsset =
@@ -3011,12 +3059,13 @@ const server = http.createServer(async (req, res) => {
       pathname.startsWith("/images/") ||
       pathname.startsWith("/assets/");
 
-    if (PREVIEW_GATE_ENABLED && !isAuthenticated && !isGatePublicAsset) {
+    const isLogosRoute = pathname === "/logos" || pathname === "/logos/" || pathname.startsWith("/logos/");
+    if ((isLogosRoute || (PREVIEW_GATE_ENABLED && !isGatePublicAsset)) && !isAuthenticated) {
       await serveStaticFile(
         res,
         path.join(__dirname, "modules", "MOD-PREVIEW-GATE", "gate.html"),
         401,
-        { "Cache-Control": "no-store" }
+        { "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow" }
       );
       return;
     }
